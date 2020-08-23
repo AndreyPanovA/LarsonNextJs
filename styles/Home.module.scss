@@ -1,0 +1,42 @@
+
+.keysWrapper {
+  height: 100vh;
+  color: white;
+  .backLogo {
+    position: fixed;
+    min-width: 50vw;
+  }
+  .keysLine {
+    position: relative;
+    width: 80vw;
+    justify-content: space-between;
+    align-items: flex-start;   
+    .keyCard {
+      justify-content: flex-start;
+      .keyImg {
+      min-height: 300px;
+      }  
+      img {
+        width: 220px;
+      }
+      &:nth-child(2) {
+        img {
+          width: 80%;
+          width: 240px;
+        }
+      }
+      &:nth-child(3) {
+        img {
+          margin-top: 25px;
+          width: 180px;
+        }
+      }
+      text-align: center;
+      width: 300px;
+      transition: .2s ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
