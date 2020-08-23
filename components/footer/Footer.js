@@ -17,6 +17,9 @@ export function Footer({ color = "black" }) {
                             <img src="/assets/img/social/google.svg" alt=""
                                 href="https://itunes.apple.com/us/app/larson-car/id1190680675" /></a>
                     </div>
+                    <button>
+                        Русский
+                    </button>
                 </div>
             </footer>
 
