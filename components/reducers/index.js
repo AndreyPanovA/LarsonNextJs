@@ -1,12 +1,12 @@
 const initialState = {
-    lang: []
+    lang: "ru"
 }
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case "CHANGE_LANG":
             return {
-                lang: action.newLang
+                lang: action.lang
             }
         default:
             return state;

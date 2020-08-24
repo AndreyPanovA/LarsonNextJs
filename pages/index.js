@@ -3,8 +3,9 @@ import cls from '../styles/Home.module.scss'
 import { MainLayout } from "../components/MainLayout"
 import textContent from "../components/language/lang"
 import { connect } from "react-redux"
-
 import React, { Component } from "react"
+import store from "../components/store"
+import lang from "../components/language/lang"
 
 class Home extends Component {
   constructor(props) {
@@ -14,16 +15,25 @@ class Home extends Component {
   state = {
     lang: "ru"
   }
+
+  componentDidMount() {
+
+  }
   render() {
+    const { lang } = this.props
+    console.log("before:", lang)
 
-
-    //  StylesService.changeLanguage(this, "text")
     return (
-
       <MainLayout color="white" title="larsonvolvo">
         <div className={cls.keysWrapper + " flex_c"}>
           <img src="/assets/img/larson-start.svg" alt="LARSON" className={cls.backLogo} />
-          <div className={cls.keysLine + " flex_cw"}>
+          <div className={cls.keysLine + " flex_cw"} onClick={(lang) => {
+
+            this.props.changeLang("ru");
+
+
+
+          }}>
             {textContent.keys.map((key, idx) => {
               return (
                 <Link href={key.href} key={idx}>
@@ -32,7 +42,7 @@ class Home extends Component {
                       <div className={cls.keyImg}>
                         <img src={key.img} alt={key.alt} />
                       </div>
-                      {this.state.lang == "ru" ? <h2>{key.h2ru}</h2> : <h2>{key.h2eng}</h2>}
+                      {lang == "ru" ? <h2>{key.h2ru}</h2> : <h2>{key.h2eng}</h2>}
                     </div>
                   </a>
                 </Link>
@@ -49,4 +59,18 @@ class Home extends Component {
 const mapStateToProps = ({ lang }) => {
   return { lang }
 }
-export default connect(mapStateToProps)(Home)
+const mapDispatchToProps = (dispatch) => {
+
+
+  return {
+    changeLang: (lang) => {
+      console.log(lang, "after")
+      dispatch({
+        type: "CHANGE_LANG",
+        lang: `${lang}`
+      })
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Home)
+

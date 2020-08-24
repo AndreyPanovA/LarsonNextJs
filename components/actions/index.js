@@ -1,5 +1,5 @@
 const changeLang = (lang) => {
-    return{
+    return {
         type: "CHANGE_LANG",
         newLang: lang
     }
