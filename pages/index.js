@@ -1,9 +1,19 @@
 import Link from "next/link"
 import cls from '../styles/Home.module.scss'
+import StylesService from "../services/StylesService"
 import { MainLayout } from "../components/MainLayout"
 import textContent from "../components/language/lang"
 
-export default function Home() {
+import React, {Component} from "react"
+
+export default class Home extends Component {
+  state = {
+    lang: "ru"
+  }
+  
+ render() {
+
+  //  StylesService.changeLanguage(this, "text")
   return (
     <MainLayout color="white" title="larsonvolvo">
       <div className={cls.keysWrapper + " flex_c"}>
@@ -17,7 +27,7 @@ export default function Home() {
                     <div className={cls.keyImg}>
                       <img src={key.img} alt={key.alt} />
                     </div>
-                    <h2>{key.h2ru}</h2>
+                    {this.state.lang=="ru" ?  <h2>{key.h2ru}</h2>:<h2>{key.h2eng}</h2> }
                   </div>
                 </a>
               </Link>
@@ -27,4 +37,5 @@ export default function Home() {
       </div>
     </MainLayout >
   )
+}
 }
