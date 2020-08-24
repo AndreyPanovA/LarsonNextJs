@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Head from "next/head"
 import { Navigation } from "./navigation/Navigation"
-import { Footer } from "../components/footer/Footer"
+import Footer from "../components/footer/Footer"
 import cls from "../styles/test.module.scss"
 
 export function MainLayout({ children, title = "Larson", color = "black", store }) {

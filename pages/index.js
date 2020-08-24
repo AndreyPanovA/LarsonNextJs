@@ -10,29 +10,20 @@ import lang from "../components/language/lang"
 class Home extends Component {
   constructor(props) {
     super(props)
-    console.log(props)
-  }
-  state = {
-    lang: "ru"
-  }
-
-  componentDidMount() {
 
   }
   render() {
     const { lang } = this.props
-    console.log("before:", lang)
 
     return (
       <MainLayout color="white" title="larsonvolvo">
         <div className={cls.keysWrapper + " flex_c"}>
           <img src="/assets/img/larson-start.svg" alt="LARSON" className={cls.backLogo} />
-          <div className={cls.keysLine + " flex_cw"} onClick={(lang) => {
-
-            this.props.changeLang("ru");
-
-
-
+          <div className={cls.keysLine + " flex_cw"} onClick={() => {
+            // lang == "ru" ?
+            //   this.props.changeLang("eng")
+            //   :
+            //   this.props.changeLang("ru");
           }}>
             {textContent.keys.map((key, idx) => {
               return (
@@ -42,7 +33,7 @@ class Home extends Component {
                       <div className={cls.keyImg}>
                         <img src={key.img} alt={key.alt} />
                       </div>
-                      {lang == "ru" ? <h2>{key.h2ru}</h2> : <h2>{key.h2eng}</h2>}
+                      {lang === "ru" ? <h2>{key.h2ru}</h2> : <h2>{key.h2eng}</h2>}
                     </div>
                   </a>
                 </Link>
@@ -60,11 +51,8 @@ const mapStateToProps = ({ lang }) => {
   return { lang }
 }
 const mapDispatchToProps = (dispatch) => {
-
-
   return {
     changeLang: (lang) => {
-      console.log(lang, "after")
       dispatch({
         type: "CHANGE_LANG",
         lang: `${lang}`

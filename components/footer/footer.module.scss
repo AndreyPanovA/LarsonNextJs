@@ -78,3 +78,16 @@ $footer: rgba(0,0,0,0.5);
     }
   }
 }
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border:2px solid #333;
+  cursor: pointer;
+  background-color: transparent;
+  font-weight: 600;
+  font-size: 12px;
+  &:hover {
+    background-color: #333;
+    color:white;
+  }
+}
