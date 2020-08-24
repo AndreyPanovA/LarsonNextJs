@@ -4,7 +4,8 @@ import { Navigation } from "./navigation/Navigation"
 import { Footer } from "../components/footer/Footer"
 import cls from "../styles/test.module.scss"
 
-export function MainLayout({ children, title = "Larson", color = "black" }) {
+export function MainLayout({ children, title = "Larson", color = "black", store }) {
+
     return (
         <>
             <Head>

@@ -1,41 +1,52 @@
 import Link from "next/link"
 import cls from '../styles/Home.module.scss'
-import StylesService from "../services/StylesService"
 import { MainLayout } from "../components/MainLayout"
 import textContent from "../components/language/lang"
+import { connect } from "react-redux"
 
-import React, {Component} from "react"
+import React, { Component } from "react"
 
-export default class Home extends Component {
+class Home extends Component {
+  constructor(props) {
+    super(props)
+    console.log(props)
+  }
   state = {
     lang: "ru"
   }
-  
- render() {
+  render() {
 
-  //  StylesService.changeLanguage(this, "text")
-  return (
-    <MainLayout color="white" title="larsonvolvo">
-      <div className={cls.keysWrapper + " flex_c"}>
-        <img src="/assets/img/larson-start.svg" alt="LARSON" className={cls.backLogo} />
-        <div className={cls.keysLine + " flex_cw"}>
-          {textContent.keys.map((key, idx) => {
-            return (
-              <Link href={key.href} key={idx}>
-                <a className={cls.keyCard}>
-                  <div className={cls.keyCard + " flex_cc"}>
-                    <div className={cls.keyImg}>
-                      <img src={key.img} alt={key.alt} />
+
+    //  StylesService.changeLanguage(this, "text")
+    return (
+
+      <MainLayout color="white" title="larsonvolvo">
+        <div className={cls.keysWrapper + " flex_c"}>
+          <img src="/assets/img/larson-start.svg" alt="LARSON" className={cls.backLogo} />
+          <div className={cls.keysLine + " flex_cw"}>
+            {textContent.keys.map((key, idx) => {
+              return (
+                <Link href={key.href} key={idx}>
+                  <a className={cls.keyCard}>
+                    <div className={cls.keyCard + " flex_cc"}>
+                      <div className={cls.keyImg}>
+                        <img src={key.img} alt={key.alt} />
+                      </div>
+                      {this.state.lang == "ru" ? <h2>{key.h2ru}</h2> : <h2>{key.h2eng}</h2>}
                     </div>
-                    {this.state.lang=="ru" ?  <h2>{key.h2ru}</h2>:<h2>{key.h2eng}</h2> }
-                  </div>
-                </a>
-              </Link>
-            )
-          })}
+                  </a>
+                </Link>
+              )
+            })}
+          </div>
         </div>
-      </div>
-    </MainLayout >
-  )
+      </MainLayout >
+
+    )
+  }
 }
+
+const mapStateToProps = ({ lang }) => {
+  return { lang }
 }
+export default connect(mapStateToProps)(Home)
