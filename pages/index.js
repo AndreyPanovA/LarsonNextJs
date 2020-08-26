@@ -1,11 +1,10 @@
 import Link from "next/link"
 import cls from '../styles/Home.module.scss'
 import { MainLayout } from "../components/MainLayout"
-import textContent from "../components/language/lang"
+import textContent from "../components/dataStorage/dataStorage"
 import { connect } from "react-redux"
 import React, { Component } from "react"
 import store from "../components/store"
-import lang from "../components/language/lang"
 
 class Home extends Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class Home extends Component {
     const { lang } = this.props
 
     return (
-      <MainLayout color="white" title="larsonvolvo">
+      <MainLayout color="white" title="larsonvolvo" background="black" btn="btn" logo={false}>
         <div className={cls.keysWrapper + " flex_c"}>
           <img src="/assets/img/larson-start.svg" alt="LARSON" className={cls.backLogo} />
           <div className={cls.keysLine + " flex_cw"} onClick={() => {

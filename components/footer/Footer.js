@@ -2,7 +2,7 @@ import cls from "./footer.module.scss"
 import { connect } from "react-redux"
 import store from "../store"
 function Footer(props) {
-    console.log(props)
+
     return (
         <>
             <footer className={cls[props.color]}>
@@ -20,7 +20,7 @@ function Footer(props) {
                             <img src="/assets/img/social/google.svg" alt=""
                                 href="https://itunes.apple.com/us/app/larson-car/id1190680675" /></a>
                     </div>
-                    <button className={cls.btn} onClick={() => {
+                    <button className={cls[props.btn]} onClick={() => {
                         store.getState().lang == "ru" ?
                             store.dispatch({
                                 type: "CHANGE_LANG",
