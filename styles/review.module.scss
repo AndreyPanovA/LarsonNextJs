@@ -1,0 +1,28 @@
+@import "../styles/variables.scss";
+
+.reviewWrap {
+    margin-top:  $logoHeight;
+    align-items: flex-start;
+    .review {
+
+        padding: 10px 20px;
+        border-radius: 5px;
+        height: 500px; 
+        flex-basis: 30vw;
+        overflow-y: auto;
+        .reviewItem  {
+            margin-bottom: 15px;
+            p {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    .rating {
+        background-color: rgba(255, 255, 255, 0.11);
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-right: 15px;
+        height: 500px;
+        flex-basis: 10vw;
+    }
+}

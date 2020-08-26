@@ -1,19 +1,19 @@
-/* .nav {
-position:fixed;
-    height: 60px;
+.backgroundImg {
+    position: fixed;
     top:0;
     left:0;
+    bottom: 0;
     right:0;
-    background: #333;
-    display: flex;
-    justify-content:space-around;
-    align-items:center;
+    z-index: -1;
+  
   }
-  .nav a {
-    color: white;
-    text-decoration:none;
-  }
-  .main {
-    margin-top:60px;
-    padding:1rem;
-  } */
+.black {
+  background: black;
+}
+.headerLogo {
+  width: 180px;
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translate(-50%,20%);
+}
