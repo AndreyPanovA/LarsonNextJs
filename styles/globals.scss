@@ -12,9 +12,11 @@ html {
 }
 
 a {
-  color: white;
-  color: inherit;
+  color: lightblue;
   text-decoration: none;
+  &:hover {
+    opacity: 0.7;
+  }
 }
 
 * {
