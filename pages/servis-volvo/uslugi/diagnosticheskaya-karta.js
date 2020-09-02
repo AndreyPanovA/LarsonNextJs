@@ -4,6 +4,7 @@ import { MainLayout } from "../../../components/MainLayout";
 import Footer from "../../../components/footer/Footer";
 import { Navigation } from "../../../components/navigation/Navigation";
 import dataStorage from "../../../components/dataStorage/dataStorage";
+import TextBlack from "../../../components/textBlack/TextBlack";
 
 // import {fetch} from "iso"
 export default function Card({ json }) {
@@ -12,6 +13,7 @@ export default function Card({ json }) {
   return (
     <MainLayout url={url}>
       <Navigation site="servis-volvo" />
+      <TextBlack></TextBlack>
     </MainLayout>
   );
 }
