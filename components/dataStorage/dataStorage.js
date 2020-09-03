@@ -24,8 +24,10 @@ export default {
   ],
   volvo: {
     textImages: {
+      parts: "/assets/img/volvo/textImages/parts.jpg",
       insurance: "/assets/img/volvo/textImages/insurance.jpg",
       tow: "/assets/img/volvo/textImages/tow.jpg",
+      card: "/assets/img/volvo/textImages/card.jpg",
     },
   },
   backgroundsUrl: {

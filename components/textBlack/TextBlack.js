@@ -1,12 +1,16 @@
 import cls from "./textBlack.module.scss";
-function TextBlack({ url, children }) {
+function TextBlack({ url, children, littleWidth }) {
   return (
     <>
       <div className={cls.container}>
         <div className={cls.imgContainer}>
-          <img src={url} class="" alt="" />
+          <img src={url} className="" alt="" />
         </div>
-        <div className={cls.text}>{children}</div>
+        <div
+          className={littleWidth ? cls.text + " " + cls[littleWidth] : cls.text}
+        >
+          <div>{children}</div>
+        </div>
       </div>
     </>
   );

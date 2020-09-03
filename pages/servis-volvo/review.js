@@ -15,34 +15,34 @@ export default function Review({ json }) {
       <Navigation site="servis-volvo" />
       <div className={"flex_cw " + cls.reviewWrap}>
         <div className={cls.rating}>
-          <p> wqiuyeiquwyeiuqwyu </p>{" "}
-        </div>{" "}
+          <p> wqiuyeiquwyeiuqwyu </p>
+        </div>
         <div className={cls.review}>
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Тут я вывел </p>{" "}
+          <div className={cls.reviewItem}>
+            <p> Тут я вывел </p>
             <div
               dangerouslySetInnerHTML={{
                 __html: json,
               }}
-            />{" "}
-          </div>{" "}
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>{" "}
-          </div>{" "}
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>{" "}
+            />
           </div>
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>{" "}
-          </div>{" "}
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>{" "}
-          </div>{" "}
-          <div className={"shadShine " + cls.reviewItem}>
-            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>{" "}
+          <div className={cls.reviewItem}>
+            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>
           </div>
-        </div>{" "}
-      </div>{" "}
+          <div className={cls.reviewItem}>
+            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>
+          </div>
+          <div className={cls.reviewItem}>
+            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>
+          </div>
+          <div className={cls.reviewItem}>
+            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>
+          </div>
+          <div className={cls.reviewItem}>
+            <p> Оценка: 5 </p> <p> —Ольга Васильевна К. </p>
+          </div>
+        </div>
+      </div>
     </MainLayout>
   );
 }
