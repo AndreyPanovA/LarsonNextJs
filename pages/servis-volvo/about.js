@@ -9,7 +9,7 @@ export default function About() {
   return (
     <MainLayout url={url}>
       <Navigation site="servis-volvo" />
-      <TextBlack>
+      <TextBlack isImg={true}>
         <p>
           История Larson началась в 2011 году. Открыт первый магазин запчастей
           «Вольво» под названием Part for Life в Румянцево. Спустя год открылся
