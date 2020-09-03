@@ -1,36 +1,37 @@
 @import "../../styles/variables.scss";
 
 .nav {
-    width: $headerWidth;
-    height: 100vh;
-    position: fixed;
-    top:0;
-    left:0;
-    background-color: rgba(0,0,0,0.7);
-    padding: 10px 20px;
-    .navLinks {
-      margin-top: 50px;
-      border-left: 2px solid white;
-      list-style-type: none;
-      a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        padding: 5px 20px;
-        font-size: 15px;
-        &:hover {
-          color: black;
-          background-color: $lightWight;
-        }
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        li {
-        }
+  width: $navWidth;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 10px 20px;
+  .navLinks {
+    margin-top: 50px;
+    border-left: 2px solid white;
+    list-style-type: none;
+    a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 5px 20px;
+      font-size: 15px;
+      &:hover {
+        color: black;
+        background-color: $lightWight;
+      }
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      li {
+      }
     }
   }
 }
-
-
-
+.active {
+  background-color: white;
+  color: black !important;
+}
 
 /* 
   .move {

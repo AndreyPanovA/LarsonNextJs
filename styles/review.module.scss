@@ -1,0 +1,36 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.reviewWrap {
+  margin-top: $logoHeight;
+  align-items: flex-start;
+  position: relative;
+  .review {
+    padding: 10px 20px;
+    border-radius: 5px;
+    height: 500px;
+    flex-basis: 30vw;
+    overflow-y: auto;
+
+    .reviewItem {
+      border: 2px solid #ccc;
+      margin-bottom: 15px;
+      @include shadowGlowing();
+      padding: 10px 20px;
+      border-radius: 5px;
+      p {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .rating {
+    border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.11);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 15px;
+    height: 500px;
+    flex-basis: 10vw;
+    @include shadowGlowing();
+  }
+}

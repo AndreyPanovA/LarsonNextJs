@@ -1,7 +1,10 @@
 import Link from "next/link"
 import Head from "next/head"
+import { useRouter } from 'next/router'
 import cls from "./navigation.module.scss"
-export function Navigation({ language }) {
+export function Navigation({ language, site, link = "about" }) {
+
+
     return (
         <>
             <nav className={cls.nav}>
@@ -11,15 +14,15 @@ export function Navigation({ language }) {
                     <span className="line3"></span>
                 </div>
                 <ul className={cls.navLinks}>
-                    <Link href="/servis-volvo/about"><a><li>О нас</li></a></Link>
-                    <Link href="/servis-volvo/corporate"><a><li>Клиентам</li></a></Link>
-                    <Link href="/servis-volvo/review"><a><li>Отзывы</li></a></Link>
-                    <Link href="/servis-volvo/tires"><a><li>Шины</li></a></Link>
-                    <Link href="/servis-volvo/promo"><a><li>Акции</li></a></Link>
-                    <Link href="/servis-volvo/parts"><a><li>Запчаси и аксессуары</li></a></Link>
-                    <Link href="/servis-volvo/uslugi/strahovanie-avto"><a><li>Страховка</li></a></Link>
-                    <Link href="/servis-volvo/uslugi/evakuator"><a><li>Эвакуация</li></a></Link>
-                    <Link href="/servis-volvo/uslugi/diagnosticheskaya-karta"><a><li>Диагностическая карта</li></a></Link>
+                    <Link href={`/${site}/about`}><a className={cls[selectLink("about")]}><li>О нас</li></a></Link>
+                    <Link href={`/${site}/corporate`}><a className={cls[selectLink("corporate")]}><li>Клиентам</li></a></Link>
+                    <Link href={`/${site}/review`}><a className={cls[selectLink("review")]}><li>Отзывы</li></a></Link>
+                    <Link href={`/${site}/tires`}><a className={cls[selectLink("tires")]}><li>Шины</li></a></Link>
+                    <Link href={`/${site}/promo`}><a className={cls[selectLink("promo")]}><li>Акции</li></a></Link>
+                    <Link href={`/${site}/parts`}><a className={cls[selectLink("parts")]}><li>Запчаси и аксессуары</li></a></Link>
+                    <Link href={`/${site}/uslugi/strahovanie-avto`}><a className={cls[selectLink("uslugi/strahovanie-avto")]}><li>Страховка</li></a></Link>
+                    <Link href={`/${site}/uslugi/evakuator`}><a className={cls[selectLink("uslugi/evakuator")]}><li>Эвакуация</li></a></Link>
+                    <Link href={`/${site}/uslugi/diagnosticheskaya-karta`}><a className={cls[selectLink("uslugi/diagnosticheskaya-karta")]}><li>Диагностическая карта</li></a></Link>
                     {/* <Link href=""><a><li></li></a></Link> */}
                 </ul>
             </nav>
@@ -50,4 +53,11 @@ export function Navigation({ language }) {
 
         </>
     )
+}
+function selectLink(link) {
+    const router = useRouter()
+    const regExp = new RegExp(`${link}$`);
+    if (regExp.test(router.route)) {
+        return "active"
+    }
 }

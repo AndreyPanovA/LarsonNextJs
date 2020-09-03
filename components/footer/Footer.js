@@ -1,8 +1,11 @@
 import cls from "./footer.module.scss"
-export function Footer({ color = "black" }) {
+import { connect } from "react-redux"
+import store from "../store"
+function Footer(props) {
+
     return (
         <>
-            <footer className={cls[color]}>
+            <footer className={cls[props.color]}>
                 <div className={cls.fot_wrap + " flex_c"}>
                     <p>
                         C «Larson Бонус» выгоднее! Наше приложение:</p>
@@ -17,8 +20,21 @@ export function Footer({ color = "black" }) {
                             <img src="/assets/img/social/google.svg" alt=""
                                 href="https://itunes.apple.com/us/app/larson-car/id1190680675" /></a>
                     </div>
-                    <button>
-                        Русский
+                    <button className={cls[props.btn]} onClick={() => {
+                        store.getState().lang == "ru" ?
+                            store.dispatch({
+                                type: "CHANGE_LANG",
+                                lang: `eng`
+
+                            })
+                            :
+                            store.dispatch({
+                                type: "CHANGE_LANG",
+                                lang: `ru`
+
+                            })
+                    }}>
+                        {store.getState().lang}
                     </button>
                 </div>
             </footer>
@@ -26,3 +42,6 @@ export function Footer({ color = "black" }) {
         </>
     )
 }
+
+export default Footer
+// export default connect(mapStateToProps, mapDispatchToProps)(Footer)
