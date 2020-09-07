@@ -1,0 +1,31 @@
+@import "../../styles/variables.scss";
+.top {
+  margin-top: $logoHeight;
+}
+.promo {
+  position: relative;
+  margin-left: $navWidth + 25px;
+  margin-bottom: 25px;
+  padding: 35px;
+  background-color: $blackOpacity;
+  max-width: 1000px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .promoImg {
+    margin-right: 15px;
+    img {
+      width: 270px;
+      border-radius: 5px;
+    }
+  }
+  .promoText {
+    h2 {
+      margin-bottom: 25px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}
