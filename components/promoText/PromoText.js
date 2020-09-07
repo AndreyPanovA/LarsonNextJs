@@ -11,8 +11,8 @@ function PromoText({ name, text, url, first }) {
         </div>
         <div className={cls.promoText}>
           <h2>{name}</h2>
-          {text.map((p) => (
-            <p>{p.p.ru}</p>
+          {text.map((p, idx) => (
+            <p key={idx}>{p.p.ru}</p>
           ))}
         </div>
       </div>
