@@ -17,8 +17,10 @@
   align-items: center;
   .promoImg {
     margin-right: 15px;
+    max-width: 270px;
+    margin-bottom: 15px;
     img {
-      width: 270px;
+      width: 100%;
       border-radius: 5px;
     }
   }
@@ -29,5 +31,11 @@
     p {
       margin-bottom: 15px;
     }
+  }
+}
+
+@media (max-width: 870px) {
+  .promo {
+    flex-direction: column !important;
   }
 }

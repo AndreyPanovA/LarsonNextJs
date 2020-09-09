@@ -1,7 +1,8 @@
 @import "./variables.scss";
 @import "./mixins.scss";
 .container {
-  margin-left: $navWidth;
+  max-width: 1040px;
+  margin: 0 auto;
   margin-top: $logoHeight;
   padding: 10px 20px;
   position: relative;

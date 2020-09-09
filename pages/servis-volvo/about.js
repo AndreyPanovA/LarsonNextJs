@@ -1,6 +1,4 @@
-import Router from "next/router";
 import { MainLayout } from "../../components/MainLayout";
-import Footer from "../../components/footer/Footer";
 import { Navigation } from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
