@@ -6,9 +6,9 @@
   justify-content: center;
   flex-wrap: wrap;
   margin: 0 auto;
-  padding: 10px 100px;
+  padding: 10px 10px;
   position: relative;
-  max-width: 1170px;
+  max-width: 1070px;
   .imgContainer {
     padding: 10px 0;
     margin-bottom: 50px;
@@ -26,7 +26,6 @@
   }
   .text {
     border: 2px solid white;
-    // max-width: 50vw;
     padding: 20px;
     border-radius: 5px;
     background: rgba(0, 0, 0, 0.7);

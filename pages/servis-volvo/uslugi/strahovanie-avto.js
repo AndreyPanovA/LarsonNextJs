@@ -2,7 +2,7 @@ import Router from "next/router";
 import { useState, useEffect } from "react";
 import { MainLayout } from "../../../components/MainLayout";
 import Footer from "../../../components/footer/Footer";
-import { Navigation } from "../../../components/navigation/Navigation";
+import Navigation from "../../../components/navigation/Navigation";
 import dataStorage from "../../../components/dataStorage/dataStorage";
 import TextBlack from "../../../components/textBlack/TextBlack";
 
@@ -29,8 +29,7 @@ export default function Inshurance({ json }) {
 
         <p>Мария Иванова</p>
         <p>
-          <a href="tel:+79099538952">+7 (909) 953-89-52 </a>(есть Telegram,
-          WhatsApp)
+          <a href="tel:+79099538952">+7 (909) 953-89-52 </a>(Telegram, WhatsApp)
         </p>
         <p>
           <a href="mailto:resopro@reso.ru">resopro@reso.ru</a>
@@ -50,3 +49,4 @@ export default function Inshurance({ json }) {
     </MainLayout>
   );
 }
+// export default

@@ -3,7 +3,9 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import cls from "./navigation.module.scss";
-export function Navigation({ language, site, link = "about" }) {
+import dataStorage from "../dataStorage/dataStorage";
+import { connect } from "react-redux";
+function Navigation({ language, site, link = "about", lang }) {
   const [classes, setClasses] = useState(false);
   return (
     <>
@@ -27,7 +29,23 @@ export function Navigation({ language, site, link = "about" }) {
           <div className={cls.dot}></div>
         </div>
         <ul className={cls.navLinks}>
-          <Link href={`/${site}/about`}>
+          {dataStorage.nav.map((el, idx) => {
+            return (
+              <Link
+                href={`/${site}/${el.href || el.eng.toLowerCase()}`}
+                key={idx}
+              >
+                <a
+                  className={
+                    cls[selectLink(`${el.href || el.eng.toLowerCase()}`)]
+                  }
+                >
+                  <li>{el[lang]}</li>
+                </a>
+              </Link>
+            );
+          })}
+          {/* <Link href={`/${site}/about`}>
             <a className={cls[selectLink("about")]}>
               <li>О нас</li>
             </a>
@@ -67,38 +85,14 @@ export function Navigation({ language, site, link = "about" }) {
               <li>Эвакуация</li>
             </a>
           </Link>
-          <Link href={`/${site}/uslugi/diagnosticheskaya-karta`}>
+          <Link href={`/${site}/uslugi/diagnosticheskaya-karta`}> 
             <a className={cls[selectLink("uslugi/diagnosticheskaya-karta")]}>
               <li>Диагностическая карта</li>
             </a>
           </Link>
-          {/* <Link href=""><a><li></li></a></Link> */}
+          */}
         </ul>
       </nav>
-      {/* <nav role="navigation">
-                <div id="menuToggle">
-                    <div className="burger hovBtn noscript-hide">
-                        <span className={cls.line1}></span>
-                        <span className="line2"></span>
-                        <span className="line3"></span>
-                    </div>
-                    <ul id="menu" className="links">
-
-                        <a href=""><li>About Larson</li></a>
-                        <a href="/servis-volvo/contact"><li className="active">Contact</li></a>
-                        <a href="/servis-volvo/corporate"><li>Corporate</li></a>
-                        <a href="/servis-volvo/review"><li>Reviews</li></a>
-                        <a href="/servis-volvo/tires"><li>Tires</li></a>
-                        <a href="/servis-volvo/promo"><li>Promotions</li></a>
-                        <a href="/servis-volvo/parts"><li>Parts and accessoires</li></a>
-                        <a href="/servis-volvo/uslugi/strahovanie-avto"><li>Insurance</li></a>
-                        <a href="/servis-volvo/uslugi/evakuator"><li>Tow</li></a>
-                        <a href="/servis-volvo/uslugi/diagnosticheskaya-karta"><li>Diagnostic Card</li></a>
-                        <a href="https://3.pragmatica.me" target="_blank"><li>Car Body Service</li></a>
-
-                    </ul>
-                </div>
-            </nav> */}
     </>
   );
 }
@@ -109,3 +103,5 @@ function selectLink(link) {
     return "active";
   }
 }
+
+export default connect(({ lang }) => ({ lang }))(Navigation);
