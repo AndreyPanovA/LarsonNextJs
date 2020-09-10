@@ -1,17 +1,24 @@
 @import "../styles/variables.scss";
 @import "../styles/mixins.scss";
-
 .reviewWrap {
   margin-top: $logoHeight;
   align-items: flex-start;
   position: relative;
+  .rating {
+    border: 2px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.11);
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 15px;
+    flex-basis: 10vw;
+    @include shadowGlowing();
+  }
   .review {
     padding: 10px 20px;
     border-radius: 5px;
     height: 500px;
-    flex-basis: 30vw;
+    flex-basis: 50%;
     overflow-y: auto;
-
     .reviewItem {
       border: 2px solid #ccc;
       margin-bottom: 15px;
@@ -23,14 +30,14 @@
       }
     }
   }
-  .rating {
-    border: 2px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.11);
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 15px;
-    height: 500px;
-    flex-basis: 10vw;
-    @include shadowGlowing();
+}
+@media (max-width: 570px) {
+  .reviewWrap {
+    padding: 40px;
+    .rating,
+    .review {
+      margin: 0 !important;
+      flex-basis: 100% !important;
+    }
   }
 }

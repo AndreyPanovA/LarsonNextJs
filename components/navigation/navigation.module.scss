@@ -1,5 +1,4 @@
 @import "../../styles/variables.scss";
-
 .nav {
   width: $navWidth;
   height: 100vh;
@@ -8,6 +7,8 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px 20px;
+  transition: 0.2s ease-in-out;
+  z-index: 1;
   .navLinks {
     margin-top: 50px;
     border-left: 2px solid white;
@@ -33,121 +34,169 @@
   color: black !important;
 }
 
-/* 
-  .move {
-    -webkit-transform: translateX(20vw) rotate(360deg);
-            transform: translateX(20vw) rotate(360deg);
+/*  COLORS
+========================================= */
+
+$bg-color: #2c3e50;
+$white: #ffffff;
+
+/*  MIXINS
+========================================= */
+
+@mixin animation($animation) {
+  -webkit-animation: #{$animation};
+  -moz-animation: #{$animation};
+  -o-animation: #{$animation};
+  animation: #{$animation};
+}
+
+@mixin animation-delay($animation-delay) {
+  -webkit-transition-delay: #{$animation-delay};
+  -moz-transition-delay: #{$animation-delay};
+  -o-transition-delay: #{$animation-delay};
+  transition-delay: #{$animation-delay};
+}
+
+@mixin keyframes($keyframes) {
+  @-webkit-keyframes #{$keyframes} {
+    @content;
   }
-  .burger {
-    display: none;
-    position: fixed;
-    top: 20px;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    width: 35px;
-    height: 35px;
-    cursor: pointer;
-    z-index: 110;
-    left: 20px;
+  @-moz-keyframes #{$keyframes} {
+    @content;
   }
-  .burger span {
+  @-o-keyframes #{$keyframes} {
+    @content;
+  }
+  @keyframes #{$keyframes} {
+    @content;
+  }
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin transition($transition...) {
+  -webkit-transition: #{$transition};
+  -moz-transition: #{$transition};
+  -o-transition: #{$transition};
+  transition: #{$transition};
+}
+
+@mixin transition-delay($transition-delay) {
+  -webkit-transition-delay: #{$transition-delay};
+  -moz-transition-delay: #{$transition-delay};
+  -o-transition-delay: #{$transition-delay};
+  transition-delay: #{$transition-delay};
+}
+
+/*  RESET
+========================================= */
+
+/*  MENU ICON
+========================================= */
+
+.menu-icon {
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  @include transform(translate(0vw, 20%));
+  width: 50px;
+  height: 50px;
+  z-index: 1000;
+  cursor: pointer;
+  .dot {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: $white;
+    border-radius: 10px;
+    @include transform(translate(-50%, -50%));
+    @include transition(margin 0.2s ease 0.2s, width 0.2s ease);
+
+    &:nth-of-type(1) {
+      margin-top: -10px;
+      margin-left: -10px;
+      @include transform(translate(-50%, -50%) rotate(45deg));
+    }
+
+    &:nth-of-type(2) {
+      margin-top: -10px;
+      @include transform(translate(-50%, -50%) rotate(-45deg));
+    }
+
+    &:nth-of-type(3) {
+      margin-top: -10px;
+      margin-left: 10px;
+    }
+
+    &:nth-of-type(4) {
+      margin-left: -10px;
+    }
+
+    &:nth-of-type(5) {
+    }
+
+    &:nth-of-type(6) {
+      margin-left: 10px;
+    }
+
+    &:nth-of-type(7) {
+      margin-top: 10px;
+      margin-left: -10px;
+    }
+
+    &:nth-of-type(8) {
+      margin-top: 10px;
+    }
+
+    &:nth-of-type(9) {
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  &.clicked {
+    .dot {
+      @include transition(margin 0.2s ease, width 0.2s ease 0.2s);
+      margin-left: 0;
+      margin-top: 0;
+
+      &:nth-of-type(1) {
+        width: 30px;
+      }
+
+      &:nth-of-type(2) {
+        width: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1370px) {
+  .menu-icon {
     display: block;
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 5px;
-  }
-  .burger span:nth-child(1) {
-    -webkit-transform: translateY(-8px);
-            transform: translateY(-8px);
-  }
-  .burger span:nth-child(3) {
-    -webkit-transform: translateY(8px);
-            transform: translateY(8px);
-  }
-  .xer span:nth-child(1) {
-    -webkit-transform: rotate(45deg);
-            transform: rotate(45deg);
-  }
-  .xer span:nth-child(2) {
-    opacity: 0;
-  }
-  .xer span:nth-child(3) {
-    -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg);
   }
   .nav {
-    max-width: 15vw;
-    height: 100vh;
-    padding: 20px;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    -webkit-transition: 0.5s ease-in-out;
-    transition: 0.5s ease-in-out;
+    left: -100%;
+    transition: 0.2s ease-in-out;
   }
-  nav a {
-    color: white;
+}
+@media (max-width: 570px) {
+  .menu-icon {
+    display: block;
   }
-  nav .menuLogo {
-    padding: 15px;
+  .nav {
+    min-width: 200px;
+    width: 30vw;
+    left: -100%;
+    transition: 0.2s ease-in-out;
   }
-  nav .links {
-    margin-top: 50px;
-  }
-  nav .links a {
-    font-size: 15px;
-  }
-  nav .links a:hover li {
-    background-color: #fafafa;
-    color: black;
-  }
-  nav .links li {
-    border-left: 2px solid white;
-    padding: 5px 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  nav .links .active {
-    background-color: white !important;
-    color: #000;
-  }
-  .menuActive {
-    left: 0 !important;
-  }
-  .closer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 98;
-    display: none;
-  }
-  @media (max-width: 1370px) {
-    .move {
-      -webkit-transform: translateX(30vw) rotate(360deg);
-              transform: translateX(30vw) rotate(360deg);
-    }
-    .burger {
-      display: block;
-    }
-    nav {
-      max-width: 30vw;
-      left: -100%;
-    }
-  }
-  @media (max-width: 440px) {
-    .move {
-      -webkit-transform: translateX(50vw) rotate(360deg);
-              transform: translateX(50vw) rotate(360deg);
-    }
-    nav {
-      max-width: 100vw !important;
-    }
-  }
-   */
+}
