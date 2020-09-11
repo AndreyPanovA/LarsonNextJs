@@ -263,7 +263,6 @@ export default {
           },
         ],
       },
-
       inshurance: {
         h1: {
           ru: `Страхование`,
@@ -272,16 +271,17 @@ export default {
         p: [
           {
             ru: `«Larson» сотрудничает с крупнейшей универсальной страховой компанией «РЕСО». Для наших Клиентов предусмотрен весь перечень страхования, в том числе страхование домов и квартир, выездов за рубеж, корпоративное страхование и др.`,
-            eng: ``,
+            eng: `Larson cooperates with the largest universal insurance company RESO. For our Clients, the entire list of insurance is provided, including insurance of houses and apartments, travel abroad, corporate insurance, etc.`,
           },
           {
             ru: `Получите комфортные условия страхования по промокоду Larson у персонального менеджера:`,
-            eng: ``,
+            eng: `Get comfortable insurance conditions with the Larson promo code from your personal manager:`,
           },
           {
             ru: `Мария Иванова`,
-            eng: ``,
+            eng: `Maria Ivanova`,
           },
+          { ru: ``, eng: `+7 (909) 953-89-52(also on Telegram, WhatsApp)` },
           {
             ru: `И в ближайших партнерских офисах:`,
             eng: `ул.Садовники, д.3:ул.Речников, д.21, стр.4`,
