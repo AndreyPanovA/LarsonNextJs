@@ -79,6 +79,7 @@
     }
 
     .card {
+      margin-bottom: 15px;
       //   margin-right: 25px;
       @include shadowGlowing();
       @include darkOpacity();
@@ -133,4 +134,16 @@
       }
     }
   }
+}
+
+//
+@media (max-width: 1000px) {
+  .container {
+    padding: 10px 50px;
+    .row {
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 570px) {
 }

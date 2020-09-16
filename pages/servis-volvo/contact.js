@@ -6,11 +6,13 @@ import { connect } from "react-redux";
 import cls from "../../styles/contact.module.scss";
 function Contact({ lang }) {
   const { contacts: url } = dataStorage.backgroundsUrl.volvo;
-  let { about } = dataStorage.volvo.pages;
+  let {
+    contacts: { contact, videoRoute },
+  } = dataStorage.volvo.pages;
+  console.log(contact);
   return (
     <MainLayout url={url}>
       <Navigation site="servis-volvo" />
-      {/* <div className={cls.leftContainer}> */}
       <div className={cls.container}>
         <div className={cls.row}>
           <div className={cls.card}>
@@ -25,24 +27,13 @@ function Contact({ lang }) {
           </div>
           <div className={cls.card}>
             <div className={cls.cardPad}>
-              <h1>Contact</h1>
+              <h1>{contact.h2[lang]}</h1>
               <div className={cls.cardTextBlock}>
-                <p>Mon-Sun from 09:00 until 20:00</p>
-                <div className={cls.flex}>
-                  <p>Phone number:</p>
-                  <a>+7 (495) 781-10-81</a>
-                </div>
-              </div>
-              <div className={cls.cardTextBlock}>
-                <a>Larson Kolomenskaya (open in Yandex.Navigator)</a>
-                <p>Kolomenskaya metro station,</p>
-                <p>Andropova Av., 22, bld.2, Nagatinsky business centre.</p>
-              </div>
-              <div className={cls.cardTextBlock}>
-                <a>Larson Mozhayka (open in Yandex.Navigator)</a>
-                <p>Mozhayskoe highway, pl. 167,</p>
-                <p>54-th km MKAD, outer side.</p>
-                <p>Attention! Entrance from MKAD sidepath.</p>
+                {contact.textNode.map((el, idx) => (
+                  <el.type key={idx} style={el.style}>
+                    {el[lang]}
+                  </el.type>
+                ))}
               </div>
             </div>
           </div>
@@ -67,6 +58,20 @@ function Contact({ lang }) {
           <div className={cls.card}>
             <div className={cls.cardPad}>
               <h2>Kolomenskaya metro station</h2>
+              <div className={cls.videoRow}>
+                {/* {videoRoute.row[0].textNode.map((el, idx) =>
+
+                  el.type == "iframe" ? (
+                    <div className={cls.video} {...el.atributes}>
+                      <el.type {...el.atributes}>{el[lang]}</el.type>
+                    </div>
+                  ) : (
+                    // <div className={cls.videoSize}>
+                    <el.type>{el[lang]}</el.type>
+                    // </div>
+                  )
+                )} */}
+              </div>
               <div className={cls.videoRow}>
                 <div className={cls.videoSize}>
                   <p>By car:</p>

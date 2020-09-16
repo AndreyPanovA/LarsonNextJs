@@ -168,14 +168,95 @@ export default {
           },
         },
       ],
-      contacts: [
-        {
-          p: {
-            ru: ``,
-            eng: ``,
-          },
+      contacts: {
+        contact: {
+          h2: { ru: `Контакты`, eng: `Сontact` },
+          textNode: [
+            {
+              ru: `Ежедневно с 09:00 до 20:00`,
+              eng: `Mon-Sun from 09:00 until 20:00`,
+              type: "p",
+            },
+            {
+              ru: `Единый телефон`,
+              eng: `Phone number:`,
+              type: "p",
+              style: { display: "inline" },
+            },
+            {
+              ru: `+7 (495) 781-10-81`,
+              eng: `+7 (495) 781-10-81`,
+              type: "a",
+              style: { display: "inline", marginLeft: 10 },
+            },
+            {
+              ru: "Larson Коломенская (открыть в Яндекс.Навигаторе)",
+              eng: "Larson Kolomenskaya (open in Yandex.Navigator)",
+              type: "a",
+              style: { marginTop: 25 },
+            },
+            {
+              ru: `м. Коломенская,`,
+              eng: `Kolomenskaya metro station,`,
+              type: "p",
+            },
+            {
+              ru: `проспект Андропова, д. 22, стр.2, БЦ «Нагатинский».`,
+              eng: `Andropova Av., 22, bld.2, Nagatinsky business centre.`,
+              type: "p",
+            },
+            {
+              ru: "Larson Можайка (открыть в Яндекс.Навигаторе)",
+              eng: "Larson Mozhayka (open in Yandex.Navigator)",
+              type: "a",
+              style: { marginTop: 25 },
+            },
+            {
+              ru: `Можайское шоссе, вл. 167,`,
+              eng: `Mozhayskoe highway, pl. 167,`,
+              type: "p",
+            },
+          ],
+          a: [
+            {
+              ru: `+7 (495) 781-10-81`,
+              eng: `+7 (495) 781-10-81`,
+              type: "tel",
+            },
+          ],
         },
-      ],
+        videoRoute: {
+          row: [
+            {
+              textNode: [
+                {
+                  ru: "",
+                  eng: "By car:",
+                  type: "p",
+                },
+                {
+                  ru: "",
+                  eng:
+                    "From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                  type: "p",
+                },
+                {
+                  // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                  atributes: {
+                    src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                    allowfullscreen: true,
+                  },
+                  type: "iframe",
+                },
+              ],
+            },
+          ],
+        },
+      },
+
       clients: {
         h2: [
           {
