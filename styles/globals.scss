@@ -16,6 +16,7 @@ a {
   text-decoration: none;
   &:hover {
     opacity: 0.7;
+    cursor: pointer;
   }
 }
 
@@ -27,6 +28,9 @@ a {
 .container {
   max-width: 1170px;
   margin: auto;
+}
+.flex {
+  display: flex;
 }
 .flex_c {
   display: flex;
@@ -58,4 +62,12 @@ a {
 }
 ul {
   list-style-type: none;
+}
+.panorama {
+  width: 100% !important;
+  iframe {
+    border: none;
+    width: 100%;
+    min-height: 230px;
+  }
 }

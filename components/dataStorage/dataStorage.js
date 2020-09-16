@@ -41,6 +41,10 @@ export default {
       eng: "About",
     },
     {
+      ru: "Контакты",
+      eng: "Contact",
+    },
+    {
       ru: "Корпоративным клиентам",
       eng: "Corporate",
       href: "corporate",
