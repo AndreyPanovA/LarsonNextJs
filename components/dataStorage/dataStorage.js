@@ -87,7 +87,7 @@ export default {
   },
   mers: {
     textImages: {
-      parts: "/assets/img/volvo/textImages/parts.jpg",
+      parts: "",
       insurance: "/assets/img/volvo/textImages/insurance.jpg",
       tow: "/assets/img/volvo/textImages/tow.jpg",
       card: "/assets/img/volvo/textImages/card.jpg",
@@ -991,7 +991,7 @@ export default {
       review: "/assets/img/backgrounds/volvo/reviews-volvo-bg.jpg",
       tires: "/assets/img/backgrounds/volvo/tires-volvo-bg.jpg",
       promo: "/assets/img/backgrounds/volvo/promo-volvo-bg.jpg",
-      ditails: "/assets/img/backgrounds/volvo/ditails-volvo-bg.jpg",
+      ditails: "/assets/img/backgrounds/mers/ditails-mers-bg.jpg",
       inshurance: "/assets/img/backgrounds/volvo/insurance-volvo-bg.jpg",
       tow: "/assets/img/backgrounds/volvo/tow-volvo-bg.jpg",
       card: "/assets/img/backgrounds/volvo/diagnostic-card-volvo-bg.jpg",

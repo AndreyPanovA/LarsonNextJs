@@ -9,8 +9,8 @@ import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 // import {fetch} from "iso"
 function Parts({ json, lang }) {
-  const { ditails: url } = dataStorage.backgroundsUrl.volvo;
-  const { parts: urlText } = dataStorage.volvo.textImages;
+  const { ditails: url } = dataStorage.backgroundsUrl.mers;
+  const { parts: urlText } = dataStorage.mers.textImages;
 
   const [reviews, setReview] = useState([]);
   const { h1, p } = dataStorage.volvo.pages.ditails;

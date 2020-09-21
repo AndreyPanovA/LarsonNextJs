@@ -7,6 +7,7 @@ import dataStorage from "../dataStorage/dataStorage";
 import { connect } from "react-redux";
 function Navigation({ language, site, link = "about", lang }) {
   const [classes, setClasses] = useState(false);
+  console.log(site, "coooler");
   return (
     <>
       <nav className={cls.nav} style={classes ? { left: 0 } : {}}>

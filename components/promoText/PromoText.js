@@ -1,7 +1,7 @@
 import cls from "./promoText.module.scss";
 // import { connect } from "react-redux";
 // import store from "../store";
-function PromoText({ name, text, url, first }) {
+function PromoText({ name, text, url, first, lang }) {
   console.log(url, "cool");
   return (
     <>
@@ -12,7 +12,7 @@ function PromoText({ name, text, url, first }) {
         <div className={cls.promoText}>
           <h2>{name}</h2>
           {text.map((p, idx) => (
-            <p key={idx}>{p.p.ru}</p>
+            <p key={idx}>{p.p[lang]}</p>
           ))}
         </div>
       </div>
