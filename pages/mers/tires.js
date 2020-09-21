@@ -11,7 +11,7 @@ export default function Tries({ json }) {
 
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
     </MainLayout>
   );
 }

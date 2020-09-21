@@ -13,7 +13,7 @@ export default function Review({ json }) {
   const [reviews, setReview] = useState([]);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
       {promo.map((el, idx) =>
         idx == 0 ? (
           <PromoText

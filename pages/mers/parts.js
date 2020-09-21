@@ -16,7 +16,7 @@ function Parts({ json, lang }) {
   const { h1, p } = dataStorage.volvo.pages.ditails;
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
       <TextBlack url={urlText} littleWidth="littleWidth">
         <h1>{h1[lang]}</h1>
         {p.map((p, idx) => (

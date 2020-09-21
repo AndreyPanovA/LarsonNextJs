@@ -12,7 +12,7 @@ export default function Review({ json }) {
 
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
       <div className={"flex_cw " + cls.reviewWrap}>
         <div className={cls.rating}>
           <p> wqiuyeiquwyeiuqwyu </p>

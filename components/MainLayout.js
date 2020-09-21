@@ -4,6 +4,7 @@ import { Navigation } from "./navigation/Navigation";
 import Footer from "../components/footer/Footer";
 import cls from "../styles/test.module.scss";
 import dataStorage from "./dataStorage/dataStorage";
+import LazyLoad from "./lazyLoad/lazyLoad";
 
 export function MainLayout({
   children,
@@ -21,7 +22,10 @@ export function MainLayout({
       <Head>
         <title>{title} | Larson</title>
       </Head>
+
       <main className={cls.main + " " + cls[background]}>
+        <LazyLoad />
+
         <div className={cls.backgroundImg}>
           <img src={url} />
         </div>

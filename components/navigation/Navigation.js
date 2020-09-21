@@ -45,52 +45,6 @@ function Navigation({ language, site, link = "about", lang }) {
               </Link>
             );
           })}
-          {/* <Link href={`/${site}/about`}>
-            <a className={cls[selectLink("about")]}>
-              <li>О нас</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/corporate`}>
-            <a className={cls[selectLink("corporate")]}>
-              <li>Клиентам</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/review`}>
-            <a className={cls[selectLink("review")]}>
-              <li>Отзывы</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/tires`}>
-            <a className={cls[selectLink("tires")]}>
-              <li>Шины</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/promo`}>
-            <a className={cls[selectLink("promo")]}>
-              <li>Акции</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/parts`}>
-            <a className={cls[selectLink("parts")]}>
-              <li>Запчаси и аксессуары</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/uslugi/strahovanie-avto`}>
-            <a className={cls[selectLink("uslugi/strahovanie-avto")]}>
-              <li>Страховка</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/uslugi/evakuator`}>
-            <a className={cls[selectLink("uslugi/evakuator")]}>
-              <li>Эвакуация</li>
-            </a>
-          </Link>
-          <Link href={`/${site}/uslugi/diagnosticheskaya-karta`}> 
-            <a className={cls[selectLink("uslugi/diagnosticheskaya-karta")]}>
-              <li>Диагностическая карта</li>
-            </a>
-          </Link>
-          */}
         </ul>
       </nav>
     </>
