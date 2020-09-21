@@ -4,6 +4,7 @@ import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 import cls from "../../styles/contact.module.scss";
+import LazyLoad from "../../components/lazyLoad/lazyLoad";
 function Contact({ lang }) {
   const { contacts: url } = dataStorage.backgroundsUrl.volvo;
   let {
@@ -12,7 +13,8 @@ function Contact({ lang }) {
   console.log(contact);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      {/* <LazyLoad /> */}
+      <Navigation site="mers" />
       <div className={cls.container}>
         <div className={cls.row}>
           <div className={cls.card}>

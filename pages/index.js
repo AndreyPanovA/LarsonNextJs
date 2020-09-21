@@ -12,7 +12,6 @@ class Home extends Component {
   }
   render() {
     const { lang } = this.props;
-
     return (
       <MainLayout
         color="white"
@@ -27,15 +26,7 @@ class Home extends Component {
             alt="LARSON"
             className={cls.backLogo}
           />
-          <div
-            className={cls.keysLine + " flex_cw"}
-            onClick={() => {
-              // lang == "ru" ?
-              //   this.props.changeLang("eng")
-              //   :
-              //   this.props.changeLang("ru");
-            }}
-          >
+          <div className={cls.keysLine + " flex_cw"}>
             {textContent.keys.map((key, idx) => {
               return (
                 <Link href={key.href} key={idx}>

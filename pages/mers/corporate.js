@@ -17,7 +17,7 @@ function Corporate({ lang }) {
   console.log(h2[0].ru);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
       <div className={cls.container}>
         <h2>{h2[0][lang]}</h2>
         <ul>

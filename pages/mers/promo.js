@@ -6,27 +6,36 @@ import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import cls from "../../styles/review.module.scss";
 import PromoText from "../../components/promoText/PromoText";
+import { connect } from "react-redux";
 // import {fetch} from "iso"
-export default function Review({ json }) {
+function Review({ json, lang }) {
   const { promo: url } = dataStorage.backgroundsUrl.volvo;
   const { promoPage: promo } = dataStorage.volvo;
   const [reviews, setReview] = useState([]);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
+      <Navigation site="mers" />
       {promo.map((el, idx) =>
         idx == 0 ? (
           <PromoText
-            name={el.h2.ru}
+            name={el.h2[lang]}
             text={el.text}
             url={el.url}
             first={true}
             key={idx}
+            lang={lang}
           />
         ) : (
-          <PromoText name={el.h2.ru} text={el.text} url={el.url} key={idx} />
+          <PromoText
+            name={el.h2[lang]}
+            text={el.text}
+            url={el.url}
+            key={idx}
+            lang={lang}
+          />
         )
       )}
     </MainLayout>
   );
 }
+export default connect(({ lang }) => ({ lang }))(Review);
