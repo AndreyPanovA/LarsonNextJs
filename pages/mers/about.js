@@ -3,23 +3,10 @@ import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
-import { useRouter } from "next/router";
-import useSWR from "swr";
 import FetchServ, { getResourse } from "../../services/fetchService";
-
-// const fetcher = async (url) => {
-//   const res = await fetch(url);
-//   const data = await res.json();
-//   if (res.status !== 200) {
-//     throw new Error(data.message);
-//   }
-//   return data;
-// };
-
-function About({ lang, json }) {
-  console.log("new", json);
+function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.mers;
-  let { about } = dataStorage.mers.pages;
+  // let { about } = dataStorage.mers.pages;
   return (
     <MainLayout url={url}>
       <Navigation site="mers" />
@@ -35,5 +22,5 @@ function About({ lang, json }) {
     </MainLayout>
   );
 }
-export const getStaticProps = async () => FetchServ.getResourse("navbar");
+export const getStaticProps = async () => FetchServ.getAbout("mers");
 export default connect(({ lang }) => ({ lang }))(About);

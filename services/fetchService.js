@@ -1,9 +1,12 @@
 const FetchServ = new (class FetchService {
   _apiBase = "http://localhost:3000/api/";
   async getResourse(url, type = "json") {
+    return await (await fetch(`${this._apiBase}${url}`))[type]();
+  }
+  async getAbout(page = "volvo", type = "json") {
     return {
       props: {
-        json: await (await fetch(`${this._apiBase}${url}`))[type](),
+        json: await this.getResourse(`${page}/about`, type),
       },
     };
   }
