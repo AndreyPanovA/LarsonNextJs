@@ -3,8 +3,21 @@ import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
-import LazyLoad from "../../components/lazyLoad/lazyLoad";
-function About({ lang }) {
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import FetchServ, { getResourse } from "../../services/fetchService";
+
+// const fetcher = async (url) => {
+//   const res = await fetch(url);
+//   const data = await res.json();
+//   if (res.status !== 200) {
+//     throw new Error(data.message);
+//   }
+//   return data;
+// };
+
+function About({ lang, json }) {
+  console.log("new", json);
   const { about: url } = dataStorage.backgroundsUrl.mers;
   let { about } = dataStorage.mers.pages;
   return (
@@ -22,5 +35,5 @@ function About({ lang }) {
     </MainLayout>
   );
 }
-
+export const getStaticProps = async () => FetchServ.getResourse("navbar");
 export default connect(({ lang }) => ({ lang }))(About);

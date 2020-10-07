@@ -16,7 +16,6 @@ export function MainLayout({
   btn = "btnWhite",
   logo = true,
 }) {
-  console.log(store);
   return (
     <>
       <Head>

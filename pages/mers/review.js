@@ -9,6 +9,7 @@ import cls from "../../styles/review.module.scss";
 export default function Review({ json }) {
   const { review: url } = dataStorage.backgroundsUrl.volvo;
   const [reviews, setReview] = useState([]);
+  console.log(json);
 
   return (
     <MainLayout url={url}>
@@ -47,25 +48,26 @@ export default function Review({ json }) {
   );
 }
 
-export async function getStaticProps() {
-  const response = await fetch("https://larsonv.ru/mobile.php", {
-    method: "POST",
-    body: JSON.stringify({
-      c: "Page",
-      m: "phone",
-    }),
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-  });
-  const json = await response.text();
-  // setReview(json)
-  return {
-    props: {
-      json,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const response = await fetch("http://localhost:3000/api/navbar", {
+//     method: "GET",
+//     // body: JSON.stringify({
+//     //   c: "Page",
+//     //   m: "phone",
+//     // }),
+//     headers: {
+//       "Content-type": "application/json; charset=UTF-8",
+//     },
+//   });
+//   const json = await response.text();
+//   // setReview(json)
+//   // console.log(json, "pls");
+//   return {
+//     props: {
+//       json,
+//     },
+//   };
+// }
 
 // fetch('https://larsonv.ru/mobile.php', {
 //   method: 'POST',
