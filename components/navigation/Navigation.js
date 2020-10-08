@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
+import Router, { useRouter } from "next/router";
 import { useState } from "react";
 import cls from "./navigation.module.scss";
 import { connect } from "react-redux";
 import dataStorage from "../dataStorage/dataStorage";
-import { route } from "next/dist/next-server/server/router";
 import { selectNav } from "../actions/index";
 
 function Navigation(props) {
@@ -21,9 +20,9 @@ function Navigation(props) {
   if (router.route == "/") {
     return null;
   } else {
-    props.selectNavigation(router.route);
+    // Router.push(`/`);
   }
-  console.log(site, router.route.lastIndexOf("/"));
+  // console.log(site, router.route.lastIndexOf("/"));
   return (
     <>
       <nav className={cls.nav} style={classes ? { left: 0 } : {}}>
