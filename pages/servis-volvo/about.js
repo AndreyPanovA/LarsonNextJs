@@ -1,5 +1,4 @@
-import { MainLayout } from "../../components/MainLayout";
-import Navigation from "../../components/navigation/Navigation";
+import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
@@ -9,7 +8,6 @@ function About({ lang, json: about }) {
   // let { about } = dataStorage.volvo.pages;
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
       <TextBlack isImg={true}>
         {about.map((el, idx) => (
           <p key={idx}>{el.p[lang]}</p>

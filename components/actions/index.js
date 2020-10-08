@@ -4,4 +4,10 @@ const changeLang = (lang) => {
     lang,
   };
 };
-export { changeLang };
+const selectNav = (site) => {
+  return {
+    type: "SELECT_NAV",
+    site,
+  };
+};
+export { changeLang, selectNav };

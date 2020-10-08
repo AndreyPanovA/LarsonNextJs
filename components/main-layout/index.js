@@ -4,28 +4,18 @@ import Footer from "./footer/index";
 import cls from "../styles/test.module.scss";
 import dataStorage from "./dataStorage/dataStorage";
 import LazyLoad from "./lazyLoad/lazyLoad";
-import { connect } from "react-redux";
-import Navigation from "./navigation/Navigation";
-import { selectNav } from "./actions/index";
-import Router, { useRouter } from "next/router";
+import Navigation from "../navigation/Navigation";
 
-function MainLayout({
+function MainLayout1({
   children,
   title = "Larson",
   url,
   color = "black",
   background,
-  site,
-  lang,
   btn = "btnWhite",
   logo = true,
-  selectNavigation,
+  site,
 }) {
-  const routerHook = useRouter();
-  const router = () => {
-    selectNavigation("/");
-    Router.push("/");
-  };
   return (
     <>
       <Head>
@@ -36,29 +26,20 @@ function MainLayout({
         <div className={cls.backgroundImg}>
           <img src={url} />
         </div>
-
         {logo && (
-          <div href={`/`} onClick={router}>
+          <Link href={`/`}>
             <a>
               <img src={dataStorage.headerLogo} className={cls.headerLogo} />
             </a>
-          </div>
+          </Link>
         )}
-        <Navigation site={site} lang={lang} />
+
+        <Navigation site={site} />
         {children}
       </main>
       <Footer color={color} btn={btn} />
     </>
   );
 }
-const mapDispatchToProps = (dispatch) => {
-  return {
-    selectNavigation: (site) => {
-      dispatch(selectNav(site));
-    },
-  };
-};
-export default connect(
-  ({ site, lang }) => ({ site, lang }),
-  mapDispatchToProps
-)(MainLayout);
+
+export default connect(({ site }) => ({ site }))(MainLayout1);

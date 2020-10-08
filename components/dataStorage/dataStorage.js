@@ -12,14 +12,14 @@ export default {
       alt: "Volvo",
       h2ru: "Сервис Вольво",
       h2eng: "Volvo Service",
-      href: "/servis-volvo/about",
+      href: "/servis-volvo",
     },
     {
       img: "/assets/img/keys/myKey3.png",
       alt: "Mers",
       h2ru: "Сервис Мерседес-Бенц",
       h2eng: "Mersedes-Benz service",
-      href: "/mers/about",
+      href: "/mers",
     },
   ],
   corporateClients: [

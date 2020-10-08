@@ -1,15 +1,19 @@
-import Link from "next/link";
 import cls from "../styles/Home.module.scss";
-import { MainLayout } from "../components/MainLayout";
+import MainLayout from "../components/MainLayout";
 import textContent from "../components/dataStorage/dataStorage";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import store from "../components/store";
+import { selectNav } from "../components/actions/index";
+import Router from "next/router";
 
 class Home extends Component {
   constructor(props) {
     super(props);
   }
+  router = (site) => {
+    Router.push(`${site}`);
+  };
   render() {
     const { lang } = this.props;
     return (
@@ -29,7 +33,14 @@ class Home extends Component {
           <div className={cls.keysLine + " flex_cw"}>
             {textContent.keys.map((key, idx) => {
               return (
-                <Link href={key.href} key={idx}>
+                <div
+                  href={key.href}
+                  key={idx}
+                  onClick={() => {
+                    this.props.selectNavigation(key.href);
+                    this.router(key.href + "/about");
+                  }}
+                >
                   <a className={cls.keyCard}>
                     <div className={cls.keyCard + " flex_cc"}>
                       <div className={cls.keyImg}>
@@ -42,7 +53,7 @@ class Home extends Component {
                       )}
                     </div>
                   </a>
-                </Link>
+                </div>
               );
             })}
           </div>
@@ -57,11 +68,8 @@ const mapStateToProps = ({ lang }) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeLang: (lang) => {
-      dispatch({
-        type: "CHANGE_LANG",
-        lang: `${lang}`,
-      });
+    selectNavigation: (site) => {
+      dispatch(selectNav(site));
     },
   };
 };

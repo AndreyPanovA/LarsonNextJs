@@ -1,8 +1,5 @@
-import Router from "next/router";
 import { useState, useEffect } from "react";
-import { MainLayout } from "../../../components/MainLayout";
-import Footer from "../../../components/footer/Footer";
-import Navigation from "../../../components/navigation/Navigation";
+import MainLayout from "../../../components/MainLayout";
 import dataStorage from "../../../components/dataStorage/dataStorage";
 import TextBlack from "../../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
@@ -14,7 +11,6 @@ function Card({ json, lang }) {
 
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
       <TextBlack url={urlText} littleWidth="littleWidth">
         <h1>{h1[lang]}</h1>
         {p.map((p, idx) => (

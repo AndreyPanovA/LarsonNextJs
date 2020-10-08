@@ -1,5 +1,5 @@
 import Router from "next/router";
-import { MainLayout } from "../../components/MainLayout";
+import MainLayout from "../../components/MainLayout";
 import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import cls from "../../styles/corporate.module.scss";
@@ -17,7 +17,6 @@ function Corporate({ lang }) {
   console.log(h2[0].ru);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
       <div className={cls.container}>
         <h2>{h2[0][lang]}</h2>
         <ul>

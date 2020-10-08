@@ -1,5 +1,4 @@
-import { MainLayout } from "../../components/MainLayout";
-import Navigation from "../../components/navigation/Navigation";
+import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
@@ -14,7 +13,6 @@ function Contact({ lang }) {
   return (
     <MainLayout url={url}>
       {/* <LazyLoad /> */}
-      <Navigation site="mers" />
       <div className={cls.container}>
         <div className={cls.row}>
           <div className={cls.card}>

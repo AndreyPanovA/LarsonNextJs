@@ -4,18 +4,26 @@ import { useState } from "react";
 import cls from "./navigation.module.scss";
 import { connect } from "react-redux";
 import dataStorage from "../dataStorage/dataStorage";
+import { route } from "next/dist/next-server/server/router";
+import { selectNav } from "../actions/index";
 
 function Navigation(props) {
   const { site, link = "about", lang, json } = props;
   const [classes, setClasses] = useState(false);
   const { nav: data } = dataStorage;
+  const router = useRouter();
   const selectLink = (link) => {
-    const router = useRouter();
     const regExp = new RegExp(`${link}$`);
     if (regExp.test(router.route)) {
       return "active";
     }
   };
+  if (router.route == "/") {
+    return null;
+  } else {
+    props.selectNavigation(router.route);
+  }
+  console.log(site, router.route.lastIndexOf("/"));
   return (
     <>
       <nav className={cls.nav} style={classes ? { left: 0 } : {}}>
@@ -27,15 +35,7 @@ function Navigation(props) {
             setClasses(!classes);
           }}
         >
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
-          <div className={cls.dot}></div>
+          {BurgerBtn}
         </div>
         <ul className={cls.navLinks}>
           <div
@@ -48,7 +48,7 @@ function Navigation(props) {
             data.map((el, idx) => {
               return (
                 <Link
-                  href={`/${site}/${el.href || el.eng.toLowerCase()}`}
+                  href={`${site}/${el.href || el.eng.toLowerCase()}`}
                   key={idx}
                 >
                   <a
@@ -66,4 +66,28 @@ function Navigation(props) {
     </>
   );
 }
-export default connect(({ lang }) => ({ lang }))(Navigation);
+const BurgerBtn = (
+  <>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+    <div className={cls.dot}></div>
+  </>
+);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectNavigation: (site) => {
+      dispatch(selectNav(site));
+    },
+  };
+};
+// export default Navigation;
+export default connect(
+  ({ lang }) => ({ lang }),
+  mapDispatchToProps
+)(Navigation);
