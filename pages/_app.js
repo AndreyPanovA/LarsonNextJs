@@ -1,7 +1,6 @@
 import "../styles/globals.scss";
 import { Provider } from "react-redux";
 import store from "../components/store";
-import { connect } from "react-redux";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,17 +11,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-// const mapStateToProps = ({ lang }) => {
-//   return { lang };
-// };
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     changeLang: (lang) => {
-//       dispatch({
-//         type: "CHANGE_LANG",
-//         lang: `${lang}`,
-//       });
-//     },
-//   };
-// };
-// export default connect(mapStateToProps, mapDispatchToProps)(MyApp);

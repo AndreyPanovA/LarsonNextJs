@@ -3,6 +3,13 @@ const FetchServ = new (class FetchService {
   async getResourse(url, type = "json") {
     return await (await fetch(`${this._apiBase}${url}`))[type]();
   }
+  async getExact(page = "volvo", src = "about", type = "json") {
+    return {
+      props: {
+        json: await this.getResourse(`${page}/${src}`, type),
+      },
+    };
+  }
   async getAbout(page = "volvo", type = "json") {
     return {
       props: {
@@ -10,23 +17,26 @@ const FetchServ = new (class FetchService {
       },
     };
   }
-  async getAllPeople() {
-    return (await this.getResourse("/people/")).results;
+  async getContact(page = "volvo", type = "json") {
+    return {
+      props: {
+        json: await this.getResourse(`${page}/about`, type),
+      },
+    };
   }
-  getPerson(id) {
-    return this.getResourse(`/people/${id}`);
+  async getCorporate(page = "volvo", type = "json") {
+    return {
+      props: {
+        json: await this.getResourse(`${page}/about`, type),
+      },
+    };
   }
-  async getAllPlanets() {
-    return (await this.getResourse("/planets/")).results;
-  }
-  getPlanet(id) {
-    return this.getResourse(`/planets/${id}`);
-  }
-  async getAllStarships() {
-    return (await this.getResourse("/starships/")).results;
-  }
-  getStarship(id) {
-    return this.getResourse(`/starships/${id}`);
+  async getPromo(page = "volvo", type = "json") {
+    return {
+      props: {
+        json: await this.getResourse(`${page}/about`, type),
+      },
+    };
   }
 })();
 

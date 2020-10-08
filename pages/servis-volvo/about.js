@@ -3,9 +3,10 @@ import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
-function About({ lang }) {
+import FetchServ from "../../services/fetchService";
+function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.volvo;
-  let { about } = dataStorage.volvo.pages;
+  // let { about } = dataStorage.volvo.pages;
   return (
     <MainLayout url={url}>
       <Navigation site="servis-volvo" />
@@ -18,4 +19,5 @@ function About({ lang }) {
   );
 }
 
+export const getStaticProps = async () => FetchServ.getAbout("volvo");
 export default connect(({ lang }) => ({ lang }))(About);

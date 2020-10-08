@@ -1,8 +1,5 @@
 import cls from "./promoText.module.scss";
-// import { connect } from "react-redux";
-// import store from "../store";
 function PromoText({ name, text, url, first, lang }) {
-  console.log(url, "cool");
   return (
     <>
       <div className={first ? cls.promo + " " + cls.top : cls.promo}>
@@ -21,4 +18,3 @@ function PromoText({ name, text, url, first, lang }) {
 }
 
 export default PromoText;
-// export default connect(mapStateToProps, mapDispatchToProps)(Footer)

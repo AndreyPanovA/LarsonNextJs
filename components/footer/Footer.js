@@ -1,15 +1,33 @@
 import cls from "./footer.module.scss";
 import { connect } from "react-redux";
 import dataStorage from "../dataStorage/dataStorage";
-import store from "../store";
-function Footer(props) {
+import { changeLang } from "../actions";
+import { useCallback, useState } from "react";
+import LogicServ from "../../services/logicService";
+
+function Footer({ changeLanguage, lang, color, btn }) {
   const { footerText } = dataStorage;
+  const [state, setState] = useState("ru");
+  const callbacks = {
+    onClick: useCallback(async () => {
+      state == "ru"
+        ? setState((prev) => {
+            changeLanguage("eng");
+            return "eng";
+          })
+        : setState((prev) => {
+            changeLanguage("ru");
+            return "ru";
+          });
+    }),
+  };
+
   return (
     <>
-      <footer className={cls[props.color]}>
-        <div className={cls.fot_wrap + " flex_c"}>
-          <p>{footerText[props.lang]}</p>
-          <div className={cls.appStore + " flex_c"}>
+      <footer className={cls[color]}>
+        <div className={LogicServ.cn("flex_c", cls["fot_wrap"])}>
+          <p>{footerText[lang]}</p>
+          <div className={LogicServ.cn("flex_c", cls.appStore)}>
             <a href="https://lk.larsonv.ru" target="_blank">
               <img src="/assets/img/larson-white.svg" alt="" />
             </a>
@@ -36,22 +54,8 @@ function Footer(props) {
               />
             </a>
           </div>
-          <button
-            className={cls[props.btn]}
-            onClick={() => {
-              //   console.log(store);
-              store.getState().lang == "ru"
-                ? store.dispatch({
-                    type: "CHANGE_LANG",
-                    lang: `eng`,
-                  })
-                : store.dispatch({
-                    type: "CHANGE_LANG",
-                    lang: `ru`,
-                  });
-            }}
-          >
-            {props.lang}
+          <button className={cls[btn]} onClick={callbacks.onClick}>
+            {lang}
           </button>
         </div>
       </footer>
@@ -59,8 +63,11 @@ function Footer(props) {
   );
 }
 
-// export default Footer;
-const mapStateToProps = ({ lang }) => {
-  return { lang };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeLanguage: (lang) => {
+      dispatch(changeLang(lang));
+    },
+  };
 };
-export default connect(mapStateToProps)(Footer);
+export default connect(({ lang }) => ({ lang }), mapDispatchToProps)(Footer);
