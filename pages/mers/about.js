@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import FetchServ, { getResourse } from "../../services/fetchService";
 function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.mers;
-  // let { about } = dataStorage.mers.pages;
   return (
     <MainLayout url={url}>
       <div style={{ position: "relative", fontSize: 55 }}>

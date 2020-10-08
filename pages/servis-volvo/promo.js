@@ -1,12 +1,10 @@
 import Router from "next/router";
 import { useState, useEffect } from "react";
 import MainLayout from "../../components/MainLayout";
-import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
-import cls from "../../styles/review.module.scss";
 import PromoText from "../../components/promoText/PromoText";
 import { connect } from "react-redux";
-// import {fetch} from "iso"
+
 function Review({ json, lang }) {
   const { promo: url } = dataStorage.backgroundsUrl.volvo;
   const { promoPage: promo } = dataStorage.volvo;

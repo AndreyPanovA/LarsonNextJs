@@ -1,21 +1,31 @@
 import cls from "../styles/Home.module.scss";
 import MainLayout from "../components/MainLayout";
-import textContent from "../components/dataStorage/dataStorage";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import store from "../components/store";
 import { selectNav } from "../components/actions/index";
 import Router from "next/router";
+import FetchServ from "../services/fetchService";
+import LogicServ from "../services/logicService";
+import Item from "../components/item";
 
+const { cn } = LogicServ;
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.callbacks = {
+      onClick: (key) => {
+        this.props.selectNavigation(key.href);
+        this.router(key.href + "/about");
+      },
+    };
   }
   router = (site) => {
     Router.push(`${site}`);
   };
+
   render() {
-    const { lang } = this.props;
+    const { lang, json } = this.props;
     return (
       <MainLayout
         color="white"
@@ -24,38 +34,18 @@ class Home extends Component {
         btn="btn"
         logo={false}
       >
-        <div className={cls.keysWrapper + " flex_c"}>
+        <div className={cn(cls["keysWrapper"], "flex_c")}>
           <img
             src="/assets/img/larson-start.svg"
             alt="LARSON"
             className={cls.backLogo}
           />
-          <div className={cls.keysLine + " flex_cw"}>
-            {textContent.keys.map((key, idx) => {
-              return (
-                <div
-                  href={key.href}
-                  key={idx}
-                  onClick={() => {
-                    this.props.selectNavigation(key.href);
-                    this.router(key.href + "/about");
-                  }}
-                >
-                  <a className={cls.keyCard}>
-                    <div className={cls.keyCard + " flex_cc"}>
-                      <div className={cls.keyImg}>
-                        <img src={key.img} alt={key.alt} />
-                      </div>
-                      {lang === "ru" ? (
-                        <h2>{key.h2ru}</h2>
-                      ) : (
-                        <h2>{key.h2eng}</h2>
-                      )}
-                    </div>
-                  </a>
-                </div>
-              );
-            })}
+          <div className={cn(cls["keysLine"], "flex_cw")}>
+            <Item
+              json={json}
+              lang={lang}
+              selectNavigation={this.props.selectNavigation}
+            />
           </div>
         </div>
       </MainLayout>
@@ -73,4 +63,7 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
+
+export const getStaticProps = async () => FetchServ.getHomeKeys();
+
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

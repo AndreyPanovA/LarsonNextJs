@@ -142,12 +142,6 @@ function Contact({ lang }) {
           </div>
         </div>
       </div>
-      {/* </div> */}
-      {/* <TextBlack isImg={true}>
-        {about.map((el, idx) => (
-          <p key={idx}>{el.p[lang]}</p>
-        ))}
-      </TextBlack> */}
     </MainLayout>
   );
 }

@@ -3,6 +3,14 @@ const FetchServ = new (class FetchService {
   async getResourse(url, type = "json") {
     return await (await fetch(`${this._apiBase}${url}`))[type]();
   }
+  async getHomeKeys(type = "json") {
+    return {
+      props: {
+        json: await this.getResourse(`hello`, type),
+      },
+    };
+  }
+
   async getExact(page = "volvo", src = "about", type = "json") {
     return {
       props: {

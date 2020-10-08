@@ -56,7 +56,6 @@ export async function getStaticProps() {
     },
   });
   const json = await response.text();
-  // setReview(json)
   return {
     props: {
       json,

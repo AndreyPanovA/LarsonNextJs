@@ -3,23 +3,29 @@ export const data = {
     {
       img: "/assets/img/keys/myKey1.png",
       alt: "Kuzov",
-      h2ru: "Кузовной сервис",
-      h2eng: "Car Body Service",
+      h2: {
+        ru: "Кузовной сервис",
+        eng: "Car Body Service",
+      },
       href: "/kuzov",
     },
     {
       img: "/assets/img/keys/myKey2.png",
       alt: "Volvo",
-      h2ru: "Сервис Вольво",
-      h2eng: "Volvo Service",
-      href: "/servis-volvo/about",
+      h2: {
+        ru: "Сервис Вольво",
+        eng: "Volvo Service",
+      },
+      href: "/servis-volvo",
     },
     {
       img: "/assets/img/keys/myKey3.png",
       alt: "Mers",
-      h2ru: "Сервис Мерседес-Бенц",
-      h2eng: "Mersedes-Benz service",
-      href: "/mers/about",
+      h2: {
+        ru: "Сервис Мерседес-Бенц",
+        eng: "Mersedes-Benz service",
+      },
+      href: "/mers",
     },
   ],
   corporateClients: [

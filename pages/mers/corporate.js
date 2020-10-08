@@ -13,7 +13,7 @@ function Corporate({ lang }) {
       },
     },
   } = dataStorage;
-  console.log(h2[0].ru);
+  // console.log(h2[0].ru);
   return (
     <MainLayout url={url}>
       <div className={cls.container}>
