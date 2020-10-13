@@ -9,7 +9,6 @@ import { connect } from "react-redux";
 function Parts({ json, lang }) {
   const { ditails: url } = dataStorage.backgroundsUrl.volvo;
   const { parts: urlText } = dataStorage.volvo.textImages;
-
   const [reviews, setReview] = useState([]);
   const { h1, p } = dataStorage.volvo.pages.ditails;
   return (

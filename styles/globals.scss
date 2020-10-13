@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 html,
 body {
   padding: 0;
@@ -70,4 +72,13 @@ ul {
     width: 100%;
     min-height: 230px;
   }
+}
+
+.shad__reviw {
+  border: 2px solid #ccc;
+  margin-bottom: 15px;
+  @include shadowGlowing();
+  padding: 10px 20px;
+  border-radius: 5px;
+  line-height: 25px;
 }

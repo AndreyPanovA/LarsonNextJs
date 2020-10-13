@@ -1,5 +1,4 @@
 import MainLayout from "../../components/MainLayout";
-import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
