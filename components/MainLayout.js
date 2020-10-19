@@ -15,7 +15,7 @@ function MainLayout({
   url,
   color = "black",
   background,
-  site,
+  site = "servis-volvo",
   lang,
   btn = "btnWhite",
   logo = true,

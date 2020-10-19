@@ -1,6 +1,5 @@
 import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
-
 import { connect } from "react-redux";
 import cls from "../../styles/contact.module.scss";
 let {

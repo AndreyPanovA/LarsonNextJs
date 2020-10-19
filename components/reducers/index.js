@@ -1,6 +1,6 @@
 const initialState = {
   lang: "ru",
-  site: "/",
+  site: "/servis-volvo",
 };
 
 const reducer = (state = initialState, action) => {

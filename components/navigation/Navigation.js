@@ -7,7 +7,13 @@ import dataStorage from "../dataStorage/dataStorage";
 import { selectNav } from "../actions/index";
 
 function Navigation(props) {
-  const { site, link = "about", lang, json } = props;
+  const {
+    site = "servis-volvo",
+    siteURL = "servis-volvo",
+    link = "about",
+    lang,
+    json,
+  } = props;
   const [classes, setClasses] = useState(false);
   const { nav: data } = dataStorage;
   const router = useRouter();
@@ -20,6 +26,7 @@ function Navigation(props) {
   if (router.route == "/") {
     return null;
   }
+  console.log(link, site);
   return (
     <>
       <nav className={cls.nav} style={classes ? { left: 0 } : {}}>
@@ -44,7 +51,7 @@ function Navigation(props) {
             data.map((el, idx) => {
               return (
                 <Link
-                  href={`${site}/${el.href || el.eng.toLowerCase()}`}
+                  href={`${site || siteURL}/${el.href || el.eng.toLowerCase()}`}
                   key={idx}
                 >
                   <a
