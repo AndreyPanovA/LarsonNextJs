@@ -1,10 +1,6 @@
-import Router from "next/router";
 import { useState, useEffect } from "react";
 import MainLayout from "../../components/MainLayout";
-import Footer from "../../components/footer/Footer";
-import Navigation from "../../components/navigation/Navigation";
 import dataStorage from "../../components/dataStorage/dataStorage";
-import cls from "../../styles/review.module.scss";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 function Parts({ json, lang }) {

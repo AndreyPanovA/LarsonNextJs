@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
-import cls from "../../styles/review.module.scss";
 import PromoText from "../../components/promoText/PromoText";
 import { connect } from "react-redux";
 function Review({ json, lang }) {

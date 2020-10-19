@@ -14,7 +14,7 @@ function MainLayout1({
   background,
   btn = "btnWhite",
   logo = true,
-  site,
+  site = "servis-volvo",
 }) {
   return (
     <>

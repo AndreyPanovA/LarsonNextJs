@@ -19,10 +19,7 @@ function Navigation(props) {
   };
   if (router.route == "/") {
     return null;
-  } else {
-    // Router.push(`/`);
   }
-  // console.log(site, router.route.lastIndexOf("/"));
   return (
     <>
       <nav className={cls.nav} style={classes ? { left: 0 } : {}}>

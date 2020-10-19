@@ -207,12 +207,7 @@ export default {
               eng: `Andropova Av., 22, bld.2, Nagatinsky business centre.`,
               type: "p",
             },
-            {
-              ru: "Larson Можайка (открыть в Яндекс.Навигаторе)",
-              eng: "Larson Mozhayka (open in Yandex.Navigator)",
-              type: "a",
-              style: { marginTop: 25 },
-            },
+
             {
               ru: `Можайское шоссе, вл. 167,`,
               eng: `Mozhayskoe highway, pl. 167,`,
@@ -232,16 +227,59 @@ export default {
             {
               textNode: [
                 {
-                  ru: "",
-                  eng: "By car:",
-                  type: "p",
-                },
-                {
-                  ru: "",
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
                   eng:
-                    "From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
                   type: "p",
                 },
+
+                {
+                  // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                  atributes: {
+                    src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                    allowfullscreen: true,
+                  },
+                  type: "iframe",
+                },
+              ],
+            },
+            {
+              textNode: [
+                {
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                  eng:
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                  type: "p",
+                },
+
+                {
+                  // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                  atributes: {
+                    src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                    allowfullscreen: true,
+                  },
+                  type: "iframe",
+                },
+              ],
+            },
+            {
+              textNode: [
+                {
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                  eng:
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                  type: "p",
+                },
+
                 {
                   // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
                   atributes: {
@@ -993,11 +1031,25 @@ export default {
       promo: "/assets/img/backgrounds/volvo/promo-volvo-bg.jpg",
       ditails: "/assets/img/backgrounds/mers/ditails-mers-bg.jpg",
       inshurance: "/assets/img/backgrounds/volvo/insurance-volvo-bg.jpg",
-      tow: "/assets/img/backgrounds/volvo/tow-volvo-bg.jpg",
+      tow: "/assets/img/backgrounds/mers/tow-mers-bg.jpg",
       card: "/assets/img/backgrounds/volvo/diagnostic-card-volvo-bg.jpg",
     },
     about: "/assets/img/backgrounds/bg-review.jpg",
     review: "/assets/img/backgrounds/bg-review.jpg",
   },
   headerLogo: "/assets/img/larson-white.svg",
+  components: {
+    tur: {
+      ru: "Тур",
+      eng: "Tur",
+    },
+    map: {
+      ru: "Larson Коломенская",
+      eng: "Larson Kolomenskaya",
+    },
+    pathDescr: {
+      ru: "Метро Коломенская",
+      eng: "Kolomenskaya metro station",
+    },
+  },
 };
