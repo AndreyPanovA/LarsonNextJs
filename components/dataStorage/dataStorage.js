@@ -1040,6 +1040,23 @@ export default {
   headerLogo: "/assets/img/larson-white.svg",
   components: {
     tur: {
+      text: {
+        ru: "Тур",
+        eng: "Tur",
+      },
+      panorama: [
+        {
+          url: "https://lk.larsonv.ru/assets/panorama/1/tour.html",
+          text: {
+            ru: "Слесарный цех Коломенская",
+            eng: "Car Service Kolomenskaya",
+          },
+        },
+        {
+          url: "https://lk.larsonv.ru/assets/panorama/3/tour.html",
+          text: { ru: "Кузовной сервис", eng: "Car Body Service" },
+        },
+      ],
       ru: "Тур",
       eng: "Tur",
     },
