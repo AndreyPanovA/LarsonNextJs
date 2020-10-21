@@ -95,7 +95,7 @@ export default {
     pages: {
       about: [
         { h1: { ru: "ЛУЧШЕЕ В", eng: "THE BEST OF" } },
-        { h1: { ru: "МЕРСЕДЕС!", eng: "MERCEDES-BENZ!" } },
+        { h1: { ru: "МЕРСЕДЕС!", eng: "MERCEDES- BENZ!" } },
         {
           p: {
             ru: `  История Larson началась в 2011 году. Открыт первый магазин запчастей
@@ -836,21 +836,12 @@ export default {
         },
         p: [
           {
-            ru: `«Larson» сотрудничает с крупнейшей универсальной страховой компанией «РЕСО». Для наших Клиентов предусмотрен весь перечень страхования, в том числе страхование домов и квартир, выездов за рубеж, корпоративное страхование и др.`,
-            eng: `Larson cooperates with the largest universal insurance company RESO. For our Clients, the entire list of insurance is provided, including insurance of houses and apartments, travel abroad, corporate insurance, etc.`,
+            ru: `«Larson» сотрудничает с крупнейшей универсальной страховой компанией «РЕСО». Страховое публичное акционерное общество «РЕСО-Гарантия» `,
+            eng: `Larson cooperates with the largest universal insurance company RESO. Public insurance company RESO-Garantia `,
           },
           {
-            ru: `Получите комфортные условия страхования по промокоду Larson у персонального менеджера:`,
-            eng: `Get comfortable insurance conditions with the Larson promo code from your personal manager:`,
-          },
-          {
-            ru: `Мария Иванова`,
-            eng: `Maria Ivanova`,
-          },
-          { ru: ``, eng: `+7 (909) 953-89-52(also on Telegram, WhatsApp)` },
-          {
-            ru: `И в ближайших партнерских офисах:`,
-            eng: `ул.Садовники, д.3:ул.Речников, д.21, стр.4`,
+            ru: `(СПАО «РЕСО-Гарантия») предоставляет широкий спектр услуг по страхованию физических и юридических лиц. Приоритетными направлениями деятельности являются автострахование (КАСКО и ОСАГО, а также ДГО), добровольное медицинское страхование, страхование имущества физических и юридических лиц, ипотечное страхование, страхование туристов, страхование от несчастных случаев и другие виды. Обращайтесь к мастерам-консультантам «Larson» для оформления страховых продуктов для себя и своего автомобиля`,
+            eng: `(SPAO RESO-Garantia) provides a wide range of insurance services for individuals and legal entities. The priority areas of activity are car insurance (CASCO and OSAGO, as well as voluntary medical insurance), property insurance for individuals and legal entities, mortgage insurance, travel insurance, accident insurance and other types. Contact the managers at Larson to arrange insurance products for yourself and your car.`,
           },
         ],
       },

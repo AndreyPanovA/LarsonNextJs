@@ -2,6 +2,9 @@ import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import { connect } from "react-redux";
 import cls from "../../styles/contact.module.scss";
+import TourKolomensk from "../../components/panorama/index";
+import ContactHugePath from "../../components/contacts/huge/index";
+
 let {
   contacts: { contact, videoRoute },
 } = dataStorage.mers.pages;
@@ -12,15 +15,21 @@ function Contact({ lang }) {
     <MainLayout url={url}>
       <div className={cls.container}>
         <div className={cls.row}>
-          <TourKolomensk text={tur[lang]} />
+          {/* <TourKolomensk text={tur[lang]} /> */}
           <ContactDescr lang={lang} />
         </div>
-        <div className={cls.row}>
+        {/* <div className={cls.row}>
           <Map text={map[lang]} />
           <PathDescr text={pathDescr[lang]} lang={lang} />
-        </div>
+        </div> */}
         <div className={cls.row}>
           <ContactHugePath lang={lang} />
+        </div>
+        <div className={cls.row + " " + cls.mb}>
+          <ContactHugePath
+            lang={lang}
+            src="https://www.youtube.com/embed/a-LqCwChWO8"
+          />
         </div>
       </div>
     </MainLayout>
@@ -41,20 +50,20 @@ const Row = ({ lang, idx }) => (
     )}
   </div>
 );
-const TourKolomensk = ({ text }) => {
-  return (
-    <div className={cls.card}>
-      <h2>{text}</h2>
-      <div className="panorama">
-        <iframe
-          src="https://lk.larsonv.ru/assets/panorama/1/tour.html"
-          frameborder="1"
-          allowfullscreen="true"
-        ></iframe>
-      </div>
-    </div>
-  );
-};
+// const TourKolomensk = ({ text }) => {
+//   return (
+//     <div className={cls.card}>
+//       <h2>{text}</h2>
+//       <div className="panorama">
+//         <iframe
+//           src="https://lk.larsonv.ru/assets/panorama/1/tour.html"
+//           frameborder="1"
+//           allowfullscreen="true"
+//         ></iframe>
+//       </div>
+//     </div>
+//   );
+// };
 const Map = ({
   text,
   src = "https://yandex.ru/map-widget/v1/?um=constructor%3Aa530216490486b1f7b1ae5dcf8db4acfddc4b78beb189f5a8c8695cd1665d510&source=constructor",
@@ -98,37 +107,6 @@ const ContactDescr = ({ lang }) => {
               {el[lang]}
             </el.type>
           ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-const ContactHugePath = ({
-  lang,
-  src = "https://www.youtube.com/embed/iBTVf8yDd1M",
-}) => {
-  return (
-    <div className={cls.bigCard}>
-      <div className={cls.cardPad}>
-        <h2>By metro or by feet:</h2>
-        <div className={cls.videoRow}>
-          <div className={cls.videoSize}>
-            <p>By car:</p>
-            <p>
-              From the center: along Andropova Av., after the Nagatinsky Bridge,
-              to the right, down to the embankment and to the left to the
-              territory of the Nagatinsky business center in front of the Lukoil
-              gas station.
-            </p>
-          </div>
-          <div className={cls.video}>
-            <iframe
-              src={src}
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
         </div>
       </div>
     </div>

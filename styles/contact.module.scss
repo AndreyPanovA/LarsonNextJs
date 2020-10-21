@@ -15,20 +15,23 @@
     iframe {
       border: none;
       width: 100%;
-      //   min-height: 230px;
+      min-height: 280px;
     }
   }
   .row {
     margin-bottom: 15px;
     display: flex;
     justify-content: space-between;
+    .mb {
+      margin-bottom: 20vh;
+    }
     .bigCard {
       @include shadowGlowing();
       @include darkOpacity();
       flex-basis: 100%;
       padding: 10px 0px;
       border-radius: 5px;
-      margin-bottom: 20vh;
+
       //   clone
       h2 {
         text-align: center;

@@ -1,0 +1,40 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+.card {
+  margin-bottom: 15px;
+  //   margin-right: 25px;
+  @include shadowGlowing();
+  @include darkOpacity();
+  flex-basis: 45%;
+  padding: 10px 0px;
+  border-radius: 5px;
+  h2 {
+    text-align: center;
+    margin: 15px 0;
+  }
+  display: flex;
+  justify-content: space-around;
+  .cardPad {
+    padding: 10px 20px;
+
+    .cardTextBlock {
+      margin-bottom: 25px;
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .flex {
+        display: flex;
+        p {
+          margin-right: 5px;
+        }
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .video {
+    margin: 10px 0;
+  }
+}
