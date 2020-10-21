@@ -32,7 +32,7 @@ const ContactDescr = ({ lang, page = "mers" }) => {
             </div>
           </div>
           <div className={cls.cardPad}>
-            <h2>Larson Mozhayka, by car:</h2>
+            <p>Larson Mozhayka, by car:</p>
             <div className={cls.video}>
               <iframe
                 src="https://www.youtube.com/embed/IyYqO61suaI"
