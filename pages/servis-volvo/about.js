@@ -6,7 +6,7 @@ import FetchServ from "../../services/fetchService";
 
 function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.volvo;
-  const { panorama: isPano } = dataStorage.components.tur;
+  const { panorama: isPano, text } = dataStorage.components.tur;
 
   return (
     <MainLayout url={url}>
@@ -15,6 +15,7 @@ function About({ lang, json: about }) {
         littleWidth="littleWidth"
         isPano={isPano}
         lang={lang}
+        text={text}
       >
         {about.map((el, idx) => (
           <p key={idx}>{el.p[lang]}</p>

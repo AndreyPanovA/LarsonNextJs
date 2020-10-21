@@ -207,12 +207,6 @@ export default {
               eng: `Andropova Av., 22, bld.2, Nagatinsky business centre.`,
               type: "p",
             },
-
-            {
-              ru: `Можайское шоссе, вл. 167,`,
-              eng: `Mozhayskoe highway, pl. 167,`,
-              type: "p",
-            },
           ],
           a: [
             {
@@ -222,6 +216,73 @@ export default {
             },
           ],
         },
+        videoPath: [
+          {
+            src: "",
+            title: {
+              ru: "Ларсон Коломенская, на машине:",
+              eng: "Larson Kolomenskaya, by car:",
+            },
+            p: [
+              {
+                ru:
+                  "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                eng:
+                  "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+              },
+              {
+                ru:
+                  "- По Нагатинской набережной: направо перед Нагатинским мостом, далее вверх от набережной, сразу после АЗС «Лукойл» направо на территорию БЦ «Нагатинский».",
+                eng:
+                  "- Along the Nagatinskaya embankment: to the right in front of the Nagatinskiy bridge, further up from the embankment, immediately after the Lukoil gas station, to the right into the territory of the Nagatinskiy business center.",
+              },
+              {
+                ru:
+                  "- Из области: по проспекту Андропова, разворот под Нагатинским мостом, далее вверх от набережной, сразу после АЗС «Лукойл» направо на территорию БЦ «Нагатинский».",
+                eng:
+                  "- From the suburbs: along Andropova Avenue, a U-turn under the Nagatinsky Bridge, further up from the embankment, right after the Lukoil gas station, to the right to the territory of the Nagatinsky business center. Welcome!",
+              },
+              { ru: "Добро пожаловать!", eng: "Welcome!" },
+            ],
+          },
+          {
+            src: "",
+            title: {
+              ru: "Larson Коломенская, на метро или пешком:",
+              eng: "Larson Kolomenskaya, by metro or by feet:",
+            },
+            p: [
+              {
+                ru:
+                  "- По замоскворецкой линии метро (зеленая ветка) до станции Коломенская, последний вагон из центра, выход налево, из стеклянных дверей налево, в сторону улиц: проспект Андропова и Высокая улица (Выходы номер 5 и 6), далее по лестнице направо (выход номер 6).",
+                eng:
+                  "- Along the Zamoskvoretskaya metro line (green line) to Kolomenskaya station, the last carriage from the center, exit to the left, from the glass doors to the left, towards the streets: Andropova Av. and Vysokaya St. (Exits 5 and 6), then along the stairs to the right (exit 6).",
+              },
+              {
+                ru:
+                  "- Выйдя на улицу идете прямо, вдоль проспекта Андропова вниз к набережной до торгово-развлекательного комплекса «НОРА».",
+                eng:
+                  "- Going outside, go straight along Andropov Avenue down to the embankment to the HOPA shopping and entertainment complex.",
+              },
+              {
+                ru:
+                  "- Поворачиваете налево и идете прямо вдоль торгово-развлекательного комплекса “НОРА”, так чтобы он оставался по правую руку.",
+                eng:
+                  "- Turn left and go straight along the HOPA shopping and entertainment complex, so that it remains on your right.",
+              },
+              {
+                ru:
+                  "- Далее увидите вывеску «Кузовной центр Larson». Проходите мимо до угла здания и поворачиваете направо, затем прямо до вывески Larson и снова направо, входите в дверь и на КПП говорите “Здравствуйте, я в Larson”.",
+                eng: `- Next you will see a signboard "Кузовной центр Larson". Walk past the corner of the building and turn right, then straight to the Larson sign and right again, go through the door and at the checkpoint say "Zdravstvuyte, ya v Larson."`,
+              },
+              {
+                ru: `- После КПП, во внутреннем дворе двигаетесь прямо, слева одно отдельно стоящее здание — это «Larson».`,
+                eng: `- After the checkpoint, move straight in the courtyard, on the left there is one detached building — this is Larson.`,
+              },
+              { ru: "Добро пожаловать!", eng: "Welcome!" },
+            ],
+          },
+        ],
         videoRoute: {
           row: [
             {
@@ -241,7 +302,7 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -264,7 +325,7 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -287,7 +348,7 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -728,7 +789,7 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },

@@ -255,7 +255,7 @@ export const data = {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -696,7 +696,7 @@ export const data = {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },

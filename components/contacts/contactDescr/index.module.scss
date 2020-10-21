@@ -1,8 +1,13 @@
 @import "../../../styles/mixins.scss";
 @import "../../../styles/variables.scss";
+.textbig {
+  margin-top: 25px;
+  border: 2px solid red;
+}
 .card {
   margin-bottom: 15px;
   //   margin-right: 25px;
+
   @include shadowGlowing();
   @include darkOpacity();
   flex-basis: 45%;
@@ -18,7 +23,8 @@
     padding: 10px 20px;
 
     .cardTextBlock {
-      margin-bottom: 25px;
+      margin: 25px 0;
+
       a {
         display: block;
         margin-bottom: 10px;
@@ -36,5 +42,27 @@
   }
   .video {
     margin: 10px 0;
+  }
+}
+@media (max-width: 800px) {
+  .card {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .cardPad {
+      width: 100%;
+    }
+    .video {
+      border-top: 2px solid white;
+      padding: 10px 0;
+      margin: 10px 0;
+
+      iframe {
+        min-height: 300px;
+        width: 100%;
+      }
+
+      width: 100%;
+    }
   }
 }

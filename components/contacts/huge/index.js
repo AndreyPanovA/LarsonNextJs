@@ -1,29 +1,31 @@
 import cls from "./index.module.scss";
+import dataStorage from "../../dataStorage/dataStorage";
 
 const ContactHugePath = ({
+  page = "mers",
+  id = 0,
   lang,
   src = "https://www.youtube.com/embed/iBTVf8yDd1M",
 }) => {
+  const { p, title } = dataStorage[page].pages.contacts.videoPath[id];
   return (
     <div className={cls.bigCard}>
       <div className={cls.cardPad}>
-        <h2>By metro or by feet:</h2>
         <div className={cls.videoRow}>
           <div className={cls.videoSize}>
-            <p>By car:</p>
-            <p>
-              From the center: along Andropova Av., after the Nagatinsky Bridge,
-              to the right, down to the embankment and to the left to the
-              territory of the Nagatinsky business center in front of the Lukoil
-              gas station.
-            </p>
+            <h4>{title[lang]}</h4>
+            <div className={cls.textbig}>
+              {p.map((el, idx) => {
+                return <p>{el[lang]}</p>;
+              })}
+            </div>
           </div>
           <div className={cls.video}>
             <iframe
               src={src}
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>

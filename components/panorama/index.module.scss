@@ -2,7 +2,7 @@
 @import "../../styles/variables.scss";
 
 .card {
-  margin-bottom: 15px;
+  margin: 15px 0;
   @include shadowGlowing();
   @include darkOpacity();
   flex-basis: 45%;

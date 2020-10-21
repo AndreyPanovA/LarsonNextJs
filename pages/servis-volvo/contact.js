@@ -15,12 +15,13 @@ function Contact({ lang }) {
   return (
     <MainLayout url={url}>
       <div className={cls.container}>
-        <ContactDescr lang={lang} />
+        <ContactDescr lang={lang} page="volvo" />
         <div className={cls.row}>
-          <ContactHugePath lang={lang} />
+          <ContactHugePath lang={lang} id={0} />
         </div>
         <div className={cls.row + " " + cls.mb}>
           <ContactHugePath
+            id={1}
             lang={lang}
             src="https://www.youtube.com/embed/a-LqCwChWO8"
           />

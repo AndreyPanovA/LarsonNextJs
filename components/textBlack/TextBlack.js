@@ -6,7 +6,7 @@ function TextBlack({
   littleWidth,
   isImg = false,
   isPano = false,
-  text,
+  text = "Tur",
   lang,
 }) {
   console.log(isPano);
@@ -20,7 +20,7 @@ function TextBlack({
         )}
         {isPano && (
           <div className={cls.imgContainer}>
-            <h2 className="tcenter">Виртуальный Тур</h2>
+            <h2 className="tcenter">{text[lang]}</h2>
             {isPano.map(({ url, text }, idx) => {
               return <Tour src={url} text={text[lang]} />;
             })}

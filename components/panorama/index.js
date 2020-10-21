@@ -5,7 +5,7 @@ const Tour = ({ text, src }) => {
     <div className={cls.card}>
       <h2>{text}</h2>
       <div className="panorama">
-        <iframe src={src} frameborder="1" allowfullscreen="true"></iframe>
+        <iframe src={src} frameborder="1" allowFullScreen="true"></iframe>
       </div>
     </div>
   );
