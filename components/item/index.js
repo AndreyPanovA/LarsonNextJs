@@ -18,7 +18,12 @@ const Item = (props) => {
     <>
       {json.map((key, idx) => {
         return (
-          <div href={key.href} key={idx} onClick={() => callbacks.onClick(key)}>
+          <div
+            href={key.href}
+            key={idx}
+            onClick={() => callbacks.onClick(key)}
+            className={cls.count}
+          >
             <a className={cls.keyCard}>
               <div className={cn(cls["keyCard"], "flex_cc")}>
                 <div className={cls.keyImg}>
