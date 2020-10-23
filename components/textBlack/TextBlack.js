@@ -28,7 +28,7 @@ function TextBlack({
         <div
           className={littleWidth ? cls.text + " " + cls[littleWidth] : cls.text}
         >
-          <div>{children}</div>
+          <div className={cls.font}>{children}</div>
         </div>
       </div>
     </>

@@ -955,16 +955,21 @@ export default {
             eng: `In the Larson service you can get a diagnostic card necessary for issuing an OSAGO policy.`,
           },
           {
-            ru: `При прохождении любого ТО на любой модели «Вольво» вы получите карту бесплатно.`,
-            eng: `When passing any MOT on any Volvo model, you will receive a card for free.`,
+            ru: `Необходимо соблюдение двух условий:`,
+            eng: `There are two requirements:`,
           },
           {
-            ru: `Просто предупредите нашего оператора во время записи на сервис по +7 (495) 781-10-81, единый для «Larson» Коломенская и «Larson» Можайка.`,
-            eng: `Just notify our operator when registering for the service by +7 (495) 781-10-81, the same for Larson Kolomenskaya and Larson Mozhayka.`,
+            ru: ` прохождение технического обслуживания в «Larson»; `,
+            eng: `technical maintenance must be done at Larson;`,
+          },
+
+          {
+            ru: `◦  приобретение полиса ОСАГО в «Larson».`,
+            eng: `◦  purchase of a CTP policy from Larson.`,
           },
           {
-            ru: `Согласно последним изменениям в законодательстве, итоговым документом, подтверждающим технический осмотр транспортного средства, является не талон ТО, а диагностическая карта. В ней содержатся сведения о соответствии или несоответствии транспортного средства обязательным требованиям безопасности. Если техосмотр успешно пройден, в диагностическую карту заносится информация о сроке её действия, а также фамилия, инициалы и подпись технического эксперта, принявшего решение о её выдаче. Сведения о выданной диагностической карте передаются операторами в единую информационную систему технического осмотра (ЕАИСТО).`,
-            eng: `According to the latest changes in legislation, the final document confirming the technical inspection of the vehicle is not a MOT coupon, but a diagnostic card. It contains information about the compliance or non-compliance of the vehicle with the mandatory safety requirements. If the inspection is successfully passed, information about its validity period is entered into the diagnostic card, as well as the surname, initials and signature of the technical expert who made the decision to issue it. Information about the issued diagnostic card is transferred by operators to the Unified Technical Inspection Information System (EAISTO).`,
+            ru: `◦  «Larson» не оказывает услуги по проведению технического осмотра и выдаче диагностической карты на возмездной основе.`,
+            eng: `◦  We don't sell diagnostic cards without technical maintenance.`,
           },
         ],
       },
