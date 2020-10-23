@@ -6,9 +6,12 @@
 // }
 .container {
   top: $logoHeight;
-  max-width: 900px;
+  // max-width: 900px;
+  max-width: 90vw;
   margin: 0 auto;
   position: relative;
+  margin-left: 15vw;
+  padding: 20px 35px;
 
   .video {
     width: 100%;
@@ -95,4 +98,11 @@
   }
 }
 @media (max-width: 570px) {
+  .container {
+    top: $logoHeight;
+    max-width: 900px !important;
+
+    margin-left: 0 !important;
+    padding: 20px 40px !important;
+  }
 }

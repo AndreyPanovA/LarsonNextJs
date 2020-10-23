@@ -8,6 +8,8 @@ import { connect } from "react-redux";
 import Navigation from "./navigation/Navigation";
 import { selectNav } from "./actions/index";
 import Router, { useRouter } from "next/router";
+import LogicServ from "../services/logicService";
+const { cn } = LogicServ;
 
 function MainLayout({
   children,
@@ -20,6 +22,7 @@ function MainLayout({
   btn = "btnWhite",
   logo = true,
   selectNavigation,
+  shadowBackground = true,
 }) {
   const routerHook = useRouter();
   const router = () => {
@@ -31,7 +34,7 @@ function MainLayout({
       <Head>
         <title>{title} | Larson</title>
       </Head>
-      <main className={cls.main + " " + cls[background]}>
+      <main className={cn(cls[background], { main: shadowBackground })}>
         <LazyLoad />
         <div className={cls.backgroundImg}>
           <img src={url} />

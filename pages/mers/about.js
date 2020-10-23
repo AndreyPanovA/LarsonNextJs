@@ -28,5 +28,5 @@ function About({ lang, json: about }) {
     </MainLayout>
   );
 }
-export const getStaticProps = async () => FetchServ.getAbout("mers");
+export const getServerSideProps = async () => FetchServ.getAbout("mers");
 export default connect(({ lang }) => ({ lang }))(About);

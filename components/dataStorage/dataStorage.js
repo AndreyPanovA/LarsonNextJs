@@ -192,6 +192,12 @@ export default {
               style: { display: "inline", marginLeft: 10 },
             },
             {
+              ru: `info@larsonv.ru`,
+              eng: `info@larsonv.ru`,
+              type: "a",
+              style: { display: "block", marginTop: 10 },
+            },
+            {
               ru: "Larson Коломенская (открыть в Яндекс.Навигаторе)",
               eng: "Larson Kolomenskaya (open in Yandex.Navigator)",
               type: "a",
@@ -580,14 +586,14 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-3.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "20% на День рождения",
+          eng: "20% for your birthday",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "A one-time 20% discount on Larson service is valid on your birthday and for the next 20 days.",
               eng:
                 "Register in Larson Car app and get 2000 bonus points to your account.",
             },
@@ -604,23 +610,25 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-4.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "До 15% бонусами по программе «Larson бонус». Присоединяйтесь!",
+          eng:
+            "Up to 15% to bonus points under the Larson Bonus program. Join us!",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "До 15% начисляется на бонусный счёт при покупке запасных частей и аксессуаров в сертифицированном сервисе Larson.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
+                "Up to 15% is going to your bonus account when purchasing spare parts and accessories in a certified Larson service.",
             },
           },
           {
             p: {
-              ru: "Приложение доступно в App Store и Google Play.",
+              ru:
+                "Бонусами можно оплатить любые работы, выполняемые в Larson из расчета 1 балл = 1 рубль.",
               eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "Bonuses can be used to pay for any service performed in Larson at the rate of 1 point = 1 ruble.",
             },
           },
         ],
@@ -758,6 +766,17 @@ export default {
               eng: `Mozhayskoe highway, pl. 167,`,
               type: "p",
             },
+            {
+              ru: `54-й км МКАД, внешняя сторона.
+            `,
+              eng: `54-th km MKAD, outer side.`,
+              type: "p",
+            },
+            {
+              ru: `Внимание! Заезд с дублёра МКАД.`,
+              eng: `Attention! Entrance from MKAD sidepath.`,
+              type: "p",
+            },
           ],
           a: [
             {
@@ -800,6 +819,10 @@ export default {
       },
 
       clients: {
+        h1: {
+          ru: `Корпоративным клиентам`,
+          eng: `Corporate`,
+        },
         h2: [
           {
             ru: `Larson для корпоративных Клиентов — это:`,
@@ -1012,23 +1035,16 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-3.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "20% на День рождения",
+          eng: "20% for your birthday",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "Разовая скидка 20% на обслуживание в сервисе Larson действует в Ваш день рождения и в течение следующих 20 дней.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
-            },
-          },
-          {
-            p: {
-              ru: "Приложение доступно в App Store и Google Play.",
-              eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "A one-time 20% discount on Larson service is valid on your birthday and for the next 20 days.",
             },
           },
         ],
@@ -1036,23 +1052,25 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-4.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "До 15% бонусами по программе «Larson бонус». Присоединяйтесь!",
+          eng:
+            "Up to 15% to bonus points under the Larson Bonus program. Join us!",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "До 15% начисляется на бонусный счёт при покупке запасных частей и аксессуаров в сертифицированном сервисе Larson.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
+                "Up to 15% is going to your bonus account when purchasing spare parts and accessories in a certified Larson service.",
             },
           },
           {
             p: {
-              ru: "Приложение доступно в App Store и Google Play.",
+              ru:
+                "Бонусами можно оплатить любые работы, выполняемые в Larson из расчета 1 балл = 1 рубль.",
               eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "Bonuses can be used to pay for any service performed in Larson at the rate of 1 point = 1 ruble.",
             },
           },
         ],

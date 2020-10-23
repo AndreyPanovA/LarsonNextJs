@@ -23,7 +23,7 @@ export default function Review({ json }) {
     },
   };
   return (
-    <MainLayout url={url}>
+    <MainLayout url={url} shadowBackground={false}>
       <div className={"flex_cw " + cls.reviewWrap}>
         <Rating />
         <div className={cls.review} onScroll={callbacks.onScroll}>

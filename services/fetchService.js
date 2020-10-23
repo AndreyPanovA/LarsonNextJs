@@ -1,7 +1,5 @@
-const env = require("../next.config").env.API_URI;
-
 const FetchServ = new (class FetchService {
-  _apiBase = `${env}/api/`;
+  _apiBase = `${process.env.HOST}/api/`;
   _apiLarsonBase = "https://larsonv.ru/mobile.php";
   async getResourse(url, type = "json") {
     return await (await fetch(`${this._apiBase}${url}`))[type]();

@@ -8,13 +8,15 @@ function Corporate({ lang }) {
     corporateClients,
     volvo: {
       pages: {
-        clients: { h2, li },
+        clients: { h2, li, h1 },
       },
     },
   } = dataStorage;
   return (
     <MainLayout url={url}>
       <div className={cls.container}>
+        <h1>{h1[lang]}</h1>
+
         <h2>{h2[0][lang]}</h2>
         <ul>
           {li.map((l, idx) => (

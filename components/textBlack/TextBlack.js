@@ -9,7 +9,6 @@ function TextBlack({
   text = "Tur",
   lang,
 }) {
-  console.log(isPano);
   return (
     <>
       <div className={cls.container}>
@@ -22,7 +21,7 @@ function TextBlack({
           <div className={cls.imgContainer}>
             <h2 className="tcenter">{text[lang]}</h2>
             {isPano.map(({ url, text }, idx) => {
-              return <Tour src={url} text={text[lang]} />;
+              return <Tour src={url} text={text[lang]} key={url} />;
             })}
           </div>
         )}

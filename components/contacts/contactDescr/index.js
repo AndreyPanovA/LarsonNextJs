@@ -22,7 +22,7 @@ const ContactDescr = ({ lang, page = "mers" }) => {
         </div>
       ) : (
         <div className={cls.card}>
-          <div className={cls.cardPad}>
+          <div className={cls.cardPad + " " + cls.flexBasis}>
             <h1>{contact.h2[lang]}</h1>
             <div className={cls.cardTextBlock}>
               {contact.textNode.map((el, idx) => (
@@ -33,7 +33,7 @@ const ContactDescr = ({ lang, page = "mers" }) => {
             </div>
           </div>
           <div className={cls.cardPad}>
-            <p>Larson Mozhayka, by car:</p>
+            <h4>Larson Mozhayka, by car:</h4>
             <div className={cls.video}>
               <iframe
                 src="https://www.youtube.com/embed/IyYqO61suaI"

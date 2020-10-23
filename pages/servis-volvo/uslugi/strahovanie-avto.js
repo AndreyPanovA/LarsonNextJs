@@ -16,12 +16,12 @@ function Inshurance({ json, lang }) {
           <p key={idx}>{el[lang]}</p>
         ))}
 
-        <p>
+        {/* <p>
           <a href="tel:+79099538952">+7 (909) 953-89-52 </a>(Telegram, WhatsApp)
         </p>
         <p>
           <a href="mailto:resopro@reso.ru">resopro@reso.ru</a>
-        </p>
+        </p> */}
 
         {/* <p>И в ближайших партнерских офисах:</p>
         <p>ул.Садовники, д.3</p> */}

@@ -23,16 +23,3 @@
   left: 50%;
   transform: translate(-50%, 20%);
 }
-.main {
-  &::before {
-    background-image: url("/assets/img/backgrounds/volvo/body-shad.png");
-    content: "";
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-size: cover;
-    background-position: center top;
-  }
-}

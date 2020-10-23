@@ -1,4 +1,5 @@
-import { data } from "../../data";
+// import { data } from "../../data";
+const { data } = require("../../data");
 const { nav } = data;
 export default (req, res) => {
   res.statusCode = 200;

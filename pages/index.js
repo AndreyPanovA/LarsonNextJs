@@ -64,6 +64,6 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export const getStaticProps = async () => FetchServ.getHomeKeys();
+export const getServerSideProps = async () => FetchServ.getHomeKeys();
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
