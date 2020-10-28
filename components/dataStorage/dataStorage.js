@@ -19,7 +19,7 @@ export default {
       alt: "Mers",
       h2ru: "Сервис Мерседес-Бенц",
       h2eng: "Mersedes-Benz service",
-      href: "/mers",
+      href: "/servis-mercedes-benz",
     },
   ],
   corporateClients: [

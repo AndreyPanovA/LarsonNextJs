@@ -25,7 +25,7 @@ export const data = {
         ru: "Сервис Мерседес-Бенц",
         eng: "Mersedes-Benz service",
       },
-      href: "/mers",
+      href: "/servis-mercedes-benz",
     },
   ],
   corporateClients: [
