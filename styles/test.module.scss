@@ -22,4 +22,9 @@
   top: 0;
   left: 50%;
   transform: translate(-50%, 20%);
+  z-index: 10000;
+  cursor: pointer;
+  img {
+    width: 100%;
+  }
 }

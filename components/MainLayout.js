@@ -41,9 +41,9 @@ function MainLayout({
         </div>
 
         {logo && (
-          <div href={`/`} onClick={router}>
+          <div href={`/`} onClick={router} className={cls.headerLogo}>
             <a>
-              <img src={dataStorage.headerLogo} className={cls.headerLogo} />
+              <img src={dataStorage.headerLogo} />
             </a>
           </div>
         )}

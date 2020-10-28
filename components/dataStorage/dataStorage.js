@@ -80,6 +80,10 @@ export default {
       eng: "Diagnostic Card",
       href: "uslugi/diagnosticheskaya-karta",
     },
+    {
+      ru: "MB",
+      eng: "MB",
+    },
   ],
   footerText: {
     ru: "C «Larson Бонус» выгоднее! Наше приложение:",

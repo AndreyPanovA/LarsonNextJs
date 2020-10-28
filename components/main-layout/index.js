@@ -34,7 +34,7 @@ function MainLayout1({
           </Link>
         )}
 
-        <Navigation site={site} />
+        <Navigation site={site} siteURL={} />
         {children}
       </main>
       <Footer color={color} btn={btn} />

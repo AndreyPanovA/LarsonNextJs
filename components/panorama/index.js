@@ -1,6 +1,9 @@
 import cls from "./index.module.scss";
 
-const Tour = ({ text, src }) => {
+const Tour = ({
+  text,
+  src = "https://yandex.ru/map-widget/v1/-/CCQh4GuthC",
+}) => {
   return (
     <div className={cls.card}>
       <h2>{text}</h2>
