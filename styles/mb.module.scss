@@ -330,6 +330,7 @@
     cursor: -webkit-grab;
     cursor: grab;
   }
+
   .header_descr-top {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -354,6 +355,7 @@
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
+    margin-top: 25px;
   }
   .serv-comand h2 {
     font-size: 35px !important;
@@ -368,11 +370,12 @@
     font-size: 14px !important;
   }
 }
+
 @media (max-width: 767px) {
   .serv_header-descr {
     margin: 0 !important;
     -ms-flex-preferred-size: 60% !important;
-    flex-basis: 60% !important;
+    flex-basis: 100% !important;
   }
   .little,
   .huge {
