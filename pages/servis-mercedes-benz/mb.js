@@ -4,6 +4,10 @@ import dataStorage from "../../components/dataStorage/dataStorage";
 import cls from "../../styles/mb.module.scss";
 import Tour from "../../components/panorama/index";
 import LogicServ from "../../services/logicService";
+import { useState } from "react";
+import MbItems from "./mbv/[id]/index"
+import Link from "next/link";
+import {data} from "../../data";
 const { cn } = LogicServ;
 const MbMap = () => {
   return (
@@ -42,107 +46,113 @@ const MbMap = () => {
           src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e59348621f8f7d443d881e0e9454b2d4df2ca1b9b90391de232e09144a4129f&amp;source=constructor"
           width="100%"
           height="720"
-          frameborder="0"
+          frameBorder="0"
         ></iframe>
       </div>
     </div>
   );
 };
-const MbItems = (
-  <>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
+// const MbItems =()=>{ 
+//   const [modal, setModal]= useState(false)
+//   return (
 
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
+//   <>
+//     <div className={cn(cls["serv-item"],{ modal: modal} )} onClick={()=> {
+//       setModal((prev)=> !prev)
+//     }}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
 
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
 
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
 
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
 
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-    <div className={cls["serv-item"]}>
-      <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
-      <p>Toyota RAV4</p>
-    </div>
-  </>
-);
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//     <div className={cls["serv-item"]}>
+//       <img src="../assets/img/toyota_RAV4/1.jpg" alt="" />
+//       <p>Toyota RAV4</p>
+//     </div>
+//   </>
+// );}
 export default function Mb() {
   const { about: url } = dataStorage.backgroundsUrl;
+  const {volvo:{pages:{itemElement:item}}}=data;
   return (
     <MainLayout>
       <div className={cn("", "", "", cls["blur_container"])}>
@@ -167,11 +177,11 @@ export default function Mb() {
                   id="enter"
                   name={cls["service"] + " " + cls.checked + " " + cls.input}
                 />
-                <label for="enter">Записаться в сервис Volvo</label>
+                <label htmlFor="enter">Записаться в сервис Volvo</label>
               </div>
               <div className={cls["check_2"]}>
                 <input type="radio" id="tow" name="service" />
-                <label for="tow">Вызвать эвакуатор</label>
+                <label htmlFor="tow">Вызвать эвакуатор</label>
               </div>
               <h2>Телефон</h2>
               <div className={cls["flex_cc"]}>
@@ -201,8 +211,17 @@ export default function Mb() {
             </div>
           </div>
           <div className={cls["serv-container"]}>
-            <div className={cls["catalog_row"] + " " + cls.flex_c}>
-              {MbItems}
+            <div className={cn(cls["catalog_row"], cls.flex_c)}>
+            {item.map((el,idx)=> {
+                return ( 
+                <Link href={`mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
+                  <a className={cn(cls["serv-item"])}>
+                      <img src={el.img} alt="" />
+                      <p>{el.title["ru"]}</p>
+                  </a>
+                </Link>)
+            })}
+             
             </div>
           </div>
         </div>

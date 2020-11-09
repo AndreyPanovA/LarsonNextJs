@@ -135,6 +135,15 @@
       position: relative;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+
+    
+     &::before, &::after {
+       content: "";
+       border-top:2px solid black;
+       filter: blur(5px);
+       width: 100%;
+       margin: 25px 0;
+     }
       .serv-item {
         text-align: center;
         font-size: 12px;

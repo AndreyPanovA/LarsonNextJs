@@ -4,6 +4,7 @@ import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 import FetchServ from "../../services/fetchService";
 
+
 function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.volvo;
   const { panorama: isPano, text } = dataStorage.components.tur;

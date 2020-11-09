@@ -862,6 +862,134 @@ export const data = {
           },
         ],
       },
+      itemElement: [{
+        id:1,
+        title: {
+          ru: "Volvo-C30", eng:
+          "Volvo-C30"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-C30.png"
+      }, 
+      {
+        id:2,
+        title: {
+          ru: "Volvo-C70", eng:
+          "Volvo-C70"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-C70.png"
+      },
+       {
+        id:3,
+        title: {
+          ru: "Volvo-S40", eng:
+          "Volvo-S40"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-S40.png"
+      }, 
+      {
+        id:4,
+        title: {
+          ru: "Volvo-S60", eng:
+          "Volvo-S60"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-S60.png"
+      }, 
+      {
+        id:5,
+        title: {
+          ru: "Volvo-S80", eng:
+          "Volvo-S80"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-S80.png"
+      }, 
+      {
+        id:6,
+        title: {
+          ru: "Volvo-S90", eng:
+          "Volvo-S90"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-S90.png"
+      },
+      {
+        id:7,
+        title: {
+          ru: "Volvo-V40", eng:
+          "Volvo-V40"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-V40.png"
+      },
+      {
+        id:8,
+        title: {
+          ru: "Volvo-V50", eng:
+          "Volvo-V50"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-V50.png"
+      },
+      {
+        id:9,
+        title: {
+          ru: "Volvo-V60", eng:
+          "Volvo-V60"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-V60big.png"
+      },
+      {
+        id:10,
+        title: {
+          ru: "Volvo-XC60", eng:
+          "Volvo-XC60"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-XC60.png"
+      },
+      {
+        id:11,
+        title: {
+          ru: "Volvo-XC70", eng:
+          "Volvo-XC70"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-XC70.png"
+      },
+      {
+        id:12,
+        title: {
+          ru: "Volvo-XC90", eng:
+          "Volvo-XC90"
+        },
+        img: "/assets/img/volvo/dinamicItems/Volvo-XC90.png"
+      },
+      {
+        id:13,
+        title: {
+          ru: "Volvo-V90", eng:
+          "Volvo-V90"
+        },
+        img: "/assets/img/volvo/dinamicItems/VolvoV90.png"
+      },
+      {
+        id:14,
+        title: {
+          ru: "Volvo-xc40", eng:
+          "Volvo-xc40"
+        },
+        img: "/assets/img/volvo/dinamicItems/volvo-xc40.png"
+      },
+      {
+        id:15,
+        title: {
+          ru: "xc60ii2-resizebig.png", eng:
+          "xc60ii2-resizebig.png"
+        },
+        img: "/assets/img/volvo/dinamicItems/xc60ii2-resizebig.png"
+      },
+      {
+        id:16,
+        title: {
+          ru: "xc90ii2-resizebig.png", eng:
+          "xc90ii2-resizebig.png"
+        },
+        img: "/assets/img/volvo/dinamicItems/xc90ii2-resizebig.png"
+      }]
     },
     promoPage: [
       {
@@ -975,6 +1103,7 @@ export const data = {
         ],
       },
     ],
+ 
   },
   backgroundsUrl: {
     volvo: {
