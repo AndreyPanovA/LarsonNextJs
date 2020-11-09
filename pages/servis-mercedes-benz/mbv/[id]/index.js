@@ -25,6 +25,7 @@ const MbItems =(props)=>{
             <img src={item[id].img} alt="" />
             <p>{item[id].title["ru"]}</p>
         </div>}
+        
     </MainLayout>
     </>
   );}
