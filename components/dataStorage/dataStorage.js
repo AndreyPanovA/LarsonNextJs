@@ -12,14 +12,14 @@ export default {
       alt: "Volvo",
       h2ru: "Сервис Вольво",
       h2eng: "Volvo Service",
-      href: "/servis-volvo/about",
+      href: "/servis-volvo",
     },
     {
       img: "/assets/img/keys/myKey3.png",
       alt: "Mers",
       h2ru: "Сервис Мерседес-Бенц",
       h2eng: "Mersedes-Benz service",
-      href: "/mers/about",
+      href: "/servis-mercedes-benz",
     },
   ],
   corporateClients: [
@@ -80,6 +80,10 @@ export default {
       eng: "Diagnostic Card",
       href: "uslugi/diagnosticheskaya-karta",
     },
+    {
+      ru: "MB",
+      eng: "MB",
+    },
   ],
   footerText: {
     ru: "C «Larson Бонус» выгоднее! Наше приложение:",
@@ -95,7 +99,7 @@ export default {
     pages: {
       about: [
         { h1: { ru: "ЛУЧШЕЕ В", eng: "THE BEST OF" } },
-        { h1: { ru: "МЕРСЕДЕС!", eng: "MERCEDES-BENZ!" } },
+        { h1: { ru: "МЕРСЕДЕС!", eng: "MERCEDES- BENZ!" } },
         {
           p: {
             ru: `  История Larson началась в 2011 году. Открыт первый магазин запчастей
@@ -192,6 +196,12 @@ export default {
               style: { display: "inline", marginLeft: 10 },
             },
             {
+              ru: `info@larsonv.ru`,
+              eng: `info@larsonv.ru`,
+              type: "a",
+              style: { display: "block", marginTop: 10 },
+            },
+            {
               ru: "Larson Коломенская (открыть в Яндекс.Навигаторе)",
               eng: "Larson Kolomenskaya (open in Yandex.Navigator)",
               type: "a",
@@ -207,17 +217,6 @@ export default {
               eng: `Andropova Av., 22, bld.2, Nagatinsky business centre.`,
               type: "p",
             },
-            {
-              ru: "Larson Можайка (открыть в Яндекс.Навигаторе)",
-              eng: "Larson Mozhayka (open in Yandex.Navigator)",
-              type: "a",
-              style: { marginTop: 25 },
-            },
-            {
-              ru: `Можайское шоссе, вл. 167,`,
-              eng: `Mozhayskoe highway, pl. 167,`,
-              type: "p",
-            },
           ],
           a: [
             {
@@ -227,21 +226,85 @@ export default {
             },
           ],
         },
+        videoPath: [
+          {
+            src: "",
+            title: {
+              ru: "Ларсон Коломенская, на машине:",
+              eng: "Larson Kolomenskaya, by car:",
+            },
+            p: [
+              {
+                ru:
+                  "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                eng:
+                  "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+              },
+              {
+                ru:
+                  "- По Нагатинской набережной: направо перед Нагатинским мостом, далее вверх от набережной, сразу после АЗС «Лукойл» направо на территорию БЦ «Нагатинский».",
+                eng:
+                  "- Along the Nagatinskaya embankment: to the right in front of the Nagatinskiy bridge, further up from the embankment, immediately after the Lukoil gas station, to the right into the territory of the Nagatinskiy business center.",
+              },
+              {
+                ru:
+                  "- Из области: по проспекту Андропова, разворот под Нагатинским мостом, далее вверх от набережной, сразу после АЗС «Лукойл» направо на территорию БЦ «Нагатинский».",
+                eng:
+                  "- From the suburbs: along Andropova Avenue, a U-turn under the Nagatinsky Bridge, further up from the embankment, right after the Lukoil gas station, to the right to the territory of the Nagatinsky business center. Welcome!",
+              },
+              { ru: "Добро пожаловать!", eng: "Welcome!" },
+            ],
+          },
+          {
+            src: "",
+            title: {
+              ru: "Larson Коломенская, на метро или пешком:",
+              eng: "Larson Kolomenskaya, by metro or by feet:",
+            },
+            p: [
+              {
+                ru:
+                  "- По замоскворецкой линии метро (зеленая ветка) до станции Коломенская, последний вагон из центра, выход налево, из стеклянных дверей налево, в сторону улиц: проспект Андропова и Высокая улица (Выходы номер 5 и 6), далее по лестнице направо (выход номер 6).",
+                eng:
+                  "- Along the Zamoskvoretskaya metro line (green line) to Kolomenskaya station, the last carriage from the center, exit to the left, from the glass doors to the left, towards the streets: Andropova Av. and Vysokaya St. (Exits 5 and 6), then along the stairs to the right (exit 6).",
+              },
+              {
+                ru:
+                  "- Выйдя на улицу идете прямо, вдоль проспекта Андропова вниз к набережной до торгово-развлекательного комплекса «НОРА».",
+                eng:
+                  "- Going outside, go straight along Andropov Avenue down to the embankment to the HOPA shopping and entertainment complex.",
+              },
+              {
+                ru:
+                  "- Поворачиваете налево и идете прямо вдоль торгово-развлекательного комплекса “НОРА”, так чтобы он оставался по правую руку.",
+                eng:
+                  "- Turn left and go straight along the HOPA shopping and entertainment complex, so that it remains on your right.",
+              },
+              {
+                ru:
+                  "- Далее увидите вывеску «Кузовной центр Larson». Проходите мимо до угла здания и поворачиваете направо, затем прямо до вывески Larson и снова направо, входите в дверь и на КПП говорите “Здравствуйте, я в Larson”.",
+                eng: `- Next you will see a signboard "Кузовной центр Larson". Walk past the corner of the building and turn right, then straight to the Larson sign and right again, go through the door and at the checkpoint say "Zdravstvuyte, ya v Larson."`,
+              },
+              {
+                ru: `- После КПП, во внутреннем дворе двигаетесь прямо, слева одно отдельно стоящее здание — это «Larson».`,
+                eng: `- After the checkpoint, move straight in the courtyard, on the left there is one detached building — this is Larson.`,
+              },
+              { ru: "Добро пожаловать!", eng: "Welcome!" },
+            ],
+          },
+        ],
         videoRoute: {
           row: [
             {
               textNode: [
                 {
-                  ru: "",
-                  eng: "By car:",
-                  type: "p",
-                },
-                {
-                  ru: "",
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
                   eng:
-                    "From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
                   type: "p",
                 },
+
                 {
                   // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
                   atributes: {
@@ -249,7 +312,53 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
+                  },
+                  type: "iframe",
+                },
+              ],
+            },
+            {
+              textNode: [
+                {
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                  eng:
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                  type: "p",
+                },
+
+                {
+                  // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                  atributes: {
+                    src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                    allowFullScreen: true,
+                  },
+                  type: "iframe",
+                },
+              ],
+            },
+            {
+              textNode: [
+                {
+                  ru:
+                    "- Из центра: по проспекту Андропова, после Нагатинского моста направо, вниз к набережной и налево на территорию БЦ «Нагатинский» перед АЗС «Лукойл».",
+                  eng:
+                    "- From the center: along Andropova Av., after the Nagatinsky Bridge, to the right, down to the embankment and to the left to the territory of the Nagatinsky business center in front of the Lukoil gas station",
+                  type: "p",
+                },
+
+                {
+                  // src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                  atributes: {
+                    src: "https://www.youtube.com/embed/iBTVf8yDd1M",
+                    frameborder: "0",
+                    allow:
+                      "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -481,14 +590,14 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-3.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "20% на День рождения",
+          eng: "20% for your birthday",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "A one-time 20% discount on Larson service is valid on your birthday and for the next 20 days.",
               eng:
                 "Register in Larson Car app and get 2000 bonus points to your account.",
             },
@@ -505,23 +614,25 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-4.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "До 15% бонусами по программе «Larson бонус». Присоединяйтесь!",
+          eng:
+            "Up to 15% to bonus points under the Larson Bonus program. Join us!",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "До 15% начисляется на бонусный счёт при покупке запасных частей и аксессуаров в сертифицированном сервисе Larson.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
+                "Up to 15% is going to your bonus account when purchasing spare parts and accessories in a certified Larson service.",
             },
           },
           {
             p: {
-              ru: "Приложение доступно в App Store и Google Play.",
+              ru:
+                "Бонусами можно оплатить любые работы, выполняемые в Larson из расчета 1 балл = 1 рубль.",
               eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "Bonuses can be used to pay for any service performed in Larson at the rate of 1 point = 1 ruble.",
             },
           },
         ],
@@ -659,6 +770,17 @@ export default {
               eng: `Mozhayskoe highway, pl. 167,`,
               type: "p",
             },
+            {
+              ru: `54-й км МКАД, внешняя сторона.
+            `,
+              eng: `54-th km MKAD, outer side.`,
+              type: "p",
+            },
+            {
+              ru: `Внимание! Заезд с дублёра МКАД.`,
+              eng: `Attention! Entrance from MKAD sidepath.`,
+              type: "p",
+            },
           ],
           a: [
             {
@@ -690,7 +812,7 @@ export default {
                     frameborder: "0",
                     allow:
                       "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture",
-                    allowfullscreen: true,
+                    allowFullScreen: true,
                   },
                   type: "iframe",
                 },
@@ -701,6 +823,10 @@ export default {
       },
 
       clients: {
+        h1: {
+          ru: `Корпоративным клиентам`,
+          eng: `Corporate`,
+        },
         h2: [
           {
             ru: `Larson для корпоративных Клиентов — это:`,
@@ -798,21 +924,12 @@ export default {
         },
         p: [
           {
-            ru: `«Larson» сотрудничает с крупнейшей универсальной страховой компанией «РЕСО». Для наших Клиентов предусмотрен весь перечень страхования, в том числе страхование домов и квартир, выездов за рубеж, корпоративное страхование и др.`,
-            eng: `Larson cooperates with the largest universal insurance company RESO. For our Clients, the entire list of insurance is provided, including insurance of houses and apartments, travel abroad, corporate insurance, etc.`,
+            ru: `«Larson» сотрудничает с крупнейшей универсальной страховой компанией «РЕСО». Страховое публичное акционерное общество «РЕСО-Гарантия» `,
+            eng: `Larson cooperates with the largest universal insurance company RESO. Public insurance company RESO-Garantia `,
           },
           {
-            ru: `Получите комфортные условия страхования по промокоду Larson у персонального менеджера:`,
-            eng: `Get comfortable insurance conditions with the Larson promo code from your personal manager:`,
-          },
-          {
-            ru: `Мария Иванова`,
-            eng: `Maria Ivanova`,
-          },
-          { ru: ``, eng: `+7 (909) 953-89-52(also on Telegram, WhatsApp)` },
-          {
-            ru: `И в ближайших партнерских офисах:`,
-            eng: `ул.Садовники, д.3:ул.Речников, д.21, стр.4`,
+            ru: `(СПАО «РЕСО-Гарантия») предоставляет широкий спектр услуг по страхованию физических и юридических лиц. Приоритетными направлениями деятельности являются автострахование (КАСКО и ОСАГО, а также ДГО), добровольное медицинское страхование, страхование имущества физических и юридических лиц, ипотечное страхование, страхование туристов, страхование от несчастных случаев и другие виды. Обращайтесь к мастерам-консультантам «Larson» для оформления страховых продуктов для себя и своего автомобиля`,
+            eng: `(SPAO RESO-Garantia) provides a wide range of insurance services for individuals and legal entities. The priority areas of activity are car insurance (CASCO and OSAGO, as well as voluntary medical insurance), property insurance for individuals and legal entities, mortgage insurance, travel insurance, accident insurance and other types. Contact the managers at Larson to arrange insurance products for yourself and your car.`,
           },
         ],
       },
@@ -842,16 +959,21 @@ export default {
             eng: `In the Larson service you can get a diagnostic card necessary for issuing an OSAGO policy.`,
           },
           {
-            ru: `При прохождении любого ТО на любой модели «Вольво» вы получите карту бесплатно.`,
-            eng: `When passing any MOT on any Volvo model, you will receive a card for free.`,
+            ru: `Необходимо соблюдение двух условий:`,
+            eng: `There are two requirements:`,
           },
           {
-            ru: `Просто предупредите нашего оператора во время записи на сервис по +7 (495) 781-10-81, единый для «Larson» Коломенская и «Larson» Можайка.`,
-            eng: `Just notify our operator when registering for the service by +7 (495) 781-10-81, the same for Larson Kolomenskaya and Larson Mozhayka.`,
+            ru: ` прохождение технического обслуживания в «Larson»; `,
+            eng: `technical maintenance must be done at Larson;`,
+          },
+
+          {
+            ru: `◦  приобретение полиса ОСАГО в «Larson».`,
+            eng: `◦  purchase of a CTP policy from Larson.`,
           },
           {
-            ru: `Согласно последним изменениям в законодательстве, итоговым документом, подтверждающим технический осмотр транспортного средства, является не талон ТО, а диагностическая карта. В ней содержатся сведения о соответствии или несоответствии транспортного средства обязательным требованиям безопасности. Если техосмотр успешно пройден, в диагностическую карту заносится информация о сроке её действия, а также фамилия, инициалы и подпись технического эксперта, принявшего решение о её выдаче. Сведения о выданной диагностической карте передаются операторами в единую информационную систему технического осмотра (ЕАИСТО).`,
-            eng: `According to the latest changes in legislation, the final document confirming the technical inspection of the vehicle is not a MOT coupon, but a diagnostic card. It contains information about the compliance or non-compliance of the vehicle with the mandatory safety requirements. If the inspection is successfully passed, information about its validity period is entered into the diagnostic card, as well as the surname, initials and signature of the technical expert who made the decision to issue it. Information about the issued diagnostic card is transferred by operators to the Unified Technical Inspection Information System (EAISTO).`,
+            ru: `◦  «Larson» не оказывает услуги по проведению технического осмотра и выдаче диагностической карты на возмездной основе.`,
+            eng: `◦  We don't sell diagnostic cards without technical maintenance.`,
           },
         ],
       },
@@ -922,23 +1044,16 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-3.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "20% на День рождения",
+          eng: "20% for your birthday",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "Разовая скидка 20% на обслуживание в сервисе Larson действует в Ваш день рождения и в течение следующих 20 дней.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
-            },
-          },
-          {
-            p: {
-              ru: "Приложение доступно в App Store и Google Play.",
-              eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "A one-time 20% discount on Larson service is valid on your birthday and for the next 20 days.",
             },
           },
         ],
@@ -946,23 +1061,25 @@ export default {
       {
         url: "/assets/img/volvo/promo/promo-4.jpg",
         h2: {
-          ru: "2000 бонусов при регистрации в приложении Larson Car!",
-          eng: "2000 bonuses when registering in the Larson Car app!",
+          ru: "До 15% бонусами по программе «Larson бонус». Присоединяйтесь!",
+          eng:
+            "Up to 15% to bonus points under the Larson Bonus program. Join us!",
         },
         text: [
           {
             p: {
               ru:
-                "Зарегистрируйтесь в приложении Larson Car и получите 2000 бонусных баллов на свой счет.",
+                "До 15% начисляется на бонусный счёт при покупке запасных частей и аксессуаров в сертифицированном сервисе Larson.",
               eng:
-                "Register in Larson Car app and get 2000 bonus points to your account.",
+                "Up to 15% is going to your bonus account when purchasing spare parts and accessories in a certified Larson service.",
             },
           },
           {
             p: {
-              ru: "Приложение доступно в App Store и Google Play.",
+              ru:
+                "Бонусами можно оплатить любые работы, выполняемые в Larson из расчета 1 балл = 1 рубль.",
               eng:
-                "The application is available in the AppStore and GooglePlay.",
+                "Bonuses can be used to pay for any service performed in Larson at the rate of 1 point = 1 ruble.",
             },
           },
         ],
@@ -993,11 +1110,42 @@ export default {
       promo: "/assets/img/backgrounds/volvo/promo-volvo-bg.jpg",
       ditails: "/assets/img/backgrounds/mers/ditails-mers-bg.jpg",
       inshurance: "/assets/img/backgrounds/volvo/insurance-volvo-bg.jpg",
-      tow: "/assets/img/backgrounds/volvo/tow-volvo-bg.jpg",
+      tow: "/assets/img/backgrounds/mers/tow-mers-bg.jpg",
       card: "/assets/img/backgrounds/volvo/diagnostic-card-volvo-bg.jpg",
     },
     about: "/assets/img/backgrounds/bg-review.jpg",
     review: "/assets/img/backgrounds/bg-review.jpg",
   },
   headerLogo: "/assets/img/larson-white.svg",
+  components: {
+    tur: {
+      text: {
+        ru: "Тур",
+        eng: "Tur",
+      },
+      panorama: [
+        {
+          url: "https://lk.larsonv.ru/assets/panorama/1/tour.html",
+          text: {
+            ru: "Слесарный цех Коломенская",
+            eng: "Car Service Kolomenskaya",
+          },
+        },
+        {
+          url: "https://lk.larsonv.ru/assets/panorama/3/tour.html",
+          text: { ru: "Кузовной сервис", eng: "Car Body Service" },
+        },
+      ],
+      ru: "Тур",
+      eng: "Tur",
+    },
+    map: {
+      ru: "Larson Коломенская",
+      eng: "Larson Kolomenskaya",
+    },
+    pathDescr: {
+      ru: "Метро Коломенская",
+      eng: "Kolomenskaya metro station",
+    },
+  },
 };

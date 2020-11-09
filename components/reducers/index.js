@@ -1,5 +1,6 @@
 const initialState = {
   lang: "ru",
+  site: "/servis-volvo",
 };
 
 const reducer = (state = initialState, action) => {
@@ -8,6 +9,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         lang: action.lang,
+      };
+    case "SELECT_NAV":
+      return {
+        ...state,
+        site: action.site,
       };
     default:
       return state;

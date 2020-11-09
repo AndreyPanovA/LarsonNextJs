@@ -1,3 +1,17 @@
+.count {
+  &:nth-of-type(2) {
+    img {
+      width: 80%;
+      width: 250px;
+    }
+  }
+  &:nth-child(3) {
+    img {
+      margin-top: 25px;
+      max-width: 170px !important;
+    }
+  }
+}
 .keysWrapper {
   height: 100vh;
   color: white;
@@ -19,18 +33,19 @@
       img {
         width: 220px;
       }
-      &:nth-child(2) {
-        img {
-          width: 80%;
-          width: 240px;
-        }
-      }
-      &:nth-child(3) {
-        img {
-          margin-top: 25px;
-          width: 180px;
-        }
-      }
+      // &:nth-of-type(2) {
+      //   img {
+      //     width: 80%;
+      //     width: 240px;
+      //     border: 2px solid red;
+      //   }
+      // }
+      // &:nth-child(3) {
+      //   img {
+      //     margin-top: 25px;
+      //     width: 180px;
+      //   }
+      // }
       text-align: center;
       width: 300px;
       transition: 0.2s ease-in-out;

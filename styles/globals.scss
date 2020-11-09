@@ -1,3 +1,5 @@
+@import "./mixins.scss";
+
 html,
 body {
   padding: 0;
@@ -19,11 +21,25 @@ a {
     cursor: pointer;
   }
 }
-
+// p {
+//   font-weight: 200;
+// }
+label {
+  margin-left: 15px;
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+h1 {
+  font-size: 25px;
+}
+// h2 {
+//   font-size: 15px;
+// }
+p {
+  font-size: 14px;
 }
 .container {
   max-width: 1170px;
@@ -69,5 +85,32 @@ ul {
     border: none;
     width: 100%;
     min-height: 230px;
+  }
+}
+
+.shad__reviw {
+  border: 2px solid #ccc;
+  margin-bottom: 15px;
+  @include shadowGlowing();
+  padding: 10px 20px;
+  border-radius: 5px;
+  line-height: 25px;
+}
+
+.tcenter {
+  text-align: center;
+}
+
+.main {
+  &::before {
+    background-image: url("/assets/img/backgrounds/volvo/body-shad.png");
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center top;
   }
 }

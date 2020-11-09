@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p $PORT",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "local": "next start -p 3000"
   },
   "dependencies": {
     "next": "9.5.2",
@@ -14,6 +15,7 @@
     "react-dom": "16.13.1",
     "react-redux": "^7.2.1",
     "redux": "^4.0.5",
-    "sass": "^1.26.10"
+    "sass": "^1.26.10",
+    "swr": "^0.3.5"
   }
 }
