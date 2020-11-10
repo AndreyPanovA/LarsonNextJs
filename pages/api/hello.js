@@ -3,6 +3,12 @@
 const { data } = require("../../data");
 const { keys } = data;
 export default (req, res) => {
-  res.statusCode = 200;
-  res.json(keys);
+  try {
+    res.statusCode = 200;
+    res.json(keys);
+  }
+  catch(e) {
+    console.log(e)
+  }
+
 };
