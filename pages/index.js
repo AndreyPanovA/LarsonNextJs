@@ -10,9 +10,18 @@ import DataServ from "../services/dataService";
 import LogicServ from "../services/logicService";
 import Item from "../components/item";
 
+// import ModelViewer from 'react-model-viewer';
+// import 
+// import "../public/scene.bin"
+
+// const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
+const modelPath = "/scene.gltf"
+
+// const test = ""
 const { cn } = LogicServ;
 class Home extends Component {
   constructor(props) {
+
     super(props);
     this.callbacks = {
       onClick: (key) => {
@@ -24,6 +33,12 @@ class Home extends Component {
   router = (site) => {
     Router.push(`${site}`);
   };
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+       require('@google/model-viewer');
+    }
+
+  }
 
   render() {
     const { lang, json } = this.props;
@@ -35,6 +50,7 @@ class Home extends Component {
         btn="btn"
         logo={false}
       >
+ <model-viewer src={modelPath}  camera-controls auto-rotate></model-viewer> 
         <div className={cn(cls["keysWrapper"], "flex_c")}>
           <img
             src="/assets/img/larson-start.svg"
