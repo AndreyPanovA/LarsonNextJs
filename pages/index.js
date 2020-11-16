@@ -15,7 +15,7 @@ import Item from "../components/item";
 // import "../public/scene.bin"
 
 // const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
-const modelPath = "/scene.gltf"
+// const modelPath = "/scene.gltf"
 
 // const test = ""
 const { cn } = LogicServ;
@@ -50,7 +50,7 @@ class Home extends Component {
         btn="btn"
         logo={false}
       >
- <model-viewer src={modelPath}  camera-controls auto-rotate></model-viewer> 
+ {/* <model-viewer src={modelPath}  camera-controls auto-rotate></model-viewer>  */}
         <div className={cn(cls["keysWrapper"], "flex_c")}>
           <img
             src="/assets/img/larson-start.svg"

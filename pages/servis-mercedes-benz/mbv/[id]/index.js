@@ -7,7 +7,7 @@ import cls from "./style.module.scss";
 // http://localhost:3000/servis-mercedes-benz/mb
 import {data} from "../../../../data";
 import LogicServ from "../../../../services/logicService";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 const { cn } = LogicServ;
 // import '@google/model-viewer';
@@ -28,8 +28,16 @@ const { cn } = LogicServ;
 // })
 
 
+
 const MbItems =(props)=>{ 
-  const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
+  // const modelPath = "/t/scene.gltf"
+  const modelPath = "/volvo.gltf"
+  useEffect(()=>{
+    if(typeof window !== 'undefined') {
+      require('@google/model-viewer');
+   }
+  },[])
+
     const {volvo:{pages:{itemElement:item}}}=data;
     const router = useRouter()
     const id = router.query.id
@@ -40,8 +48,10 @@ const MbItems =(props)=>{
     <>
     <MainLayout>
       {/* <DynamicComponentWithNoSSR /> */}
+      <model-viewer src={modelPath}  camera-controls auto-rotate class={cls.model}></model-viewer> 
        {router.query.id && <div className={cn(cls["car-container"])}>
-            <img src={item[id].img} alt="" />
+            {/* <img src={item[id].img} alt="" /> */}
+            
             <p>{item[id].title["ru"]}</p>
         </div>}
         {/* <Scroll /> */}
