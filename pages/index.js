@@ -5,7 +5,8 @@ import React, { Component } from "react";
 import store from "../components/store";
 import { selectNav } from "../components/actions/index";
 import Router from "next/router";
-import FetchServ from "../services/fetchService";
+import DataServ from "../services/dataService";
+
 import LogicServ from "../services/logicService";
 import Item from "../components/item";
 
@@ -64,6 +65,7 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export const getServerSideProps = async () => FetchServ.getHomeKeys();
+// export const getServerSideProps = async () => FetchServ.getHomeKeys();
 
+export const getServerSideProps = async () => DataServ.getHomeKeys();
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -3,6 +3,7 @@ import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 import FetchServ, { getResourse } from "../../services/fetchService";
+import DataServ from "../../services/dataService";
 import cls from "../../styles/mersTitle.module.scss";
 function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.mers;
@@ -28,5 +29,6 @@ function About({ lang, json: about }) {
     </MainLayout>
   );
 }
-export const getServerSideProps = async () => FetchServ.getAbout("mers");
+// export const getServerSideProps = async () => FetchServ.getAbout("mers");
+export const getServerSideProps = async () => DataServ.getAbout("mers");
 export default connect(({ lang }) => ({ lang }))(About);

@@ -2,7 +2,7 @@ import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
-import FetchServ from "../../services/fetchService";
+import DataServ from "../../services/dataService";
 
 
 function About({ lang, json: about }) {
@@ -26,5 +26,6 @@ function About({ lang, json: about }) {
   );
 }
 
-export const getServerSideProps = async () => FetchServ.getAbout("volvo");
+// export const getServerSideProps = async () => FetchServ.getAbout("volvo");
+export const getServerSideProps = async () => DataServ.getAbout("volvo");
 export default connect(({ lang }) => ({ lang }))(About);
