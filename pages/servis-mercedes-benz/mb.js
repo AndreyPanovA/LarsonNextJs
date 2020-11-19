@@ -211,6 +211,13 @@ export default function Mb() {
             </div>
           </div>
           <div className={cls["serv-container"]}>
+          <div className={cls["tab-menu"]}>
+           <p>Техобслуживание</p>
+           <p>Диагностика</p>
+           <p>Ремонт</p>
+           <p>Кузовной ремонт</p>
+           <p>Установка доп. оборудования</p>
+          </div>
             <div className={cn(cls["catalog_row"], cls.flex_c)}>
             {item.map((el,idx)=> {
                 return ( 

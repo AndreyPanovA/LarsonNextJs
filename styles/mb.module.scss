@@ -131,7 +131,7 @@
       opacity: 0.9;
     }
     .catalog_row {
-      margin-top: 10vh;
+      // margin-top: 10vh;
       position: relative;
       -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -570,3 +570,23 @@
 }
 
 //
+.tab-menu {
+  display: flex;
+  color: black;
+  justify-content: center;
+  position: relative;
+  p {
+  border-bottom: 2px solid black;
+  padding: 10px 20px;
+  margin: 35px 0;
+  cursor: pointer;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  transition: .5s ease-in-out;
+  &:hover {
+    background-color: #333;
+    color: white;
+  }
+
+  }
+}

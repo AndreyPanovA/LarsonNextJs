@@ -37,8 +37,6 @@ const MbItems =(props)=>{
       require('@google/model-viewer');
    }
   },[])
-
-
     const {volvo:{pages:{itemElement:item}}}=data;
     const router = useRouter()
     const id = router.query.id
@@ -49,9 +47,8 @@ const MbItems =(props)=>{
     <>
     <MainLayout>
        {router.query.id && <div className={cn(cls["car-container"])}>
-            {modal ? <model-viewer src={modelPath[router.query.id]}  camera-controls auto-rotate class={cls.model}></model-viewer> :     <img src={item[id].img} alt="" onClick={()=> {
+            {modal ? <model-viewer src={modelPath[router.query.id]}  camera-controls auto-rotate class={cls.model}></model-viewer> : <img src={item[id].img} alt="" onClick={()=> {
               setModal(!modal)
-              console.log(modelPath[router.query.id])
             }}/>}
             <p>{item[id].title["ru"]}</p>
         </div>}
