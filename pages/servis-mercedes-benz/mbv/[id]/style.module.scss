@@ -1,7 +1,10 @@
 .car-container{
+    position: relative;
+    img {
     margin-left: 30vw;
     margin-top: 200px;
-    position: relative;
+    position: absolute;
+    }
 }
 .model {
     position: absolute;

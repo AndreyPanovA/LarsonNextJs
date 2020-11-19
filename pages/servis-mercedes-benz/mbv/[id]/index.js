@@ -31,12 +31,13 @@ const { cn } = LogicServ;
 
 const MbItems =(props)=>{ 
   // const modelPath = "/t/scene.gltf"
-  const modelPath = "/volvo.gltf"
+  const modelPath = ["/volvo.gltf", "/volvo.gltf", "/S40.gltf", "/S60.gltf", "/S80.gltf", "/XC90.gltf"]
   useEffect(()=>{
     if(typeof window !== 'undefined') {
       require('@google/model-viewer');
    }
   },[])
+
 
     const {volvo:{pages:{itemElement:item}}}=data;
     const router = useRouter()
@@ -47,15 +48,13 @@ const MbItems =(props)=>{
     return (
     <>
     <MainLayout>
-      {/* <DynamicComponentWithNoSSR /> */}
-      <model-viewer src={modelPath}  camera-controls auto-rotate class={cls.model}></model-viewer> 
        {router.query.id && <div className={cn(cls["car-container"])}>
-            {/* <img src={item[id].img} alt="" /> */}
-            
+            {modal ? <model-viewer src={modelPath[router.query.id]}  camera-controls auto-rotate class={cls.model}></model-viewer> :     <img src={item[id].img} alt="" onClick={()=> {
+              setModal(!modal)
+              console.log(modelPath[router.query.id])
+            }}/>}
             <p>{item[id].title["ru"]}</p>
         </div>}
-        {/* <Scroll /> */}
-       
     </MainLayout>
     </>
   );}
