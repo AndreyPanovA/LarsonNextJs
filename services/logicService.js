@@ -5,14 +5,22 @@ const LogicServ = new (class LogicService {
     }
     return str;
   };
-  cn = (str, obj = {}) => {
-    if (typeof obj == "string") {
-      str = str + " " + obj;
+  cn = (str, obj = {}, status = false) => {
+    if (typeof obj == 'string') {
+      str = str + ' ' + obj;
     } else if (obj.join) {
-      str = str + " " + [...obj].join(" ");
+      if (status) {
+        status.map((el, idx) => {
+          if (el) {
+            str = str + ' ' + [...obj][idx];
+          }
+        });
+      } else {
+        str = str + ' ' + [...obj].join(' ');
+      }
     } else {
       for (let key in obj) {
-        obj[key] && typeof obj[key] === "boolean" && (str = str + " " + key);
+        obj[key] && typeof obj[key] === 'boolean' && (str = str + ' ' + key);
       }
     }
     return str;

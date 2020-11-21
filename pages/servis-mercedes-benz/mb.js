@@ -153,6 +153,8 @@ const MbMap = () => {
 export default function Mb() {
   const { about: url } = dataStorage.backgroundsUrl;
   const {volvo:{pages:{itemElement:item}}}=data;
+  const [crew, setCrew]=useState(false);
+       
   return (
     <MainLayout>
       <div className={cn("", "", "", cls["blur_container"])}>
@@ -212,7 +214,7 @@ export default function Mb() {
           </div>
           <div className={cls["serv-container"]}>
           <div className={cls["tab-menu"]}>
-           <p>Техобслуживание</p>
+           <p >Техобслуживание</p>
            <p>Диагностика</p>
            <p>Ремонт</p>
            <p>Кузовной ремонт</p>
@@ -237,19 +239,19 @@ export default function Mb() {
           <div
             className={cls["serv-tab-container"] + " " + cls["serv-container"]}
           >
-            <div className="tab-item tab-1 tab-show">
+            <div className={cn(cls["tab-item"], [cls["tab-1"], cls["tab-show"]], [true, !crew])}>
               <p>
                 Рассказываем немного о себе и о наших ценностях. Команда Larson
                 - это опытные проффесионалы своего дела, которые дадут вам
                 ощущение полного комфорта в нашем автосервисе.
               </p>
             </div>
-            <div className={cls["tab-item"] + " " + cls["tab-2"]}>
+            <div className={cn(cls["tab-item"], [cls["tab-2"],cls["tab-show"]], [true, crew])  }>
               <div className={cls["flex_c"]}>
                 <div className={cls["foto"]}>
                   <img src="../assets/img/serv/petr.png" alt="Петр Бакулов" />
                 </div>
-                <div className="foto">
+                <div className={cn(cls["foto"])}>
                   <img
                     src="../assets/img/serv/sergey.jpg"
                     alt="Сергей Тарасов"
@@ -260,16 +262,23 @@ export default function Mb() {
                 </div>
               </div>
             </div>
-            <div className={cls["tab-btn-container"] + " " + cls["flex_c"]}>
-              <div
-                className={
-                  cls["tab-btn"] + " " + cls["btn-1"] + " " + cls["tab-active"]
-                }
+            <div   className={cn(cls["tab-btn-container"],cls["flex_c"])}>
+              <div data-orientation="left" onClick={(e)=> {
+              if (e.target.dataset.orientation=="left" && crew)
+                setCrew(!crew);      
+              }}
+                className={cn(cls["tab-btn"], [cls["btn-1"], cls["tab-active"]], [true, !crew])}
                 id="0"
               >
                 Ценности
               </div>
-              <div className={cls["tab-btn"] + " " + cls["btn-2"]} id="1">
+              <div  data-orientation="right" onClick={(e)=> {
+                if (e.target.dataset.orientation=="right" && !crew) {
+
+                  setCrew(!crew);
+                }
+                     
+              }} className={cn(cls["tab-btn"], [cls["btn-2"],  cls["tab-active"]],[true, crew]) } id="1">
                 Люди
               </div>
             </div>
