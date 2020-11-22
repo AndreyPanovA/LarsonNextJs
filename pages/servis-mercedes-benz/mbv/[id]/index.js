@@ -22,10 +22,11 @@ const MbItems =(props)=>{
     const id = router.query.id
     console.log( id ,"router")
     const {name}= props;
-    const [modal, setModal]= useState(true)
+    const [modal, setModal]= useState(false)
     return (
     <>
     <MainLayout>
+
        {router.query.id && <div className={cn(cls["car-container"])}>
             {modal ? 
             <model-viewer src={modelPath[router.query.id]}  loading="eager" reveal="interaction" poster={item[id].img} camera-controls auto-rotate class={cls.model}>
@@ -34,7 +35,7 @@ const MbItems =(props)=>{
               <p className={cn(cls["button-load"])} slot="poster">Load 3D Model</p>
 
             </model-viewer> : <img className={cn(cls["top-img"])} src={item[id].img} alt="" onClick={()=> {
-              // setModal(!modal)
+              setModal(!modal)
             }}/>}
        
             <div className={cn(cls["content"])}>
