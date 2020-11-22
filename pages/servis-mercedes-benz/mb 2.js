@@ -7,8 +7,6 @@ import LogicServ from "../../services/logicService";
 import { useState } from "react";
 import MbItems from "./mbv/[id]/index"
 import Link from "next/link";
-import {data} from "../../data";
-import ModelsCatalog from "../../components/models-catalog/index"
 const { cn } = LogicServ;
 const MbMap = () => {
   return (
@@ -151,47 +149,14 @@ const MbMap = () => {
 //     </div>
 //   </>
 // );}
-
-// const ModelsCatalog = () => {
-
-//   const {volvo:{pages:{itemElement:item}}}=data;
-//   return(
-//     <div className={cls["serv-container"]}>
-//     <div className={cls["tab-menu"]}>
-//      <p >Техобслуживание</p>
-//      <p>Диагностика</p>
-//      <p>Ремонт</p>
-//      <p>Кузовной ремонт</p>
-//      <p>Установка доп. оборудования</p>
-//     </div>
-//       <div className={cn(cls["catalog_row"], cls.flex_c)}>
-//       {item.map((el,idx)=> {
-//           return ( 
-//           <Link href={`mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
-//             <a className={cn(cls["serv-item"])}>
-//                 <img src={el.img} alt="" />
-//                 <p>{el.title["ru"]}</p>
-//             </a>
-//           </Link>)
-//       })}
-       
-//       </div>
-//     </div>
-//   )
-
-// }
 export default function Mb() {
   const { about: url } = dataStorage.backgroundsUrl;
-  const {volvo:{pages:{itemElement:item}}}=data;
-  const [crew, setCrew]=useState(false);
-       
   return (
     <MainLayout>
       <div className={cn("", "", "", cls["blur_container"])}>
         <div className={cn(cls["serv_header"], cls["container_bot"])}>
           <div className={cn(cls["header_descr-top"])}>
             <div className="">
-              <p>Главная / Сервис вольво / MB /</p>
               <h1>Сервис Volvo</h1>
               <p>
                 Мы специализируемся на автомобилях Volvo и имеем все
@@ -243,47 +208,35 @@ export default function Mb() {
               <p>Ремонт Volvo XC901</p>
             </div>
           </div>
-          <ModelsCatalog />
-          {/* <div className={cls["serv-container"]}>
-          <div className={cls["tab-menu"]}>
-           <p >Техобслуживание</p>
-           <p>Диагностика</p>
-           <p>Ремонт</p>
-           <p>Кузовной ремонт</p>
-           <p>Установка доп. оборудования</p>
-          </div>
+          <div className={cls["serv-container"]}>
             <div className={cn(cls["catalog_row"], cls.flex_c)}>
-            {item.map((el,idx)=> {
-                return ( 
-                <Link href={`mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
-                  <a className={cn(cls["serv-item"])}>
-                      <img src={el.img} alt="" />
-                      <p>{el.title["ru"]}</p>
-                  </a>
-                </Link>)
-            })}
-             
+              <Link href={`mbv/[id]`} as={`/servis-mercedes-benz/mbv/1`}>
+                <a>
+                    <img src="/assets/img/toyota_RAV4/1.jpg" alt="" />
+                    <p>{"name"}</p>
+                </a>
+              </Link>
             </div>
-          </div> */}
+          </div>
         </div>
         <div className={cls["serv-comand"]}>
           <h2>Наша команда</h2>
           <div
             className={cls["serv-tab-container"] + " " + cls["serv-container"]}
           >
-            <div className={cn(cls["tab-item"], [cls["tab-1"], cls["tab-show"]], [true, !crew])}>
+            <div className="tab-item tab-1 tab-show">
               <p>
                 Рассказываем немного о себе и о наших ценностях. Команда Larson
                 - это опытные проффесионалы своего дела, которые дадут вам
                 ощущение полного комфорта в нашем автосервисе.
               </p>
             </div>
-            <div className={cn(cls["tab-item"], [cls["tab-2"],cls["tab-show"]], [true, crew])  }>
+            <div className={cls["tab-item"] + " " + cls["tab-2"]}>
               <div className={cls["flex_c"]}>
                 <div className={cls["foto"]}>
                   <img src="../assets/img/serv/petr.png" alt="Петр Бакулов" />
                 </div>
-                <div className={cn(cls["foto"])}>
+                <div className="foto">
                   <img
                     src="../assets/img/serv/sergey.jpg"
                     alt="Сергей Тарасов"
@@ -294,23 +247,16 @@ export default function Mb() {
                 </div>
               </div>
             </div>
-            <div   className={cn(cls["tab-btn-container"],cls["flex_c"])}>
-              <div data-orientation="left" onClick={(e)=> {
-              if (e.target.dataset.orientation=="left" && crew)
-                setCrew(!crew);      
-              }}
-                className={cn(cls["tab-btn"], [cls["btn-1"], cls["tab-active"]], [true, !crew])}
+            <div className={cls["tab-btn-container"] + " " + cls["flex_c"]}>
+              <div
+                className={
+                  cls["tab-btn"] + " " + cls["btn-1"] + " " + cls["tab-active"]
+                }
                 id="0"
               >
                 Ценности
               </div>
-              <div  data-orientation="right" onClick={(e)=> {
-                if (e.target.dataset.orientation=="right" && !crew) {
-
-                  setCrew(!crew);
-                }
-                     
-              }} className={cn(cls["tab-btn"], [cls["btn-2"],  cls["tab-active"]],[true, crew]) } id="1">
+              <div className={cls["tab-btn"] + " " + cls["btn-2"]} id="1">
                 Люди
               </div>
             </div>

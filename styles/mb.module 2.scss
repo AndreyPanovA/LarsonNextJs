@@ -119,54 +119,45 @@
       transform: translate(-50%, 50%);
     }
   }
-  // .serv-container {
-  //   max-width: 970px;
-  //   margin-left: 20vw;
-  //   z-index: 10;
-  //   .catalog-abs-header {
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //     width: 100vw;
-  //     opacity: 0.9;
-  //   }
-  //   .catalog_row {
-  //     // margin-top: 10vh;
-  //     position: relative;
-  //     -ms-flex-wrap: wrap;
-  //     flex-wrap: wrap;
-
-    
-  //    &::before, &::after {
-  //      content: "";
-  //      border-top:2px solid black;
-  //      filter: blur(5px);
-  //      width: 100%;
-  //      margin: 25px 0;
-  //    }
-  //     .serv-item {
-  //       text-align: center;
-  //       font-size: 12px;
-  //       padding: 10px;
-  //       width: 130px;
-  //       height: 120px;
-  //       background-color: #ccc;
-  //       color: #000;
-  //       border-radius: 5px;
-  //       margin: 10px;
-  //       cursor: pointer;
-  //       img {
-  //         width: 100%;
-  //       }
-  //       &:hover {
-  //         -webkit-transition: 0.2s ease-in-out;
-  //         transition: 0.2s ease-in-out;
-  //         -webkit-transform: scale(1.2);
-  //         transform: scale(1.2);
-  //       }
-  //     }
-  //   }
-  // }
+  .serv-container {
+    max-width: 970px;
+    margin-left: 20vw;
+    z-index: 10;
+    .catalog-abs-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      opacity: 0.9;
+    }
+    .catalog_row {
+      margin-top: 10vh;
+      position: relative;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      .serv-item {
+        text-align: center;
+        font-size: 12px;
+        padding: 10px;
+        width: 130px;
+        height: 120px;
+        background-color: #ccc;
+        color: #000;
+        border-radius: 5px;
+        margin: 10px;
+        cursor: pointer;
+        img {
+          width: 100%;
+        }
+        &:hover {
+          -webkit-transition: 0.2s ease-in-out;
+          transition: 0.2s ease-in-out;
+          -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }
 
 .serv-comand {
@@ -570,25 +561,3 @@
 }
 
 //
-.tab-menu {
-  display: flex;
-  color: black;
-  justify-content: center;
-  position: relative;
-  p {
-  border-bottom: 2px solid black;
-  padding: 10px 20px;
-  margin: 35px 0;
-  cursor: pointer;
-  border-top-right-radius: 15px;
-  border-top-left-radius: 15px;
-  transition: .5s ease-in-out;
-  &:hover {
-    background-color: #333;
-    color: white;
-  }
-
-  }
-}
-
-
