@@ -3,7 +3,7 @@ import dataStorage from "../../components/dataStorage/dataStorage";
 import TextBlack from "../../components/textBlack/TextBlack";
 import { connect } from "react-redux";
 import DataServ from "../../services/dataService";
-
+// test
 
 function About({ lang, json: about }) {
   const { about: url } = dataStorage.backgroundsUrl.volvo;
