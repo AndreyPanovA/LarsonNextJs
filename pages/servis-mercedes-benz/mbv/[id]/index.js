@@ -20,7 +20,7 @@ const MbItems =(props)=>{
     const {volvo:{pages:{itemElement:item}}}=data;
     const router = useRouter()
     const id = router.query.id
-    console.log( id ,"router")
+    // console.log( id ,"router")
     const {name}= props;
     const [modal, setModal]= useState(false)
     return (

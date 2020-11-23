@@ -16,7 +16,7 @@ const ContactHugePath = ({
             <h4>{title[lang]}</h4>
             <div className={cls.textbig}>
               {p.map((el, idx) => {
-                return <p>{el[lang]}</p>;
+                return <p key={idx}>{el[lang]}</p>;
               })}
             </div>
           </div>

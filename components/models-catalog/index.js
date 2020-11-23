@@ -15,7 +15,7 @@ const Links = ()=> {
         <>
         {item.map((el,idx)=> {
         return ( 
-        <Link href={`/servis-mercedes-benz/mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
+        <Link key={idx} href={`/servis-mercedes-benz/mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
           <a className={cn(cls["serv-item"])}>
               <img src={el.img} alt="" />
               <p>{el.title["ru"]}</p>
