@@ -1,17 +1,47 @@
-import Link from "next/link";
 import cls from "../styles/Home.module.scss";
-import { MainLayout } from "../components/MainLayout";
-import textContent from "../components/dataStorage/dataStorage";
+import MainLayout from "../components/MainLayout";
 import { connect } from "react-redux";
 import React, { Component } from "react";
 import store from "../components/store";
+import { selectNav } from "../components/actions/index";
+import Router from "next/router";
+import DataServ from "../services/dataService";
 
+import LogicServ from "../services/logicService";
+import Item from "../components/item";
+
+// import ModelViewer from 'react-model-viewer';
+// import 
+// import "../public/scene.bin"
+
+// const modelPath = 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf';
+// const modelPath = "/scene.gltf"
+
+// const test = ""
+const { cn } = LogicServ;
 class Home extends Component {
   constructor(props) {
+
     super(props);
+    this.callbacks = {
+      onClick: (key) => {
+        this.props.selectNavigation(key.href);
+        this.router(key.href + "/about");
+      },
+    };
   }
+  router = (site) => {
+    Router.push(`${site}`);
+  };
+  componentDidMount() {
+    if(typeof window !== 'undefined') {
+       require('@google/model-viewer');
+    }
+
+  }
+
   render() {
-    const { lang } = this.props;
+    const { lang, json } = this.props;
     return (
       <MainLayout
         color="white"
@@ -20,31 +50,19 @@ class Home extends Component {
         btn="btn"
         logo={false}
       >
-        <div className={cls.keysWrapper + " flex_c"}>
+ {/* <model-viewer src={modelPath}  camera-controls auto-rotate></model-viewer>  */}
+        <div className={cn(cls["keysWrapper"], "flex_c")}>
           <img
             src="/assets/img/larson-start.svg"
             alt="LARSON"
             className={cls.backLogo}
           />
-          <div className={cls.keysLine + " flex_cw"}>
-            {textContent.keys.map((key, idx) => {
-              return (
-                <Link href={key.href} key={idx}>
-                  <a className={cls.keyCard}>
-                    <div className={cls.keyCard + " flex_cc"}>
-                      <div className={cls.keyImg}>
-                        <img src={key.img} alt={key.alt} />
-                      </div>
-                      {lang === "ru" ? (
-                        <h2>{key.h2ru}</h2>
-                      ) : (
-                        <h2>{key.h2eng}</h2>
-                      )}
-                    </div>
-                  </a>
-                </Link>
-              );
-            })}
+          <div className={cn(cls["keysLine"], "flex_cw")}>
+            <Item
+              json={json}
+              lang={lang}
+              selectNavigation={this.props.selectNavigation}
+            />
           </div>
         </div>
       </MainLayout>
@@ -57,12 +75,13 @@ const mapStateToProps = ({ lang }) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    changeLang: (lang) => {
-      dispatch({
-        type: "CHANGE_LANG",
-        lang: `${lang}`,
-      });
+    selectNavigation: (site) => {
+      dispatch(selectNav(site));
     },
   };
 };
+
+// export const getServerSideProps = async () => FetchServ.getHomeKeys();
+
+export const getServerSideProps = async () => DataServ.getHomeKeys();
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

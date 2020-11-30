@@ -4,15 +4,7 @@
   margin-top: $logoHeight;
   align-items: flex-start;
   position: relative;
-  .rating {
-    border: 2px solid #ccc;
-    background-color: rgba(255, 255, 255, 0.11);
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-right: 15px;
-    flex-basis: 10vw;
-    @include shadowGlowing();
-  }
+
   .review {
     padding: 10px 20px;
     border-radius: 5px;
@@ -20,7 +12,6 @@
     flex-basis: 50%;
     overflow-y: auto;
     .reviewItem {
-      border: 2px solid #ccc;
       margin-bottom: 15px;
       @include shadowGlowing();
       padding: 10px 20px;

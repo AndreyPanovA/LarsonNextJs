@@ -1,0 +1,98 @@
+@import "./mixins.scss";
+@import "./variables.scss";
+.titleCont {
+  position: relative;
+  top: $logoHeight;
+  //   left: $navWidth;
+  margin: 0 auto;
+  padding: 10px 100px;
+  max-width: 1070px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  //   border: 2px solid rgb(169, 169, 169);
+  div {
+    display: flex;
+    align-self: flex-start;
+    // border: 2px solid red;
+  }
+  .little {
+    text-align: left;
+
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 115px;
+    display: block;
+  }
+  .huge {
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 80px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 115px;
+    display: block;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .little {
+    text-align: left;
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 30px !important;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 55px !important;
+    display: block;
+  }
+  .huge {
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 55px !important;
+    display: block;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .little {
+    text-align: left;
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 24px !important;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    line-height: 45px !important;
+    display: block;
+  }
+  .huge {
+    font: normal 13px/20px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    text-indent: -0.02em;
+    font-size: 30px !important;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    // line-height: 35px !important;
+    display: block;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+  }
+}

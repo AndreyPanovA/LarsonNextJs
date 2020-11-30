@@ -1,52 +1,67 @@
 import Link from "next/link";
 import Head from "next/head";
-import { Navigation } from "./navigation/Navigation";
-import Footer from "../components/footer/Footer";
+import Footer from "./footer/index";
 import cls from "../styles/test.module.scss";
 import dataStorage from "./dataStorage/dataStorage";
 import LazyLoad from "./lazyLoad/lazyLoad";
+import { connect } from "react-redux";
+import Navigation from "./navigation/Navigation";
+import { selectNav } from "./actions/index";
+import Router, { useRouter } from "next/router";
+import LogicServ from "../services/logicService";
+const { cn } = LogicServ;
 
-export function MainLayout({
+function MainLayout({
   children,
   title = "Larson",
   url,
   color = "black",
   background,
-  store,
+  site = "servis-volvo",
+  lang,
   btn = "btnWhite",
   logo = true,
+  selectNavigation,
+  shadowBackground = true,
 }) {
-  console.log(store);
+  const routerHook = useRouter();
+  const router = () => {
+    selectNavigation("/");
+    Router.push("/");
+  };
   return (
     <>
       <Head>
         <title>{title} | Larson</title>
       </Head>
-
-      <main className={cls.main + " " + cls[background]}>
+      <main className={cn(cls[background], { main: shadowBackground })}>
         <LazyLoad />
-
         <div className={cls.backgroundImg}>
           <img src={url} />
         </div>
 
-        {logo ? (
-          <Link href={`/`}>
+        {logo && (
+          <div href={`/`} onClick={router} className={cls.headerLogo}>
             <a>
-              <img src={dataStorage.headerLogo} className={cls.headerLogo} />
+              <img src={dataStorage.headerLogo} />
             </a>
-          </Link>
-        ) : null}
+          </div>
+        )}
+        <Navigation site={site} lang={lang} />
         {children}
       </main>
       <Footer color={color} btn={btn} />
     </>
   );
 }
-
-// const linkClickHandler = () => {
-//     Router.push("/")
-// }
-{
-  /* <button onClick={linkClickHandler}>Go back to home</button> */
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectNavigation: (site) => {
+      dispatch(selectNav(site));
+    },
+  };
+};
+export default connect(
+  ({ site, lang }) => ({ site, lang }),
+  mapDispatchToProps
+)(MainLayout);

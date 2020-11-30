@@ -1,0 +1,73 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/variables.scss";
+.textbig {
+  margin-top: 15px;
+}
+.bigCard {
+  @include shadowGlowing();
+  @include darkOpacity();
+  flex-basis: 100%;
+  padding: 10px 0px;
+  border-radius: 5px;
+  h2 {
+    text-align: center;
+    margin: 15px 0;
+  }
+  .cardPad {
+    padding: 10px 20px;
+    .videoRow {
+      display: flex;
+      margin-bottom: 25px;
+      .videoSize {
+        flex-basis: 80%;
+        p {
+          margin-bottom: 10px;
+          margin-right: 10px;
+          line-height: 20px;
+          font-size: 14px;
+        }
+      }
+      .video {
+        width: 100%;
+        iframe {
+          border: none;
+          width: 100%;
+          min-height: 280px;
+        }
+      }
+    }
+    .blockA {
+      margin-top: 15px;
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+    .cardTextBlock {
+      margin-bottom: 25px;
+      a {
+        display: block;
+        margin-bottom: 10px;
+      }
+      .flex {
+        display: flex;
+        p {
+          margin-right: 5px;
+        }
+      }
+      p {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .videoRow {
+    flex-direction: column !important;
+  }
+}

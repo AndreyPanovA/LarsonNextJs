@@ -1,5 +1,14 @@
 import cls from "./textBlack.module.scss";
-function TextBlack({ url, children, littleWidth, isImg = false }) {
+import Tour from "../../components/panorama/index";
+function TextBlack({
+  url,
+  children,
+  littleWidth,
+  isImg = false,
+  isPano = false,
+  text = "Tur",
+  lang,
+}) {
   return (
     <>
       <div className={cls.container}>
@@ -8,11 +17,18 @@ function TextBlack({ url, children, littleWidth, isImg = false }) {
             <img src={url} className="" alt="" />
           </div>
         )}
-
+        {isPano && (
+          <div className={cls.imgContainer}>
+            <h2 className="tcenter">{text[lang]}</h2>
+            {isPano.map(({ url, text }, idx) => {
+              return <Tour src={url} text={text[lang]} key={url} />;
+            })}
+          </div>
+        )}
         <div
           className={littleWidth ? cls.text + " " + cls[littleWidth] : cls.text}
         >
-          <div>{children}</div>
+          <div className={cls.font}>{children}</div>
         </div>
       </div>
     </>

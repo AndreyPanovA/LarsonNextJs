@@ -1,6 +1,4 @@
-import Router from "next/router";
-import { MainLayout } from "../../components/MainLayout";
-import Navigation from "../../components/navigation/Navigation";
+import MainLayout from "../../components/MainLayout";
 import dataStorage from "../../components/dataStorage/dataStorage";
 import cls from "../../styles/corporate.module.scss";
 import { connect } from "react-redux";
@@ -10,15 +8,15 @@ function Corporate({ lang }) {
     corporateClients,
     volvo: {
       pages: {
-        clients: { h2, li },
+        clients: { h2, li, h1 },
       },
     },
   } = dataStorage;
-  console.log(h2[0].ru);
   return (
     <MainLayout url={url}>
-      <Navigation site="servis-volvo" />
       <div className={cls.container}>
+        <h1>{h1[lang]}</h1>
+
         <h2>{h2[0][lang]}</h2>
         <ul>
           {li.map((l, idx) => (
@@ -27,8 +25,8 @@ function Corporate({ lang }) {
         </ul>
         <h2>{h2[1][lang]}</h2>
         <div className={cls.brandLogos}>
-          {corporateClients.map((el) => (
-            <img src={el} />
+          {corporateClients.map((el, idx) => (
+            <img src={el} key={idx} />
           ))}
         </div>
       </div>
