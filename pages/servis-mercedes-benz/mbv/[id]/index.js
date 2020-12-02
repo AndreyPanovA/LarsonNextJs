@@ -77,14 +77,13 @@ const MbItems =(props)=>{
     console.log(router.asPath.split('/'), elements);
     const {name}= props;
     const [modal, setModal]= useState(false)
-    const bread = '';
+    let bread = '';
     for (let i = 0; i<elements.length; i++) {
-      if (pathU[1] == elements[i].href) {
+      if (('/'+pathU[1]) == elements[i].href) {
         bread = elements[i].h2.ru + ' / ' + pathU[2] + ' / ';
       }
     }
     
-    console.log(bread)
     return (
     <>
     <MainLayout>
@@ -117,11 +116,8 @@ const MbItems =(props)=>{
                     <input  type="text"/>
                   </div>
                   <div className={cn(cls["form-item"])}>
-                    <p>Я подтверждаю свое согласие на обработку персональных данных</p>
-                    <div className={cn(cls["slideThree"])}>  
                       <input type="checkbox" value="None" id="slideThree" name="check" />
-                      <label for="slideThree"></label>
-                    </div>
+                      <label for="slideThree"><p>Я подтверждаю свое согласие на обработку персональных данных</p></label>
                   </div>
                 </div>
                 <div className={cn(cls["form-right"])}>
