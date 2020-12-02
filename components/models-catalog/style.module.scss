@@ -206,21 +206,23 @@
 }
 
 //
+.link-width {
+  flex-basis: 25%;
+  color: white;
+}
+
 .diacnostic-nav > div {
   display: flex;
-  background-color: rgba(50, 50, 50, 0.5);
   border-radius: 5px;
   padding: 10px 20px;
   flex-wrap: wrap;
   a {
     margin: 25px;
+    color:gold;
   }
-  justify-content: space-between;
+  justify-content: center;
 }
 .visible {
   display: none;
 }
-.more {
-  margin: auto;
-  width: 250px;
-}
+

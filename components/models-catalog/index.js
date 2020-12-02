@@ -216,8 +216,8 @@ const Diagnostic = ()=> {
                     {diagnostics.map((item, idx) => {
                         // (idx<6) ? return : null 
                         return ( <>{
-                            idx < 6 ? <a href={item.url}>{item.ru}</a> :
-                            <a href={item.url} className={cn('', [cls['visible']], [visState.vis])}>{item.ru}</a> 
+                            idx < 6 ? <a href={item.url} className={cn(cls["link-width"])}>{item.ru}</a> :
+                            <a href={item.url} className={cn(cls["link-width"], [cls['visible']], [visState.vis])}>{item.ru}</a> 
                         }</>
                             
                         )
@@ -238,8 +238,8 @@ const Remont = ()=> {
                     {remont.map((item, idx) => {
                         // (idx<6) ? return : null 
                         return ( <>{
-                            idx < 6 ? <a href={item.url}>{item.ru}</a> :
-                            <a href={item.url} className={cn('', [cls['visible']], [visState1.vis])}>{item.ru}</a> 
+                            idx < 6 ? <a href={item.url} className={cn(cls["link-width"])}>{item.ru}</a> :
+                            <a href={item.url} className={cn(cls["link-width"], [cls['visible']], [visState1.vis])}>{item.ru}</a> 
                         }</>
                             
                         )
@@ -260,8 +260,8 @@ const Dops = ()=> {
                     {dop.map((item, idx) => {
                         // (idx<6) ? return : null 
                         return ( <>{
-                            idx < 6 ? <a href={item.url}>{item.ru}</a> :
-                            <a href={item.url} className={cn('', [cls['visible']], [visState2.vis])}>{item.ru}</a> 
+                            idx < 6 ? <a href={item.url} className={cn(cls["link-width"])}>{item.ru}</a> :
+                            <a href={item.url} className={cn(cls["link-width"], [cls['visible']], [visState2.vis])}>{item.ru}</a> 
                         }</>
                             
                         )

@@ -89,23 +89,35 @@ const MbItems =(props)=>{
     <>
     <MainLayout>
 
-       {router.query.id && <div className={cn(cls["car-container"])}>
-            {modal ? 
+       {/* {router.query.id &&  */}
+       
+       
+       <div className={cn(cls["car-container"])}>
+         <div className={cn(cls["test"])}>
+          <model-viewer src={modelPath[id]}  loading="eager" reveal="interaction" poster={item[id].img} camera-controls auto-rotate class={cls.model}>
+              <div className={cn(cls["lazy-load-poster"])} slot="poster" style={{backgroundImage: `url(${item[id].img})`}}></div>
+          
+              <p className={cn(cls["button-load"])} slot="poster">Load 3D Model</p>
+
+            </model-viewer>
+          </div>
+            {/* {modal ? 
             <model-viewer src={modelPath[router.query.id]}  loading="eager" reveal="interaction" poster={item[id].img} camera-controls auto-rotate class={cls.model}>
               <div className={cn(cls["lazy-load-poster"])} slot="poster" style={{backgroundImage: `url(${item[id].img})`}}></div>
           
               <p className={cn(cls["button-load"])} slot="poster">Load 3D Model</p>
 
-            </model-viewer> : <img className={cn(cls["top-img"])} src={item[id].img} alt="" onClick={()=> {
+            </model-viewer> : 
+            
+            <img className={cn(cls["top-img"])} src={item[id].img} alt="" onClick={()=> {
               setModal(!modal)
-            }}/>}
+            }}/>} */}
             <p>{bread}</p>
             <h1 className={cn(cls['title'])}>Диагностика {item[id].title["ru"]}</h1>
-            <div className={cn(cls["content"])}>
-            <div className={cn(cls["order"])}>
             <ModelsCatalog />
-          <div>
-          <h2>Записаться на диагностику  {item[id].title["ru"]}</h2>
+              <div className={cn(cls["content"])}>
+              <div className={cn(cls["order"])}><div>
+            <h2>Записаться на диагностику  {item[id].title["ru"]}</h2>
               <form>
                 <div className={cn(cls["form-left"])}>
                   <div className={cn(cls["form-item"])}>
@@ -134,7 +146,7 @@ const MbItems =(props)=>{
         </div>
         
         
-        }
+        {/* } */}
         <div className={cn(cls['container-map'])}>
           <Tour text="Виртуальный тур" />
         <iframe
