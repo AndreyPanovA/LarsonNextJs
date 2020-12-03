@@ -2,6 +2,7 @@
 import MainLayout from "../../../../components/MainLayout";
 // import dataStorage from "../../components/dataStorage/dataStorage";
 import cls from "./style.module.scss";
+
 // http://localhost:3000/servis-mercedes-benz/mb
 import {data} from "../../../../data";
 import LogicServ from "../../../../services/logicService";
@@ -45,7 +46,6 @@ const MbMap = () => {
           </div>
         </div>
         <iframe
-          style={{marginTop:15, width:"300px", height:"300px"}}
           src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e59348621f8f7d443d881e0e9454b2d4df2ca1b9b90391de232e09144a4129f&amp;source=constructor"
           width="100%"
           height="720"
@@ -81,8 +81,9 @@ const MbItems =(props)=>{
     let bread = '';
     for (let i = 0; i<elements.length; i++) {
       if (('/'+pathU[1]) == elements[i].href) {
-        bread = elements[i].h2.ru + ' / ' + pathU[2] + ' / ';
+        bread = elements[i].h2.ru + ' / ' + 'Сервис Volvo' + ' / ';
       }
+      bread = 'Главная / Сервис Volvo / Диагностика / '+item[id].title["ru"];
     }
     
     return (
@@ -114,7 +115,7 @@ const MbItems =(props)=>{
             }}/>} */}
             <p>{bread}</p>
             <h1 className={cn(cls['title'])}>Диагностика {item[id].title["ru"]}</h1>
-            <ModelsCatalog />
+            <ModelsCatalog indexProps={1} />
               <div className={cn(cls["content"])}>
               <div className={cn(cls["order"])}><div>
             <h2>Записаться на диагностику  {item[id].title["ru"]}</h2>
@@ -149,13 +150,9 @@ const MbItems =(props)=>{
         {/* } */}
         <div className={cn(cls['container-map'])}>
           <Tour text="Виртуальный тур" />
-        <iframe
-          style={{marginTop:15, width:"100%", height:"300px"}}
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A6e59348621f8f7d443d881e0e9454b2d4df2ca1b9b90391de232e09144a4129f&amp;source=constructor"
-          width="100%"
-          height="720"
-          frameBorder="0"
-        ></iframe>
+      </div>
+      <div>
+      <MbMap/>
       </div>
     </MainLayout>
     </>

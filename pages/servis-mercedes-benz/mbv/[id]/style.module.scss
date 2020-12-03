@@ -170,10 +170,91 @@
   left: 20%;
 }
 
-
-// 
+//
 
 .test {
   position: relative;
   height: 80vh;
+}
+
+.serv-map {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  .serv-map-line {
+    background-color: #fff;
+    height: 100px;
+  }
+}
+
+.serv-map .serv-container .serv-map-contacts {
+  bottom: 0;
+  height: 100vh;
+  width: 60vw;
+  background: url("/../../../public/assets/img/serv/map-shad.png") center center /
+    cover;
+  position: absolute;
+}
+.serv-map .serv-container .serv-map-contacts .contacts-container {
+  margin-left: 16vw;
+  width: 300px;
+}
+.serv-map .serv-container .serv-map-contacts .contacts-container p {
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+.serv-map .serv-container .serv-map-contacts .contacts-container a {
+  margin-bottom: 5px;
+  margin-top: 18px;
+  display: block;
+}
+.serv-map .serv-container .serv-map-contacts .contacts-container .map-flex {
+  margin-top: 10px;
+  margin-bottom: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+.serv-map .serv-container .serv-map-contacts .contacts-container .map-flex img {
+  max-width: 100px;
+  margin-left: 25px;
+}
+.serv-map .serv-container iframe {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+@media (max-width: 1370px) {
+  .serv-container {
+    margin-left: 0vw !important;
+    margin: auto !important;
+  }
+  .contacts-container {
+    margin-left: 5vw !important;
+  }
+}
+@media (max-width: 1020px) {
+  .serv-container .serv-map-contacts {
+    width: 100vw !important;
+    top: 0;
+    background: url("/../../../public/assets/img/serv/shad-top.png") center
+      center / cover !important;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+  }
+  .serv-container .serv-map-contacts .contacts-container {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    margin-left: 0vw !important;
+    -webkit-transform: translate(-50%, 3%);
+    transform: translate(-50%, 3%);
+  }
+  .serv-container iframe {
+    cursor: -webkit-grab;
+    cursor: grab;
+  }
 }

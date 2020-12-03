@@ -54,6 +54,10 @@ export default {
       eng: "Review",
     },
     {
+      ru: "Услуги",
+      eng: "Uslugi",
+    },
+    {
       ru: "Шины",
       eng: "Tires",
     },

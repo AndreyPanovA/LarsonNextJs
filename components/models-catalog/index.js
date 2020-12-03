@@ -7,6 +7,9 @@ import Link from "next/link";
 import { useState } from "react";
 const { cn } = LogicServ;
 const items =["Техобслуживание","Диагностика","Ремонт","Кузовной ремонт","Установка доп. оборудования"];
+const props = {
+    indexProps: 0,
+}
 
 const Links = ()=> {
     const {volvo:{pages:{itemElement:item}}}=data;
@@ -46,15 +49,14 @@ const dop = [
 ];
 
 const diagnostics = [
-    {ru:"Диагностика аккумулятора", eng:"", url:"diagnostika"},
-    {ru:"Диагностика АКПП", eng:"", url:"diagnostika-akkumulyatora"},
-    {ru:"Диагностика двигателя", eng:"", url:"diagnostika-akpp"},
+    {ru:"Диагностика аккумулятора", eng:"", url:"diagnostika-akkumulyatora"},
+    {ru:"Диагностика АКПП", eng:"", url:"diagnostika-akpp"},
+    {ru:"Диагностика двигателя", eng:"", url:"diagnostika-korobki-dvitagelya"},
     {ru:"Диагностика коробки передач", eng:"", url:"diagnostika-korobki-peredach"},
     {ru:"Диагностика подвески", eng:"", url:"diagnostika-podveski"},
     {ru:"Диагностика течей", eng:"", url:"diagnostika-techey"},
     {ru:"Диагностика шины CAN", eng:"", url:"diagnostika-shiny-can"},
     {ru:"Диагностика электрики", eng:"", url:"diagnostika-ehlektriki"},
-    {ru:"Диагностика течей", eng:"", url:"diagnostika-techey"},
     {ru:"Компьютерная диагностика", eng:"", url:"kompyuternaya-diagnostika"},
     {ru:"Комплексная проверка автомобиля", eng:"", url:"kompleksnaya-proverka-avtomobilya"},
     {ru:"Проверка автомобиля перед покупкой", eng:"", url:"proverka-avtomobilya-pered-pokupkoy"},
@@ -273,10 +275,10 @@ const Dops = ()=> {
 }
 
 const components =[<Links />,<Diagnostic />, <Remont />, <Dops/>]
-const ModelsCatalog = () => {
+const ModelsCatalog = (props) => {
 
     const {volvo:{pages:{itemElement:item}}}=data;
-    const [taber, setTabber] = useState({index: 0})
+    const [taber, setTabber] = useState({index: props.indexProps})
     const callbacks = {
         onClick: (idx)=> {
             setTabber((prev)=> ({...prev, index:idx}))
