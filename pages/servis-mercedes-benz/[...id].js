@@ -1,15 +1,13 @@
 
-import MainLayout from "../../../../components/MainLayout";
-// import dataStorage from "../../components/dataStorage/dataStorage";
+import MainLayout from "../../components/MainLayout";
 import cls from "./style.module.scss";
-
-// http://localhost:3000/servis-mercedes-benz/mb
-import {data} from "../../../../data";
-import LogicServ from "../../../../services/logicService";
-import Tour from "../../../../components/panorama/index";
+import {data} from "../../data";
+import LogicServ from "../../services/logicService";
+import Tour from "../../components/panorama/index";
 import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
-import ModelsCatalog from "../../../../components/models-catalog/index"
+import ModelsCatalog from "../../components/models-catalog/index"
+import {connect} from "react-redux"
 const { cn } = LogicServ;
 
 const MbMap = ({only}) => {
@@ -72,8 +70,9 @@ const MbMap = ({only}) => {
 };
 
 const MbItems =(props)=>{ 
-  
+  console.log(props.carItem, "props.carItem")
   const modelPath = ["/volvo.gltf", "/volvo.gltf", "/S40.gltf", "/S60.gltf", "/S80.gltf", "/XC90.gltf"]
+  
   useEffect(()=>{
     if(typeof window !== 'undefined') {
       require('@google/model-viewer');
@@ -81,6 +80,17 @@ const MbItems =(props)=>{
   },[])
     const {volvo:{pages:{itemElement:item}}}=data;
     const {keys:elements} = data; 
+
+    let actualIdex =0
+    for (let i=0; i<item.length;i++) {
+  
+      const len = item[i].img.split("/").length-1
+      const carInfo = item[i].img.split("/")[len].split(".")[0].toLowerCase()
+     
+      if(props.carItem.toLowerCase()==carInfo) {
+        actualIdex =i
+      }
+    }
     const router = useRouter();
     let id = 0;
 
@@ -90,7 +100,6 @@ const MbItems =(props)=>{
       }
     }
     const pathU = router.asPath.split('/'); 
-    console.log(router.asPath.split('/'), elements);
     const {name}= props;
     const [modal, setModal]= useState(false)
     let bread = '';
@@ -98,27 +107,27 @@ const MbItems =(props)=>{
       if (('/'+pathU[1]) == elements[i].href) {
         bread = elements[i].h2.ru + ' / ' + 'Сервис Volvo' + ' / ';
       }
-      bread = 'Главная / Сервис Volvo / Диагностика / '+item[id].title["ru"];
+      bread = 'Главная / Сервис Volvo / Услуги / '+item[actualIdex].title["ru"];
     }
-    
+
     return (
     <>
     <MainLayout>
        <div className={cn(cls["car-container"])}>
          <div className={cn(cls["test"])}>
-          <model-viewer src={modelPath[id]}  loading="eager" reveal="interaction" poster={item[id].img} camera-controls auto-rotate class={cls.model}>
-              <div className={cn(cls["lazy-load-poster"])} slot="poster" style={{backgroundImage: `url(${item[id].img})`}}></div>
+          <model-viewer src={modelPath[actualIdex]}  loading="eager" reveal="interaction" poster={item[actualIdex].img} camera-controls auto-rotate class={cls.model}>
+              <div className={cn(cls["lazy-load-poster"])} slot="poster" style={{backgroundImage: `url(${item[actualIdex].img})`}}></div>
           
               <p className={cn(cls["button-load"])} slot="poster">Load 3D Model</p>
 
             </model-viewer>
           </div>
             <p>{bread}</p>
-            <h1 className={cn(cls['title'])}>Диагностика {item[id].title["ru"]}</h1>
+            <h1 className={cn(cls['title'])}>Диагностика {props.diagnosticsTitle} {item[actualIdex].title["ru"]}</h1>
             <ModelsCatalog indexProps={1} style={{color: "white"}}  />
               <div className={cn(cls["content"])}>
               <div className={cn(cls["order"])}><div>
-            <h2>Записаться на диагностику  {item[id].title["ru"]}</h2>
+            <h2>Записаться на диагностику  {item[actualIdex].title["ru"]}</h2>
               <form>
                 <div className={cn(cls["form-left"])}>
                   <div className={cn(cls["form-item"])}>
@@ -137,7 +146,7 @@ const MbItems =(props)=>{
                   </div>
                 </div>
                 <div className={cn(cls["form-right"])}>
-                  <img src={item[id].img} alt=""/>
+                  <img src={item[actualIdex].img} alt=""/>
                 </div>
                 
               </form>
@@ -159,4 +168,8 @@ const MbItems =(props)=>{
     </MainLayout>
     </>
   );}
-  export default MbItems;
+
+  export default connect(
+    ({ site, lang, carItem, diagnosticsTitle}) => ({ site, lang, carItem, diagnosticsTitle })
+  )(MbItems)
+  // export default MbItems;

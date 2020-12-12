@@ -117,7 +117,7 @@ export default function Mb() {
               <p>Ремонт Volvo XC901</p>
             </div>
           </div>
-          <ModelsCatalog indexProps={0}/>
+          <ModelsCatalog indexProps={0}  style={{color: "black"}}/>
           {/* <div className={cls["serv-container"]}>
           <div className={cls["tab-menu"]}>
            <p >Техобслуживание</p>

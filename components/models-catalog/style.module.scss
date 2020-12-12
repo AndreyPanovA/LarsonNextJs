@@ -210,6 +210,10 @@
   flex-basis: 25%;
   color: white;
 }
+.diacnostic-nav {
+  max-height: 300px;
+  overflow-y: auto;
+}
 
 .diacnostic-nav > div {
   display: flex;
@@ -218,7 +222,7 @@
   flex-wrap: wrap;
   a {
     margin: 25px;
-    color:gold;
+    color:black;
   }
   justify-content: center;
 }
