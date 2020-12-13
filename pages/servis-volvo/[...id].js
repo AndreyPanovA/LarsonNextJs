@@ -123,7 +123,7 @@ const MbItems =(props)=>{
             </model-viewer>
           </div>
             <p>{bread}</p>
-            <h1 className={cn(cls['title'])}>Диагностика {props.diagnosticsTitle} {item[actualIdex].title["ru"]}</h1>
+            <h1 className={cn(cls['title'])}>{props.diagnosticsTitle} {item[actualIdex].title["ru"]}</h1>
             <ModelsCatalog indexProps={1} style={{color: "white"}}  />
               <div className={cn(cls["content"])}>
               <div className={cn(cls["order"])}><div>

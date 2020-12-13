@@ -1,7 +1,7 @@
 const initialState = {
   lang: "ru",
   site: "/servis-volvo",
-  carItem: "Volvo-C30",
+  carItem: "volvo-c30",
   diagnosticsTitle: ""
 };
 const putCar =(car)=> ({type:"SELECT_CAR", payload:car})

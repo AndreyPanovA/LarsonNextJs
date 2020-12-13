@@ -26,7 +26,7 @@ const Links = ({setCar, carItem})=> {
         <>
         {item.map((el,idx)=> {
         return ( 
-        <Link key={idx} href={`/${router}/mbv/[id]`} as={`/${router}/mbv/${el.title.eng.toLowerCase()}`} >
+        <Link key={idx} href={`/${router}/[...id]`} as={`/${router}/tekhobsluzhivanie/${el.title.eng.toLowerCase()}`} >
           <a className={cn(cls["serv-item"])} onClick={callbacks.onPress.bind(this, el.title.eng.toLowerCase())}>
               <img src={el.img} alt="" />
               <p>{el.title["ru"]}</p>

@@ -65,7 +65,7 @@ export default function Mb() {
         <div className={cn(cls["serv_header"], cls["container_bot"])}>
           <div className={cn(cls["header_descr-top"])}>
             <div className="">
-              <p>Главная / Сервис вольво / MB /</p>
+              <p>Главная / Сервис вольво / Техобслуживание /</p>
               <h1>Сервис Volvo</h1>
               <p>
                 Мы специализируемся на автомобилях Volvo и имеем все

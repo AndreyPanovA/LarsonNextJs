@@ -85,8 +85,8 @@ export default {
       href: "uslugi/diagnosticheskaya-karta",
     },
     {
-      ru: "MB",
-      eng: "MB",
+      ru: "Техобслуживание",
+      eng: "Tekhobsluzhivanie",
     },
   ],
   footerText: {

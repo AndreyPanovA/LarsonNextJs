@@ -17,7 +17,7 @@ const props = {
 
 const ModelsCatalog = (props) => {
     const {style} = props
-    const components =[<Links  {...props} />,<Diagnostic {...props}/>, <Remont {...props} />, <Dops {...props}/>]
+    const components =[<Links  {...props} />,<Diagnostic {...props}/>, <Remont {...props} />, null, <Dops {...props}/>]
     const {volvo:{pages:{itemElement:item}}}=data;
     const [taber, setTabber] = useState({index: props.indexProps})
     const callbacks = {
