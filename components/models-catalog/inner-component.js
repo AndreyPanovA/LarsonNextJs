@@ -14,7 +14,10 @@ const props = {
 
 const InnerComponent =(props)=> {
     const {dataLink, setDiagnosticsTitle} = props
-    const router = useRouter().pathname.split("/")[1] 
+    const router =useRouter()
+ 
+    const baseURL = router.pathname.split("/")[1] 
+
     const more = ['Посмотреть все услуги', 'Свернуть'];
     const [visState, setVisState] = useState({vis: true, text:more[0]}); 
     const {volvo:{pages:{itemElement:item}}}=data;
@@ -27,10 +30,11 @@ const InnerComponent =(props)=> {
     <div className={cn(cls["diacnostic-nav"], "shadShine")}>
     <div>
         {dataLink.map((item, idx) => {
+             
             return ( <>{
-                idx < 6 ? <Link href={`/${router}/[...id]`} as={`/${router}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"])} style={props.style}>{item.ru}</a></Link>
+                idx < 6 ? <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"])} style={props.style}>{item.ru}</a></Link>
                 :
-                <Link href={`/${router}/[...id]`} as={`/${router}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"], [cls['visible']], [visState.vis])} style={props.style}>{item.ru}</a></Link>
+                <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"], [cls['visible']], [visState.vis])} style={props.style}>{item.ru}</a></Link>
             }</>
                 
             )

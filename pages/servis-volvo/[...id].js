@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from 'next/router'
 import ModelsCatalog from "../../components/models-catalog/index"
 import {connect} from "react-redux"
+import {dop, diagnostics, remont} from "../../components/models-catalog/links-data"
 const { cn } = LogicServ;
 
 const MbMap = ({only}) => {
@@ -109,7 +110,28 @@ const MbItems =(props)=>{
       }
       bread = 'Главная / Сервис Volvo / Услуги / '+item[actualIdex].title["ru"];
     }
+    let text = ""
+    const getBase = (data)=> {
+      data.forEach((el ,idx)=> {
+        let substring =el.url.split("/")[1],
+        str =router.asPath.split("/")[3]
+        console.log(substring, str, "fuck")
+        if (str?.includes(substring)) {
+          console.log(router.asPath.split("/")[3], "super1")
+          text=el.ru
+        } 
+      })
+    }
+    if (router.asPath.split("/")[2]=="diagnostika") {
+      getBase(diagnostics)
+    }else if (router.asPath.split("/")[2]=="remont") {
+      getBase(remont)
+    }
+    else if (router.asPath.split("/")[2]=="ustanovka-dop-oborudovaniya") {
+      getBase(dop)
+    }
 
+ 
     return (
     <>
     <MainLayout>
@@ -123,7 +145,7 @@ const MbItems =(props)=>{
             </model-viewer>
           </div>
             <p>{bread}</p>
-            <h1 className={cn(cls['title'])}>{props.diagnosticsTitle} {item[actualIdex].title["ru"]}</h1>
+            <h1 className={cn(cls['title'])}>{props.diagnosticsTitle|| text} {item[actualIdex].title["ru"]}</h1>
             <ModelsCatalog indexProps={1} style={{color: "white"}}  />
               <div className={cn(cls["content"])}>
               <div className={cn(cls["order"])}><div>
