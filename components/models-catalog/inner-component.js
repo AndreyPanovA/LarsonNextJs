@@ -32,9 +32,9 @@ const InnerComponent =(props)=> {
         {dataLink.map((item, idx) => {
              
             return ( <>{
-                idx < 6 ? <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"])} style={props.style}>{item.ru}</a></Link>
+                idx < 6 ? <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}/`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"])} style={props.style}>{item.ru}</a></Link>
                 :
-                <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"], [cls['visible']], [visState.vis])} style={props.style}>{item.ru}</a></Link>
+                <Link href={`/${baseURL}/[...id]`} as={`/${baseURL}/${item.url}-${props.carItem}/`}><a onClick={callbacks.onPress.bind(this, item.ru)} className={cn(cls["link-width"], [cls['visible']], [visState.vis])} style={props.style}>{item.ru}</a></Link>
             }</>
                 
             )

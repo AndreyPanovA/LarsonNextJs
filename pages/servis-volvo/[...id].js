@@ -113,7 +113,8 @@ const MbItems =(props)=>{
       bread = (<div style={{display:"flex"}}>
         <Link href="/"><a>Главная /</a></Link>
         <Link href="/servis-volvo"><a>Сервис Volvo /</a></Link>
-        <Link href={router.asPath}><a>{item[actualIdex].title["ru"]}</a></Link>
+        <Link href="/servis-volvo/uslugi/strahovanie-avto"><a>Услуги /</a></Link>
+        <p>{item[actualIdex].title["ru"]}</p>
      
       </div>)
       // 'Главная / Сервис Volvo / Услуги / '+item[actualIdex].title["ru"];
@@ -137,7 +138,16 @@ const MbItems =(props)=>{
     }
     else if (router.asPath.split("/")[2]=="ustanovka-dop-oborudovaniya") {
       getBase(dop)
+      if (!text) {
+        text="Установка доп. Оборудования"
+      }
+
     }
+    else if(router.asPath.split("/")[2]=="tekhobsluzhivanie") {
+      text = "Техобслуживание"
+      
+    }
+  
 
     return (
     <>

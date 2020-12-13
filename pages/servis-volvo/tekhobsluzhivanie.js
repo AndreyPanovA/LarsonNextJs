@@ -70,7 +70,7 @@ export default function Mb({title}) {
             <div style={{display:"flex"}}>
               <Link href="/"><a>Главная /</a></Link>
               <Link href="/servis-volvo"><a>Сервис Volvo /</a></Link>
-              <Link href={router.asPath}><a>{ title ? " ": "Техобслуживание"}</a></Link>
+              <p>{ title ? " ": "Техобслуживание"}</p>
             </div>
               <h1>{ title || "Техобслуживание"} Volvo</h1>
               <p>
