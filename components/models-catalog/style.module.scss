@@ -5,12 +5,18 @@
   max-width: 970px;
   margin-left: 20vw;
   z-index: 10;
+  .tab-menu {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .catalog-abs-header {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     opacity: 0.9;
+
   }
   .catalog_row {
     // margin-top: 10vh;
@@ -18,6 +24,7 @@
     position: relative;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+  
 
     //   display: flex;
 
@@ -115,6 +122,11 @@
 }
 
 @media (max-width: 767px) {
+  .serv-container {
+    margin: 0 !important;
+    padding: 10px 20px !important;
+  
+  }
   .flex__block {
     flex-direction: column;
   }

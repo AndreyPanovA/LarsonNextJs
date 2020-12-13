@@ -1,6 +1,11 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+
+
+// .texter {
+//   margin-top: 20vh;
+// }
 .car-container {
   position: relative;
   .top-img {
@@ -68,10 +73,15 @@
 .content {
   position: relative;
   left: 0;
+  padding: 10px 20px;
   padding-bottom: 20vh;
+  width: 100vw;
+  overflow: hidden;
+  
   .order {
     max-width: 1000px;
     margin: auto;
+
     form {
       display: flex;
       justify-content: space-between;
@@ -159,7 +169,7 @@
 
 .title {
   position: absolute;
-  top: 10%;
+  top: 11%;
   left: 20%;
 }
 .container-map {
@@ -240,6 +250,9 @@
   }
 }
 @media (max-width: 1020px) {
+  .container-map {
+    width: 80vw !important;
+  }
   .serv-container .serv-map-contacts {
     width: 100vw !important;
     top: 0;
