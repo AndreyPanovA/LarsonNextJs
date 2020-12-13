@@ -118,27 +118,6 @@ export default function Mb() {
             </div>
           </div>
           <ModelsCatalog indexProps={0}  style={{color: "black"}}/>
-          {/* <div className={cls["serv-container"]}>
-          <div className={cls["tab-menu"]}>
-           <p >Техобслуживание</p>
-           <p>Диагностика</p>
-           <p>Ремонт</p>
-           <p>Кузовной ремонт</p>
-           <p>Установка доп. оборудования</p>
-          </div>
-            <div className={cn(cls["catalog_row"], cls.flex_c)}>
-            {item.map((el,idx)=> {
-                return ( 
-                <Link href={`mbv/[id]`} as={`/servis-mercedes-benz/mbv/${idx}`}>
-                  <a className={cn(cls["serv-item"])}>
-                      <img src={el.img} alt="" />
-                      <p>{el.title["ru"]}</p>
-                  </a>
-                </Link>)
-            })}
-             
-            </div>
-          </div> */}
         </div>
         <div className={cls["serv-comand"]}>
           <h2>Наша команда</h2>

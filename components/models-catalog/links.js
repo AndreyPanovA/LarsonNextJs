@@ -5,6 +5,7 @@ import cls from "./style.module.scss";
 import LogicServ from "../../services/logicService";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from 'next/router'
 // import {connect} from "react-redux"
 // import {setCar, carItem} from "../reducers"
 const { cn } = LogicServ;
@@ -14,6 +15,7 @@ const props = {
 }
 
 const Links = ({setCar, carItem})=> {
+    const router = useRouter().pathname.split("/")[1] 
    const callbacks ={
        onPress: (item)=> {
         setCar(item)
@@ -24,7 +26,7 @@ const Links = ({setCar, carItem})=> {
         <>
         {item.map((el,idx)=> {
         return ( 
-        <Link key={idx} href={`/servis-mercedes-benz/mbv/[id]`} as={`/servis-mercedes-benz/mbv/${el.title.eng.toLowerCase()}`} >
+        <Link key={idx} href={`/${router}/mbv/[id]`} as={`/${router}/mbv/${el.title.eng.toLowerCase()}`} >
           <a className={cn(cls["serv-item"])} onClick={callbacks.onPress.bind(this, el.title.eng.toLowerCase())}>
               <img src={el.img} alt="" />
               <p>{el.title["ru"]}</p>
@@ -37,6 +39,3 @@ const Links = ({setCar, carItem})=> {
     </>)
 }
 export default Links
-// export default connect(
-//     ({ site, lang, carItem }) => ({ site, lang, carItem }),setCar
-//   )(Links)
