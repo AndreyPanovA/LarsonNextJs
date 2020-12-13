@@ -6,6 +6,7 @@ import Tour from "../../components/panorama/index";
 import LogicServ from "../../services/logicService";
 import { useState } from "react";
 import MbItems from "./mbv/[id]/index"
+import { useRouter } from 'next/router'
 import Link from "next/link";
 import {data} from "../../data";
 import ModelsCatalog from "../../components/models-catalog/index"
@@ -54,10 +55,11 @@ const MbMap = () => {
   );
 };
 
-export default function Mb() {
+export default function Mb({title}) {
   const { about: url } = dataStorage.backgroundsUrl;
   const {volvo:{pages:{itemElement:item}}}=data;
   const [crew, setCrew]=useState(false);
+ 
        
   return (
     <MainLayout>
@@ -65,8 +67,12 @@ export default function Mb() {
         <div className={cn(cls["serv_header"], cls["container_bot"])}>
           <div className={cn(cls["header_descr-top"])}>
             <div className="">
-              <p>Главная / Сервис вольво / MB /</p>
-              <h1>Сервис Volvo</h1>
+            <div style={{display:"flex"}}>
+              <Link href="/"><a>Главная /</a></Link>
+              <Link href="/servis-volvo"><a>Сервис Volvo /</a></Link>
+              <p>{ title ? " ": "Техобслуживание"}</p>
+            </div>
+              <h1>{ title || "Техобслуживание"} Volvo</h1>
               <p>
                 Мы специализируемся на автомобилях Volvo и имеем все
                 необходимое.
@@ -118,6 +124,7 @@ export default function Mb() {
             </div>
           </div>
           <ModelsCatalog indexProps={0}  style={{color: "black"}}/>
+
         </div>
         <div className={cls["serv-comand"]}>
           <h2>Наша команда</h2>

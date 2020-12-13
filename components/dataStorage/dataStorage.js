@@ -54,6 +54,10 @@ export default {
       eng: "Review",
     },
     {
+      ru: "Услуги",
+      eng: "Uslugi",
+    },
+    {
       ru: "Шины",
       eng: "Tires",
     },
@@ -81,8 +85,8 @@ export default {
       href: "uslugi/diagnosticheskaya-karta",
     },
     {
-      ru: "MB",
-      eng: "MB",
+      ru: "Техобслуживание",
+      eng: "Tekhobsluzhivanie",
     },
   ],
   footerText: {
